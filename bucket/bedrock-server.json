@@ -8,16 +8,20 @@
     },
     "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.10.20.zip",
     "hash": "08dc562da769baa9c39ab945f1947043568e398b1727b04a1cd09242bef3dd77",
-    "bin": "bedrock_server.exe",
     "shortcuts": [
         [
             "bedrock_server.exe",
             "Bedrock Server"
         ]
     ],
+    "persist": [
+        "allowlist.json",
+        "permissions.json",
+        "server.properties"
+    ],
     "checkver": {
         "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
-        "regex": "bin-win/bedrock-server-((\\d+\\.)+\\d+)\\.zip",
+        "regex": "bin-win/bedrock-server-([\\d\\.]+)\\.zip",
         "reverse": true
     },
     "autoupdate": {
