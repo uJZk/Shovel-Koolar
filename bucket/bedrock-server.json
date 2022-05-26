@@ -1,0 +1,26 @@
+{
+    "version": "1.19.10.20",
+    "description": "Bedrock Dedicated Server for Minecraft",
+    "homepage": "https://www.minecraft.net/en-us/download/server/bedrock",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.minecraft.net/en-us/terms"
+    },
+    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.10.20.zip",
+    "hash": "08dc562da769baa9c39ab945f1947043568e398b1727b04a1cd09242bef3dd77",
+    "bin": "bedrock_server.exe",
+    "shortcuts": [
+        [
+            "bedrock_server.exe",
+            "Bedrock Server"
+        ]
+    ],
+    "checkver": {
+        "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
+        "regex": "bin-win/bedrock-server-((\\d+\\.)+\\d+)\\.zip",
+        "reverse": true
+    },
+    "autoupdate": {
+        "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-$version.zip"
+    }
+}
