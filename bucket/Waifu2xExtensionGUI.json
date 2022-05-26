@@ -14,6 +14,9 @@
             "Waifu2x Extension GUI"
         ]
     ],
+	"persist": [
+		"waifu2x-extension-gui\\settings.ini"
+	],
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/AaronFeng753/Waifu2x-Extension-GUI/releases/download/v$version/Waifu2x-Extension-GUI-v$version-Win64.7z",
