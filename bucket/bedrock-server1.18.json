@@ -1,0 +1,31 @@
+{
+    "version": "1.18.33.02",
+    "description": "Bedrock Dedicated Server for Minecraft",
+    "homepage": "https://www.minecraft.net/en-us/download/server/bedrock",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.minecraft.net/en-us/terms"
+    },
+    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.18.33.02.zip",
+    "hash": "fb15dee6b77be0f0ca0b183cd0449d9aa7b9e770809e601c6fa04b95f2de17fb",
+    "shortcuts": [
+        [
+            "bedrock_server.exe",
+            "Bedrock Server"
+        ]
+    ],
+    "persist": [
+        "allowlist.json",
+        "permissions.json",
+        "server.properties",
+        "worlds"
+    ],
+    "checkver": {
+        "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
+        "regex": "bin-win/bedrock-server-(1\\.18\\.[\\d\\.]+)\\.zip",
+        "reverse": true
+    },
+    "autoupdate": {
+        "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-$version.zip"
+    }
+}
