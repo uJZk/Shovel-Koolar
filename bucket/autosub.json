@@ -7,7 +7,7 @@
 	},
 	"url": "https://github.com/BingLingGroup/autosub/releases/download/0.5.7-alpha/autosub-0.5.7-alpha-win-x64-nuitka.7z",
 	"hash": "05a8a91b3726c7ef2ecc1c15bb416fd69c7ad0b4aad507f1cd484f7a3650b713",
-	"bin": "autosub\\autosub.exe",
+	"bin": "autosub\\autosub\\autosub.exe",
 	"checkver": {
 		"url": "https://github.com/BingLingGroup/autosub/tags",
 		"regex": "/releases/tag/([\\d\\.]+(-\\w+)?)"
