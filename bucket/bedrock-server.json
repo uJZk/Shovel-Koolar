@@ -17,7 +17,8 @@
     "persist": [
         "allowlist.json",
         "permissions.json",
-        "server.properties"
+        "server.properties",
+        "worlds"
     ],
     "checkver": {
         "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
