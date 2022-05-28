@@ -15,9 +15,9 @@
     ],
     "checkver": {
         "url": "https://github.com/qwqcode/SubRenamer/releases",
-        "regex": "(?<version>[\\d\\.]+).*SubRenamer\\.v(?<lversion>[\\d\\.-]+)\\.exe"
+        "regex": "(?<version>[\\d\\.]+).*SubRenamer\\.v(?<long>[\\d\\.-]+)\\.exe"
     },
     "autoupdate": {
-        "url": "https://github.com/qwqcode/SubRenamer/releases/download/$version/SubRenamer.v$matchLversion.exe#/SubRenamer.exe"
+        "url": "https://github.com/qwqcode/SubRenamer/releases/download/$version/SubRenamer.v$matchLong.exe#/SubRenamer.exe"
     }
 }
