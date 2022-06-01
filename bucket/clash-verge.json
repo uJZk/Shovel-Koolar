@@ -20,9 +20,9 @@
         "if (!(Test-Path \"$persist_dir\\.config\\PORTABLE\")) {",
         "    New-Item -Path \"$persist_dir\\.config\\PORTABLE\" -ItemType file | Out-Null",
         "}",
-        "if (!(Test-Path \"$persist_dir\\clash-meta.exe\")) {",
-        "    New-Item -Path \"$persist_dir\\clash-meta.exe\" -ItemType file -Value \"$scoopdir\\shims\\clash-meta.exe\" | Out-Null",
-        "}"
+		"if (!(Test-Path \"$persist_dir\\clash-meta.exe\")) {",
+		"    Copy-Item \"$scoopdir\\shims\\clash-meta.exe\" -Destination \"$persist_dir\\clash-meta.exe\" | Out-Null",
+		"}"
     ],
     "checkver": "github",
     "autoupdate": {
