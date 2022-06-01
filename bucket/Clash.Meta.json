@@ -1,16 +1,16 @@
 {
-	"version": "1.11.0",
-	"description": "A rule-based tunnel in Go.",
-	"homepage": "https://github.com/MetaCubeX/Clash.Meta",
-	"license": {
-		"identifier": "GPL-3.0"
-	},
-	"url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/v1.11.1/Clash.Meta-windows-amd64v3-v1.11.1.zip",
-	"hash": "f220cab42b8d0d57c8da4e5265ca8c876e2382dcd201898e393bd9ea8494287d",
-	"bin": "clash-meta.exe",
-	"pre_install": "Rename-Item \"$dir\\Clash.Meta-windows-amd64v3.exe\" 'clash-meta.exe'",
-	"checkver": "github",
-	"autoupdate": {
-		"url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/v$version/Clash.Meta-windows-amd64v3-v$version.zip"
-	}
+    "version": "1.11.1",
+    "description": "A rule-based tunnel in Go.",
+    "homepage": "https://github.com/MetaCubeX/Clash.Meta",
+    "license": {
+        "identifier": "GPL-3.0"
+    },
+    "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/v1.11.1/Clash.Meta-windows-amd64v3-v1.11.1.zip",
+    "hash": "f220cab42b8d0d57c8da4e5265ca8c876e2382dcd201898e393bd9ea8494287d",
+    "bin": "clash-meta.exe",
+    "pre_install": "Rename-Item \"$dir\\Clash.Meta-windows-amd64v3.exe\" 'clash-meta.exe'",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/v$version/Clash.Meta-windows-amd64v3-v$version.zip"
+    }
 }
