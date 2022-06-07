@@ -1,13 +1,13 @@
 {
-    "version": "1.19.10.20",
+    "version": "1.19.1.01",
     "description": "Bedrock Dedicated Server for Minecraft",
     "homepage": "https://www.minecraft.net/en-us/download/server/bedrock",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.minecraft.net/en-us/terms"
     },
-    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.10.20.zip",
-    "hash": "08dc562da769baa9c39ab945f1947043568e398b1727b04a1cd09242bef3dd77",
+    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.1.01.zip",
+    "hash": "e955a48c047c7844d579a683b5fec34f8fdfa7f27ba0fa6056ff0b10c00a8731",
     "shortcuts": [
         [
             "bedrock_server.exe",
