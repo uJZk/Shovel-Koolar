@@ -11,6 +11,6 @@
     "pre_install": "Rename-Item \"$dir\\Clash.Meta-windows-amd64v3.exe\" 'clash-meta.exe'",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/v$version/Clash.Meta-windows-amd64v3-v$version.zip"
+        "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/v$version/Clash.Meta-windows-amd64-v$version.zip"
     }
 }
