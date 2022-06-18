@@ -20,6 +20,11 @@
         "server.properties",
         "worlds"
     ],
+    "pre_install": [
+        "if(!(Test-Path \"$dir/allowlist.json\")) { Add-Content \"$dir/allowlist.json\" $null }",
+        "if(!(Test-Path \"$dir/permissions.json\")) { Add-Content \"$dir/permissions.json\" $null }",
+        "if(!(Test-Path \"$dir/server.properties\")) { Add-Content \"$dir/server.properties\" $null }"
+    ],
     "checkver": {
         "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
         "regex": "bin-win/bedrock-server-([\\d\\.]+)\\.zip",
