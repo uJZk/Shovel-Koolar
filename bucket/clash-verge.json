@@ -27,7 +27,7 @@
         "if (!(Test-Path \"$dir\\clash-meta.exe\")) {",
         "    if ((Test-Path \"$scoopdir\\apps\\clash-meta\\current\\clash-meta.exe\")) {",
         "        New-Item -Path \"$dir\\clash-meta.exe\" -ItemType HardLink -Value \"$scoopdir\\apps\\clash-meta\\current\\clash-meta.exe\" | Out-Null",
-        "    } else {",
+        "    } elseif ((Test-Path \"$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe\")) {",
         "        New-Item -Path \"$dir\\clash-meta.exe\" -ItemType HardLink -Value \"$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe\" | Out-Null",
         "    }",
 		"}"
