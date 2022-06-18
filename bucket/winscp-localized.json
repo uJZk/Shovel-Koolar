@@ -27,7 +27,6 @@
 		"    Remove-Item $original_dir\\$($LocaleFileNames[$i]).zip",
 		"}"
 	],
-	"bin": "WinSCP.exe",
 	"shortcuts": [
 		[
 			"WinSCP.exe",
