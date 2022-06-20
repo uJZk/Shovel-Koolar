@@ -1,5 +1,5 @@
 {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A Clash GUI based on tauri",
     "homepage": "https://github.com/zzzgydi/clash-verge",
     "license": {
@@ -9,8 +9,8 @@
         "Clash.Meta": "Koolar/clash-meta",
         "Clash.Meta compatible": "Koolar/clash-meta-compatible"
     },
-    "url": "https://github.com/zzzgydi/clash-verge/releases/download/v1.0.2/Clash.Verge_1.0.2_x64_portable.zip",
-    "hash": "522c3bdca1e19874618798003a1f801a37f7ee861cb0120da88442fafd251f6d",
+    "url": "https://github.com/zzzgydi/clash-verge/releases/download/v1.0.3/Clash.Verge_1.0.3_x64_portable.zip",
+    "hash": "c708f954d06aa9653b7a724131235ef6c54168ba4c90aa924dcadb24b8b4a414",
     "shortcuts": [
         [
             "Clash Verge.exe",
@@ -30,7 +30,7 @@
         "    } elseif ((Test-Path \"$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe\")) {",
         "        New-Item -Path \"$dir\\clash-meta.exe\" -ItemType HardLink -Value \"$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe\" | Out-Null",
         "    }",
-		"}"
+        "}"
     ],
     "checkver": "github",
     "autoupdate": {
