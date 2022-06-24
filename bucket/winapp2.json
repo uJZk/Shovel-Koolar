@@ -12,19 +12,19 @@
 	"hash": "fd4ce2c4f4fe37ccf189fe9531479b05332bd9edfd0c516da2f24c2d4ece914b",
 	"post_install": [
 		"if (Test-Path \"$scoopdir\\apps\\ccleaner\\current\\x64\\CCleaner64.exe\") {",
-		"    Copy-Item \"$dir\\Winapp2.ini\" -Destination \"$scoopdir\\apps\\ccleaner\\current\\x64\\Winapp2.ini\" -ErrorAction SilentlyContinue -Force",
+		"    Copy-Item \"$dir\\Winapp2.ini\" -Destination \"$scoopdir\\apps\\ccleaner\\current\\x64\\Winapp2.ini\" -Force",
 		"}",
 		"",
 		"if (Test-Path \"$scoopdir\\apps\\ccleaner\\current\\x86\\CCleaner.exe\") {",
-		"    Copy-Item \"$dir\\Winapp2.ini\" -Destination \"$scoopdir\\apps\\ccleaner\\current\\x86\\Winapp2.ini\" -ErrorAction SilentlyContinue -Force",
+		"    Copy-Item \"$dir\\Winapp2.ini\" -Destination \"$scoopdir\\apps\\ccleaner\\current\\x86\\Winapp2.ini\" -Force",
 		"}",
 		"",
 		"if ((Test-Path \"$scoopdir\\apps\\ccleaner\\current\\CCleaner64.exe\") -or (Test-Path \"$scoopdir\\apps\\ccleaner\\current\\CCleaner.exe\")) {",
-		"    Copy-Item \"$dir\\Winapp2.ini\" -Destination \"$scoopdir\\apps\\ccleaner\\current\\Winapp2.ini\" -ErrorAction SilentlyContinue -Force",
+		"    Copy-Item \"$dir\\Winapp2.ini\" -Destination \"$scoopdir\\apps\\ccleaner\\current\\Winapp2.ini\" -Force",
 		"}"
 	],
 	"uninstaller": {
-		"script": "Remove-Item \"$scoopdir\\apps\\ccleaner\\current\\x64\\Winapp2.ini\" -Force -ErrorAction SilentlyContinue"
+		"script": "Remove-Item \"$scoopdir\\apps\\ccleaner\\current\\x64\\Winapp2.ini\" -Force"
 	},
 	"checkver": {
 		"url": "https://github.com/MoscaDotTo/Winapp2/raw/master/Winapp2.ini",
