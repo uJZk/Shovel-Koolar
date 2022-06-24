@@ -10,10 +10,16 @@
     "bin": "clash-meta.exe",
     "pre_install": "Rename-Item \"$dir\\Clash.Meta-windows-amd64-compatible.exe\" 'clash-meta.exe'",
     "post_install": [
-        "if ((Test-Path \"$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe\") -and !(Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\")) {",
+        "if ((Test-Path \"$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe\") -and !(Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac\")) {",
+        "    if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\") {",
+        "        Rename-Item -Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" -NewName \"clash-meta.exe.bac\"",
+        "    }",
         "    New-Item -Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" -ItemType HardLink -Value \"$dir\\clash-meta.exe\" | Out-Null",
         "}"
     ],
+    "uninstaller": {
+        "script": "if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac\") {Remove-Item -Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" -Force | Rename-Item -Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac\" -NewName \"clash-meta.exe\"}"
+    },
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/v$version/Clash.Meta-windows-amd64-compatible-v$version.zip"
