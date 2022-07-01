@@ -11,36 +11,28 @@
 		"64bit": {
 			"post_install": [
 				"if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-				"    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
-				"    break",
-				"}",
-				"cmd /c \"$dir\\Install_MPCVR_64.cmd\""
+				"    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cmd /c '$dir\\Install_MPCVR_64.cmd'`\"\"",
+				"}"
 			],
 			"uninstaller": {
 				"script": [
 					"if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-					"    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
-					"    break",
-					"}",
-					"cmd /c \"$dir\\Uninstall_MPCVR_64.cmd\""
+					"    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cmd /c '$dir\\Uninstall_MPCVR_64.cmd'`\"\"",
+					"}"
 				]
 			}
 		},
 		"32bit": {
 			"post_install": [
 				"if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-				"    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
-				"    break",
-				"}",
-				"cmd /c \"$dir\\Install_MPCVR_32.cmd\""
+				"    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cmd /c '$dir\\Install_MPCVR_32.cmd'`\"\"",
+				"}"
 			],
 			"uninstaller": {
 				"script": [
 					"if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-					"    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
-					"    break",
-					"}",
-					"cmd /c \"$dir\\Uninstall_MPCVR_32.cmd\""
+					"    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cmd /c '$dir\\Uninstall_MPCVR_32.cmd'`\"\"",
+					"}"
 				]
 			}
 		}

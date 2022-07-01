@@ -19,10 +19,8 @@
                 "if ($service -ne $null) {",
                 "    if ($service.Status -eq 'Running') {",
                 "        if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-                "            Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
-                "            break",
+                "            Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"Stop-Service -Name 'Clash Core Service'`\"\"",
                 "        }",
-                "        Stop-Service -Name \"Clash Core Service\"",
                 "    }",
                 "}"
             ]
@@ -38,10 +36,8 @@
                 "if ($service -ne $null) {",
                 "    if ($service.Status -eq 'Running') {",
                 "        if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-                "            Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
-                "            break",
+                "            Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"Stop-Service -Name 'Clash Core Service'`\"\"",
                 "        }",
-                "        Stop-Service -Name \"Clash Core Service\"",
                 "    }",
                 "}"
             ]
@@ -72,10 +68,8 @@
             "$service = Get-Service -Name \"Clash Core Service\" -ErrorAction SilentlyContinue",
             "if ($service -ne $null) {",
             "    if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-            "        Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
-            "        break",
+            "        Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"Remove-Service -Name 'Clash Core Service'`\"\"",
             "    }",
-            "    Remove-Service -Name \"Clash Core Service\"",
             "}",
             "",
             "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name dorado) scripts/DoradoUtils.psm1)",
