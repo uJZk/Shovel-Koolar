@@ -13,7 +13,18 @@
             "hash": "4ea87e195813a2783940018bce872935d716c1a871cfa7a9233dd805551dcd61",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
-                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse"
+                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse",
+                "",
+                "$service = Get-Service -Name \"Clash Core Service\" -ErrorAction SilentlyContinue",
+                "if ($service -ne $null) {",
+                "    if ($service.Status -eq 'Running') {",
+                "        if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
+                "            Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
+                "            break",
+                "        }",
+                "        Stop-Service -Name \"Clash Core Service\"",
+                "    }",
+                "}"
             ]
         },
         "32bit": {
@@ -21,34 +32,52 @@
             "hash": "c456766388f0ad678e6e468022e76d7900be99e96018874b6950ec5cab581fea",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\"",
-                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse"
+                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse",
+                "",
+                "$service = Get-Service -Name \"Clash Core Service\" -ErrorAction SilentlyContinue",
+                "if ($service -ne $null) {",
+                "    if ($service.Status -eq 'Running') {",
+                "        if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
+                "            Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
+                "            break",
+                "        }",
+                "        Stop-Service -Name \"Clash Core Service\"",
+                "    }",
+                "}"
             ]
         }
     },
-    "installer": {
-        "script": [
-            "# https://github.com/chawyehsu/dorado/bucket/clash-for-windows.json",
-            "if (!(Test-Path \"$persist_dir\\data\")) {",
-            "    New-Item \"$persist_dir\\data\" -Type Directory -Force | Out-Null",
-            "    if (Test-Path \"$env:USERPROFILE\\.config\\clash\") {",
-            "        Copy-Item -Path \"$env:USERPROFILE\\.config\\clash\\*\" -Destination \"$persist_dir\\data\" -Recurse -Container",
-            "    }",
-            "}",
-            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-            "Mount-ExternalRuntimeData -Source \"$persist_dir\\clash_win\" -Target \"$env:APPDATA\\clash_win\"",
-            "Remove-Module -Name DoradoUtils",
-            "",
-            "if ((Test-Path \"$scoopdir\\apps\\clash-meta\\current\\clash-meta.exe\")) {",
-            "    Rename-Item -Path \"$dir\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -NewName \"clash-win64.exe.bac\"",
-            "    New-Item -Path \"$dir\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -ItemType HardLink -Value \"$scoopdir\\apps\\clash-meta\\current\\clash-meta.exe\" -Force | Out-Null",
-            "} elseif ((Test-Path \"$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe\")) {",
-            "    Rename-Item -Path \"$dir\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -NewName \"clash-win64.exe.bac\"",
-            "    New-Item -Path \"$dir\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -ItemType HardLink -Value \"$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe\" -Force | Out-Null",
-            "}"
-        ]
-    },
+    "post_install": [
+        "# https://github.com/chawyehsu/dorado/bucket/clash-for-windows.json",
+        "if (!(Test-Path \"$persist_dir\\data\")) {",
+        "    New-Item \"$persist_dir\\data\" -Type Directory -Force | Out-Null",
+        "    if (Test-Path \"$env:USERPROFILE\\.config\\clash\") {",
+        "        Copy-Item -Path \"$env:USERPROFILE\\.config\\clash\\*\" -Destination \"$persist_dir\\data\" -Recurse -Container",
+        "    }",
+        "}",
+        "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
+        "Mount-ExternalRuntimeData -Source \"$persist_dir\\clash_win\" -Target \"$env:APPDATA\\clash_win\"",
+        "Remove-Module -Name DoradoUtils",
+        "",
+        "if ((Test-Path \"$scoopdir\\apps\\clash-meta\\current\\clash-meta.exe\")) {",
+        "    Rename-Item -Path \"$dir\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -NewName \"clash-win64.exe.bac\"",
+        "    New-Item -Path \"$dir\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -ItemType HardLink -Value \"$scoopdir\\apps\\clash-meta\\current\\clash-meta.exe\" -Force | Out-Null",
+        "} elseif ((Test-Path \"$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe\")) {",
+        "    Rename-Item -Path \"$dir\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -NewName \"clash-win64.exe.bac\"",
+        "    New-Item -Path \"$dir\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -ItemType HardLink -Value \"$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe\" -Force | Out-Null",
+        "}"
+    ],
     "uninstaller": {
         "script": [
+            "$service = Get-Service -Name \"Clash Core Service\" -ErrorAction SilentlyContinue",
+            "if ($service -ne $null) {",
+            "    if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
+            "        Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cd '$pwd'; & '$PSCommandPath';`\"\";",
+            "        break",
+            "    }",
+            "    Remove-Service -Name \"Clash Core Service\"",
+            "}",
+            "",
             "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name dorado) scripts/DoradoUtils.psm1)",
             "Dismount-ExternalRuntimeData -Target \"$env:APPDATA\\clash_win\"",
             "Remove-Module -Name DoradoUtils"
