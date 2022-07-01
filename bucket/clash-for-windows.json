@@ -13,16 +13,7 @@
             "hash": "fabff9da0aef33c31e0bfbd809e305a9232d47975c2659afed2309c7a063928e",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
-                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse",
-                "",
-                "$service = Get-Service -Name \"Clash Core Service\" -ErrorAction SilentlyContinue",
-                "if ($service -ne $null) {",
-                "    if ($service.Status -eq 'Running') {",
-                "        if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-                "            Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"Stop-Service -Name 'Clash Core Service'`\"\"",
-                "        }",
-                "    }",
-                "}"
+                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse"
             ]
         },
         "32bit": {
@@ -30,16 +21,7 @@
             "hash": "e7e82b525d633bcaa125722173ccce6667a65e28e96875d633a381ed2f8f1965",
             "pre_install": [
                 "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\"",
-                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse",
-                "",
-                "$service = Get-Service -Name \"Clash Core Service\" -ErrorAction SilentlyContinue",
-                "if ($service -ne $null) {",
-                "    if ($service.Status -eq 'Running') {",
-                "        if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-                "            Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"Stop-Service -Name 'Clash Core Service'`\"\"",
-                "        }",
-                "    }",
-                "}"
+                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse"
             ]
         }
     },
