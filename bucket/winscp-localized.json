@@ -10,7 +10,7 @@
         "    @(",
         "        '[Configuration\\Interface]'",
         "        'RandomSeedFile=.\\winscp.rnd'",
-        "    ) | Add-Content -Path \"$dir\\winscp.ini\" -Encoding ASCII -Force",
+        "    ) | Add-Content \"$dir\\winscp.ini\" -Encoding ASCII -Force",
         "}",
         "#Download translation file",
         "$LocaleFileNames = 'pt', 'ca', 'cs', 'nl', 'fi', 'fr', 'de', 'hu', 'is', 'it', 'jp', 'ko', 'no', 'pl', 'ptg', 'ro', 'ru', 'chs', 'sk', 'es', 'sv', 'ch', 'tr', 'uk', 'fa', 'hr', 'lt', 'xxk', 'ar', 'et', 'srl', 'in', 'be', 'vi', 'el', 'da', 'ms', 'bg', 'he', 'fp', 'th', 'mya', 'bn', 'mk'",

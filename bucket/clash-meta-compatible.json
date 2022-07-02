@@ -15,13 +15,13 @@
     "post_install": [
         "if ((Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\Clash for Windows.exe\") -and !(Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac\")) {",
         "    if (Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\") {",
-        "        Rename-Item -Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -NewName \"clash-win64.exe.bac\"",
+        "        Rename-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" \"clash-win64.exe.bac\"",
         "    }",
-        "    New-Item -Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -ItemType HardLink -Value \"$dir\\clash-meta.exe\" | Out-Null",
+        "    New-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -ItemType HardLink -Value \"$dir\\clash-meta.exe\" | Out-Null",
         "}"
     ],
     "uninstaller": {
-        "script": "if (Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\") {Remove-Item -Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -Force; Rename-Item -Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\" -NewName \"clash-win64.exe\"}"
+        "script": "if (Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\") {Remove-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -Force; Rename-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\" \"clash-win64.exe\"}"
     },
     "checkver": "github",
     "autoupdate": {

@@ -22,22 +22,6 @@
 					"PotPlayer Mini"
 				]
 			],
-			"pre_install": [
-				"$ConfigFile = 'PotPlayerMini64.ini'",
-				"$ConfigContent = @(",
-				"    '[Settings]'",
-				"    'AutoDownloadFile=0'",
-				"    'AutoUpdateStart=0'",
-				"    'CheckAutoUpdate=0'",
-				"    'FastAutoUpdate=0'",
-				"    'SaveConfigPause=1'",
-				")",
-				"$FinalConfig = $ConfigContent -join \"`r`n\"",
-				"if (-not (Test-Path \"$persist_dir\\$ConfigFile\")) {",
-				"    Write-Host 'File' $ConfigFile 'does not exists. Creating' -f Yellow",
-				"    Set-Content \"$dir\\$ConfigFile\" $FinalConfig -Encoding Ascii",
-				"}"
-			],
 			"post_install": [
 				"Remove-Item \"$dir\\`$*\" -Recurse",
 				"",
@@ -45,12 +29,17 @@
 				"    'PotPlayerMiniXP64.exe',",
 				"    'PotPlayerXP64.exe',",
 				"    'PotPlayer64.exe',",
-				"    'Html'",
+				"    'Html',",
+				"    'uninstall.exe.nsis'",
 				")",
 				"foreach ($d in $DelFiles) {",
 				"    if (Test-Path \"$dir\\$d\") {",
 				"        Remove-Item \"$dir\\$d\" -Recurse",
 				"    }",
+				"}",
+				"",
+				"if (Test-Path \"$persist_dir\\dll\\64bit\\version.dll\") {",
+				"    Copy-Item \"$persist_dir\\dll\\64bit\\version.dll\" \"$dir\"",
 				"}"
 			]
 		},
@@ -69,22 +58,6 @@
 					"PotPlayer Mini"
 				]
 			],
-			"pre_install": [
-				"$ConfigFile = 'PotPlayerMini.ini'",
-				"$ConfigContent = @(",
-				"    '[Settings]'",
-				"    'AutoDownloadFile=0'",
-				"    'AutoUpdateStart=0'",
-				"    'CheckAutoUpdate=0'",
-				"    'FastAutoUpdate=0'",
-				"    'SaveConfigPause=1'",
-				")",
-				"$FinalConfig = $ConfigContent -join \"`r`n\"",
-				"if (-not (Test-Path \"$persist_dir\\$ConfigFile\")) {",
-				"    Write-Host 'File' $ConfigFile 'does not exists. Creating' -f Yellow",
-				"    Set-Content \"$dir\\$ConfigFile\" $FinalConfig -Encoding Ascii",
-				"}"
-			],
 			"post_install": [
 				"Remove-Item \"$dir\\`$*\" -Recurse",
 				"",
@@ -93,15 +66,37 @@
 				"    'PotPlayerXP.exe',",
 				"    'PotPlayer.exe',",
 				"    'Html',",
+				"    'uninstall.exe.nsis'",
 				")",
 				"foreach ($d in $DelFiles) {",
 				"    if (Test-Path \"$dir\\$d\") {",
 				"        Remove-Item \"$dir\\$d\" -Recurse",
 				"    }",
+				"}",
+				"",
+				"if (Test-Path \"$persist_dir\\dll\\32bit\\version.dll\") {",
+				"    Copy-Item \"$persist_dir\\dll\\32bit\\version.dll\" \"$dir\"",
 				"}"
 			]
 		}
 	},
+	"pre_install": [
+		"$ConfigContent = @(",
+		"    '[Settings]'",
+		"    'AutoDownloadFile=0'",
+		"    'AutoUpdateStart=0'",
+		"    'CheckAutoUpdate=0'",
+		"    'FastAutoUpdate=0'",
+		"    'SaveConfigPause=1'",
+		")",
+		"$FinalConfig = $ConfigContent -join \"`r`n\"",
+		"foreach ($f in @('PotPlayerMini64.ini', 'PotPlayerMini.ini')) {",
+		"    if (-not (Test-Path \"$persist_dir\\$f\")) {",
+		"        Write-Host 'File' $f 'does not exists. Creating' -f Yellow",
+		"        Set-Content \"$dir\\$f\" $FinalConfig -Encoding Ascii",
+		"    }",
+		"}"
+	],
 	"uninstaller": {
 		"script": [
 			"Remove-Item $env:APPDATA\\Daum -Recurse -ErrorAction SilentlyContinue",
@@ -115,7 +110,8 @@
 		"Skins",
 		"UrlList",
 		"PotPlayerMini.ini",
-		"PotPlayerMini64.ini"
+		"PotPlayerMini64.ini",
+		"version.dll"
 	],
 	"checkver": {
 		"url": "https://t1.daumcdn.net/potplayer/PotPlayer/v4/Update2/UpdateEng.html",
