@@ -38,8 +38,8 @@
 				"    }",
 				"}",
 				"",
-				"if (Test-Path \"$persist_dir\\dll\\64bit\\version.dll\") {",
-				"    Copy-Item \"$persist_dir\\dll\\64bit\\version.dll\" \"$dir\"",
+				"if (Test-Path \"$persist_dir\\DLLs\\64bit\\version.dll\") {",
+				"    Copy-Item \"$persist_dir\\DLLs\\64bit\\version.dll\" \"$dir\"",
 				"}"
 			]
 		},
@@ -74,8 +74,8 @@
 				"    }",
 				"}",
 				"",
-				"if (Test-Path \"$persist_dir\\dll\\32bit\\version.dll\") {",
-				"    Copy-Item \"$persist_dir\\dll\\32bit\\version.dll\" \"$dir\"",
+				"if (Test-Path \"$persist_dir\\DLLs\\32bit\\version.dll\") {",
+				"    Copy-Item \"$persist_dir\\DLLs\\32bit\\version.dll\" \"$dir\"",
 				"}"
 			]
 		}
