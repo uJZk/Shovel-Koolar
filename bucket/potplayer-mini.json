@@ -104,8 +104,8 @@
 	},
 	"uninstaller": {
 		"script": [
-			"Remove-Item $env:APPDATA\\Daum -Recurse",
-			"Remove-Item HKCU:\\Software\\DAUM -Recurse"
+			"Remove-Item $env:APPDATA\\Daum -Recurse -ErrorAction SilentlyContinue",
+			"Remove-Item HKCU:\\Software\\DAUM -Recurse -ErrorAction SilentlyContinue"
 		]
 	},
 	"persist": [
