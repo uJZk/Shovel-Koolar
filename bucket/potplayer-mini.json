@@ -1,0 +1,134 @@
+{
+	"version": "210127",
+	"description": "A multimedia software player developed for the Microsoft Windows operating system by South Korean Internet company Kakao.",
+	"homepage": "https://potplayer.daum.net/",
+	"license": {
+		"identifier": "Freeware",
+		"url": "https://potplayer.daum.net/publicRelation"
+	},
+	"architecture": {
+		"64bit": {
+			"url": [
+				"https://t1.daumcdn.net/potplayer/PotPlayer/Version/210127/PotPlayerSetup64.exe#/cosi.7z",
+				"https://t1.daumcdn.net/potplayer/PotPlayer/Codec/v1/OpenCodecSetup64.exe#/codec.7z"
+			],
+			"hash": [
+				"68aab0b7c4e30464a6189888e59859b2bf25ed18b805aee902e55968e2d6d4d8",
+				"383686311183cbcf9e8d1f4a29191d05a0c3b2aa70396a2324f58e5a2ec98648"
+			],
+			"shortcuts": [
+				[
+					"PotPlayerMini64.exe",
+					"PotPlayer Mini"
+				]
+			],
+			"post_install": [
+				"Remove-Item \"$dir\\`$*\" -Recurse",
+				"",
+				"$DelFiles = @(",
+				"    'UrlList',",
+				"    'PotPlayerMiniXP64.exe',",
+				"    'PotPlayerXP64.exe',",
+				"    'PotPlayer64.exe',",
+				"    'Html',",
+				")",
+				"foreach ($d in $DelFiles) {",
+				"    if (Test-Path \"$dir\\$d\") {",
+				"        Remove-Item \"$dir\\$d\" -Recurse",
+				"    }",
+				"}",
+				"",
+				"$ConfigFile = 'PotPlayerMini64.ini'",
+				"$ConfigContent = @(",
+				"    '[Settings]'",
+				"    'AutoDownloadFile=0'",
+				"    'AutoUpdateStart=0'",
+				"    'CheckAutoUpdate=0'",
+				"    'FastAutoUpdate=0'",
+				"    'SaveConfigPause=1'",
+				")",
+				"$FinalConfig = $ConfigContent -join \"`r`n\"",
+				"if (-not (Test-Path \"$persist_dir\\$ConfigFile\")) {",
+				"    Write-Host 'File' $ConfigFile 'does not exists. Creating' -f Yellow",
+				"    Set-Content \"$dir\\$ConfigFile\" $FinalConfig -Encoding Ascii",
+				"}"
+			]
+		},
+		"32bit": {
+			"url": [
+				"https://t1.daumcdn.net/potplayer/PotPlayer/Version/210127/PotPlayerSetup.exe#/cosi.7z",
+				"https://t1.daumcdn.net/potplayer/PotPlayer/Codec/v1/OpenCodecSetup.exe#/codec.7z"
+			],
+			"hash": [
+				"68aab0b7c4e30464a6189888e59859b2bf25ed18b805aee902e55968e2d6d4d8",
+				"8ee793feed9b6eeb21d45876932ba91494657a66b1b0df7666fd35416d805c3c"
+			],
+			"shortcuts": [
+				[
+					"PotPlayerMini.exe",
+					"PotPlayer Mini"
+				]
+			],
+			"post_install": [
+				"Remove-Item \"$dir\\`$*\" -Recurse",
+				"",
+				"$DelFiles = @(",
+				"    'UrlList',",
+				"    'PotPlayerMiniXP.exe',",
+				"    'PotPlayerXP.exe',",
+				"    'PotPlayer.exe',",
+				"    'Html',",
+				")",
+				"foreach ($d in $DelFiles) {",
+				"    if (Test-Path \"$dir\\$d\") {",
+				"        Remove-Item \"$dir\\$d\" -Recurse",
+				"    }",
+				"}",
+				"",
+				"$ConfigFile = 'PotPlayerMini.ini'",
+				"$ConfigContent = @(",
+				"    '[Settings]'",
+				"    'AutoDownloadFile=0'",
+				"    'AutoUpdateStart=0'",
+				"    'CheckAutoUpdate=0'",
+				"    'FastAutoUpdate=0'",
+				"    'SaveConfigPause=1'",
+				")",
+				"$FinalConfig = $ConfigContent -join \"`r`n\"",
+				"if (-not (Test-Path \"$persist_dir\\$ConfigFile\")) {",
+				"    Write-Host 'File' $ConfigFile 'does not exists. Creating' -f Yellow",
+				"    Set-Content \"$dir\\$ConfigFile\" $FinalConfig -Encoding Ascii",
+				"}"
+			]
+		}
+	},
+	"uninstaller": {
+		"script": [
+			"Remove-Item $env:APPDATA\\Daum -Recurse",
+			"Remove-Item HKCU:\\Software\\DAUM -Recurse"
+		]
+	},
+	"persist": [
+		"Capture",
+		"Extension",
+		"Playlist",
+		"Skins",
+		"UrlList",
+		"PotPlayerMini.ini",
+		"PotPlayerMini64.ini"
+	],
+	"checkver": {
+		"url": "https://t1.daumcdn.net/potplayer/PotPlayer/v4/Update2/UpdateEng.html",
+		"regex": "\\[(\\d+)\\]"
+	},
+	"autoupdate": {
+		"architecture": {
+			"64bit": {
+				"url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/210127/PotPlayerSetup64.exe#/cosi.7z"
+			},
+			"32bit": {
+				"url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/210127/PotPlayerSetup.exe#/cosi.7z"
+			}
+		}
+	}
+}
