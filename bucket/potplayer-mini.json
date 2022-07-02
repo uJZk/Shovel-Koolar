@@ -22,6 +22,27 @@
 					"PotPlayer Mini"
 				]
 			],
+			"pre_install": [
+				"$ConfigContent = @(",
+				"    '[Settings]'",
+				"    'AutoDownloadFile=0'",
+				"    'AutoUpdateStart=0'",
+				"    'CheckAutoUpdate=0'",
+				"    'FastAutoUpdate=0'",
+				"    'SaveConfigPause=1'",
+				")",
+				"$FinalConfig = $ConfigContent -join \"`r`n\"",
+				"foreach ($f in @('PotPlayerMini64.ini', 'PotPlayerMini.ini')) {",
+				"    if (-not (Test-Path \"$persist_dir\\$f\")) {",
+				"        Write-Host 'File' $f 'does not exists. Creating' -f Yellow",
+				"        Set-Content \"$dir\\$f\" $FinalConfig -Encoding Ascii",
+				"    }",
+				"}",
+				"",
+				"if (Test-Path \"$persist_dir\\DLLs\\64bit\\version.dll\") {",
+				"    Copy-Item \"$persist_dir\\DLLs\\64bit\\version.dll\" \"$dir\"",
+				"}"
+			],
 			"post_install": [
 				"Remove-Item \"$dir\\`$*\" -Recurse",
 				"",
@@ -58,6 +79,27 @@
 					"PotPlayer Mini"
 				]
 			],
+			"pre_install": [
+				"$ConfigContent = @(",
+				"    '[Settings]'",
+				"    'AutoDownloadFile=0'",
+				"    'AutoUpdateStart=0'",
+				"    'CheckAutoUpdate=0'",
+				"    'FastAutoUpdate=0'",
+				"    'SaveConfigPause=1'",
+				")",
+				"$FinalConfig = $ConfigContent -join \"`r`n\"",
+				"foreach ($f in @('PotPlayerMini64.ini', 'PotPlayerMini.ini')) {",
+				"    if (-not (Test-Path \"$persist_dir\\$f\")) {",
+				"        Write-Host 'File' $f 'does not exists. Creating' -f Yellow",
+				"        Set-Content \"$dir\\$f\" $FinalConfig -Encoding Ascii",
+				"    }",
+				"}",
+				"",
+				"if (Test-Path \"$persist_dir\\DLLs\\32bit\\version.dll\") {",
+				"    Copy-Item \"$persist_dir\\DLLs\\32bit\\version.dll\" \"$dir\"",
+				"}"
+			],
 			"post_install": [
 				"Remove-Item \"$dir\\`$*\" -Recurse",
 				"",
@@ -72,31 +114,10 @@
 				"    if (Test-Path \"$dir\\$d\") {",
 				"        Remove-Item \"$dir\\$d\" -Recurse",
 				"    }",
-				"}",
-				"",
-				"if (Test-Path \"$persist_dir\\DLLs\\32bit\\version.dll\") {",
-				"    Copy-Item \"$persist_dir\\DLLs\\32bit\\version.dll\" \"$dir\"",
 				"}"
 			]
 		}
 	},
-	"pre_install": [
-		"$ConfigContent = @(",
-		"    '[Settings]'",
-		"    'AutoDownloadFile=0'",
-		"    'AutoUpdateStart=0'",
-		"    'CheckAutoUpdate=0'",
-		"    'FastAutoUpdate=0'",
-		"    'SaveConfigPause=1'",
-		")",
-		"$FinalConfig = $ConfigContent -join \"`r`n\"",
-		"foreach ($f in @('PotPlayerMini64.ini', 'PotPlayerMini.ini')) {",
-		"    if (-not (Test-Path \"$persist_dir\\$f\")) {",
-		"        Write-Host 'File' $f 'does not exists. Creating' -f Yellow",
-		"        Set-Content \"$dir\\$f\" $FinalConfig -Encoding Ascii",
-		"    }",
-		"}"
-	],
 	"uninstaller": {
 		"script": [
 			"Remove-Item $env:APPDATA\\Daum -Recurse -ErrorAction SilentlyContinue",
