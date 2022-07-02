@@ -22,21 +22,7 @@
 					"PotPlayer Mini"
 				]
 			],
-			"post_install": [
-				"Remove-Item \"$dir\\`$*\" -Recurse",
-				"",
-				"$DelFiles = @(",
-				"    'PotPlayerMiniXP64.exe',",
-				"    'PotPlayerXP64.exe',",
-				"    'PotPlayer64.exe',",
-				"    'Html'",
-				")",
-				"foreach ($d in $DelFiles) {",
-				"    if (Test-Path \"$dir\\$d\") {",
-				"        Remove-Item \"$dir\\$d\" -Recurse",
-				"    }",
-				"}",
-				"",
+			"pre_install": [
 				"$ConfigFile = 'PotPlayerMini64.ini'",
 				"$ConfigContent = @(",
 				"    '[Settings]'",
@@ -50,6 +36,21 @@
 				"if (-not (Test-Path \"$persist_dir\\$ConfigFile\")) {",
 				"    Write-Host 'File' $ConfigFile 'does not exists. Creating' -f Yellow",
 				"    Set-Content \"$dir\\$ConfigFile\" $FinalConfig -Encoding Ascii",
+				"}"
+			],
+			"post_install": [
+				"Remove-Item \"$dir\\`$*\" -Recurse",
+				"",
+				"$DelFiles = @(",
+				"    'PotPlayerMiniXP64.exe',",
+				"    'PotPlayerXP64.exe',",
+				"    'PotPlayer64.exe',",
+				"    'Html'",
+				")",
+				"foreach ($d in $DelFiles) {",
+				"    if (Test-Path \"$dir\\$d\") {",
+				"        Remove-Item \"$dir\\$d\" -Recurse",
+				"    }",
 				"}"
 			]
 		},
@@ -68,21 +69,7 @@
 					"PotPlayer Mini"
 				]
 			],
-			"post_install": [
-				"Remove-Item \"$dir\\`$*\" -Recurse",
-				"",
-				"$DelFiles = @(",
-				"    'PotPlayerMiniXP.exe',",
-				"    'PotPlayerXP.exe',",
-				"    'PotPlayer.exe',",
-				"    'Html',",
-				")",
-				"foreach ($d in $DelFiles) {",
-				"    if (Test-Path \"$dir\\$d\") {",
-				"        Remove-Item \"$dir\\$d\" -Recurse",
-				"    }",
-				"}",
-				"",
+			"pre_install": [
 				"$ConfigFile = 'PotPlayerMini.ini'",
 				"$ConfigContent = @(",
 				"    '[Settings]'",
@@ -96,6 +83,21 @@
 				"if (-not (Test-Path \"$persist_dir\\$ConfigFile\")) {",
 				"    Write-Host 'File' $ConfigFile 'does not exists. Creating' -f Yellow",
 				"    Set-Content \"$dir\\$ConfigFile\" $FinalConfig -Encoding Ascii",
+				"}"
+			],
+			"post_install": [
+				"Remove-Item \"$dir\\`$*\" -Recurse",
+				"",
+				"$DelFiles = @(",
+				"    'PotPlayerMiniXP.exe',",
+				"    'PotPlayerXP.exe',",
+				"    'PotPlayer.exe',",
+				"    'Html',",
+				")",
+				"foreach ($d in $DelFiles) {",
+				"    if (Test-Path \"$dir\\$d\") {",
+				"        Remove-Item \"$dir\\$d\" -Recurse",
+				"    }",
 				"}"
 			]
 		}
