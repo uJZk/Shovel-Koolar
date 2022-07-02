@@ -30,7 +30,7 @@
 				"    'PotPlayerMiniXP64.exe',",
 				"    'PotPlayerXP64.exe',",
 				"    'PotPlayer64.exe',",
-				"    'Html',",
+				"    'Html'",
 				")",
 				"foreach ($d in $DelFiles) {",
 				"    if (Test-Path \"$dir\\$d\") {",
