@@ -6,14 +6,9 @@
         "identifier": "Proprietary",
         "url": "https://www.minecraft.net/en-us/terms"
     },
+    "depends": "nssm",
     "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.18.33.02.zip",
     "hash": "fb15dee6b77be0f0ca0b183cd0449d9aa7b9e770809e601c6fa04b95f2de17fb",
-    "shortcuts": [
-        [
-            "bedrock_server.exe",
-            "Bedrock Server"
-        ]
-    ],
     "persist": [
         "allowlist.json",
         "permissions.json",
@@ -23,8 +18,15 @@
     "pre_install": [
         "if(!(Test-Path \"$dir/allowlist.json\")) { Add-Content \"$dir/allowlist.json\" $null }",
         "if(!(Test-Path \"$dir/permissions.json\")) { Add-Content \"$dir/permissions.json\" $null }",
-        "if(!(Test-Path \"$dir/server.properties\")) { Add-Content \"$dir/server.properties\" $null }"
+        "if(!(Test-Path \"$dir/server.properties\")) { Add-Content \"$dir/server.properties\" $null }",
+        "",
+        "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
+        "    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm install 'Bedrock Server' '$dir\\bedrock_server.exe'; nssm set 'Bedrock Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority ABOVE_NORMAL_PRIORITY_CLASS`\"\"",
+        "}"
     ],
+    "uninstaller": {
+        "script": "nssm remove 'Bedrock Server'"
+    },
     "checkver": {
         "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
         "regex": "bin-win/bedrock-server-(1\\.18\\.[\\d\\.]+)\\.zip",
