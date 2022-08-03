@@ -12,7 +12,8 @@
 	"notes": [
 		"Start EnergyStar by running: nssm start EnergyStar",
 		"Stop EnergyStar by running: nssm stop EnergyStar",
-		"Restart EnergyStar by running: nssm restart EnergyStar"
+		"Restart EnergyStar by running: nssm restart EnergyStar",
+		"Querying the service's status by running: nssm status EnergyStar"
 	],
 	"post_install": [
 		"if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",

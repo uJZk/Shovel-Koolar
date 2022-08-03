@@ -12,7 +12,8 @@
     "notes": [
         "Start Bedrock Server by running: nssm start 'Bedrock Server'",
         "Stop Bedrock Server by running: nssm stop 'Bedrock Server'",
-        "Restart Bedrock Server by running: nssm restart 'Bedrock Server'"
+        "Restart Bedrock Server by running: nssm restart 'Bedrock Server'",
+        "Querying the service's status by running: nssm status 'Bedrock Server'"
     ],
     "persist": [
         "allowlist.json",
