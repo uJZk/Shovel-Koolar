@@ -9,6 +9,11 @@
     "depends": "nssm",
     "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.10.03.zip",
     "hash": "11c95a808454f8fac8c0bf40bab3454f33e1c51137c69d1d8d96e848ae8deffc",
+    "notes": [
+        "Start Bedrock Server by running: nssm start 'Bedrock Server'",
+        "Stop Bedrock Server by running: nssm stop 'Bedrock Server'",
+        "Restart Bedrock Server by running: nssm restart 'Bedrock Server'"
+    ],
     "persist": [
         "allowlist.json",
         "permissions.json",
