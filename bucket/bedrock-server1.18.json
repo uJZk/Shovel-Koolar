@@ -10,6 +10,8 @@
     "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.18.33.02.zip",
     "hash": "fb15dee6b77be0f0ca0b183cd0449d9aa7b9e770809e601c6fa04b95f2de17fb",
     "notes": [
+        "Bedrock Server has been set as a service, it will automatically start when the system starts.",
+        "Set Bedrock Server's startup type to maunal by running: nssm set 'Bedrock Server' Start SERVICE_DEMAND_START",
         "Start Bedrock Server by running: nssm start 'Bedrock Server'",
         "Stop Bedrock Server by running: nssm stop 'Bedrock Server'",
         "Restart Bedrock Server by running: nssm restart 'Bedrock Server'",
@@ -31,7 +33,12 @@
         "}"
     ],
     "uninstaller": {
-        "script": "nssm remove 'Bedrock Server'"
+        "script": [
+            "$service = Get-Service -Name \"Bedrock Server\" -ErrorAction SilentlyContinue",
+            "if ($service -ne $null) {",
+            "    nssm remove 'Bedrock Server'",
+            "}"
+        ]
     },
     "checkver": {
         "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
