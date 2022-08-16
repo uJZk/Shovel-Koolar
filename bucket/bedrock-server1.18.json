@@ -31,14 +31,7 @@
         "}"
     ],
     "uninstaller": {
-        "script": [
-            "$service = Get-Service -Name \"Bedrock Server\" -ErrorAction SilentlyContinue",
-            "if ($service -eq $null) {",
-            "    if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-            "        Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"Remove-Service -Name 'Bedrock Server'`\"\"",
-            "    }",
-            "}"
-        ]
+        "script": "nssm remove 'Bedrock Server'"
     },
     "checkver": {
         "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
