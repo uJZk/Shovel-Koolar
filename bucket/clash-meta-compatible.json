@@ -21,7 +21,12 @@
         "}"
     ],
     "uninstaller": {
-        "script": "if (Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\") {Remove-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -Force; Rename-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\" \"clash-win64.exe\"}"
+        "script": [
+            "if (Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\") {",
+            "    Remove-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -Force",
+            "    Rename-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\" \"clash-win64.exe\"",
+            "}"
+        ]
     },
     "checkver": "github",
     "autoupdate": {
