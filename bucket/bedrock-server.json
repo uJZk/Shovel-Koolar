@@ -29,9 +29,9 @@
         "if(!(Test-Path \"$dir/server.properties\")) { Add-Content \"$dir/server.properties\" $null }",
         "",
         "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-        "    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm install 'Bedrock Server' '$dir\\bedrock_server.exe'; nssm set 'Bedrock Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority ABOVE_NORMAL_PRIORITY_CLASS`\"\"",
+        "    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm install 'Bedrock Server' '$dir/bedrock_server.exe'; nssm set 'Bedrock Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority ABOVE_NORMAL_PRIORITY_CLASS`\"\"",
         "} else {",
-        "   nssm install 'Bedrock Server' '$dir\\bedrock_server.exe'; nssm set 'Bedrock Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority ABOVE_NORMAL_PRIORITY_CLASS",
+        "    nssm install 'Bedrock Server' \"$dir/bedrock_server.exe\"; nssm set 'Bedrock Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority ABOVE_NORMAL_PRIORITY_CLASS",
         "}"
     ],
     "uninstaller": {
