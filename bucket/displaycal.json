@@ -9,13 +9,13 @@
 	"extract_dir": "DisplayCAL-3.8.9.3",
 	"post_install": [
 		"Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-		"Mount-ExternalRuntimeData -Source \"$persist_dir\\DisplayCAL\" -Target \"$env:APPDATA\\DisplayCAL\"",
+		"Mount-ExternalRuntimeData -Source \"$persist_dir/DisplayCAL\" -Target \"$env:APPDATA/DisplayCAL\"",
 		"Remove-Module -Name DoradoUtils"
 	],
 	"uninstaller": {
 		"script": [
 			"Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-			"Dismount-ExternalRuntimeData -Target \"$env:APPDATA\\DisplayCAL\"",
+			"Dismount-ExternalRuntimeData -Target \"$env:APPDATA/DisplayCAL\"",
 			"Remove-Module -Name DoradoUtils"
 		]
 	},

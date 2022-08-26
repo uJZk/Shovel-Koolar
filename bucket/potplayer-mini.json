@@ -23,7 +23,7 @@
                 ]
             ],
             "post_install": [
-                "Remove-Item \"$dir\\`$*\" -Recurse",
+                "Remove-Item \"$dir/`$*\" -Recurse",
                 "",
                 "$DelFiles = @(",
                 "    'PotPlayerMiniXP64.exe',",
@@ -33,13 +33,13 @@
                 "    'uninstall.exe.nsis'",
                 ")",
                 "foreach ($d in $DelFiles) {",
-                "    if (Test-Path \"$dir\\$d\") {",
-                "        Remove-Item \"$dir\\$d\" -Recurse",
+                "    if (Test-Path \"$dir/$d\") {",
+                "        Remove-Item \"$dir/$d\" -Recurse",
                 "    }",
                 "}",
                 "",
-                "if (Test-Path \"$persist_dir\\DLLs\\64bit\\version.dll\") {",
-                "    Copy-Item \"$persist_dir\\DLLs\\64bit\\version.dll\" \"$dir\"",
+                "if (Test-Path \"$persist_dir/DLLs/64bit/version.dll\") {",
+                "    Copy-Item \"$persist_dir/DLLs/64bit/version.dll\" \"$dir\"",
                 "}"
             ]
         },
@@ -59,7 +59,7 @@
                 ]
             ],
             "post_install": [
-                "Remove-Item \"$dir\\`$*\" -Recurse",
+                "Remove-Item \"$dir/`$*\" -Recurse",
                 "",
                 "$DelFiles = @(",
                 "    'PotPlayerMiniXP.exe',",
@@ -69,13 +69,13 @@
                 "    'uninstall.exe.nsis'",
                 ")",
                 "foreach ($d in $DelFiles) {",
-                "    if (Test-Path \"$dir\\$d\") {",
-                "        Remove-Item \"$dir\\$d\" -Recurse",
+                "    if (Test-Path \"$dir/$d\") {",
+                "        Remove-Item \"$dir/$d\" -Recurse",
                 "    }",
                 "}",
                 "",
-                "if (Test-Path \"$persist_dir\\DLLs\\32bit\\version.dll\") {",
-                "    Copy-Item \"$persist_dir\\DLLs\\32bit\\version.dll\" \"$dir\"",
+                "if (Test-Path \"$persist_dir/DLLs/32bit/version.dll\") {",
+                "    Copy-Item \"$persist_dir/DLLs/32bit/version.dll\" \"$dir\"",
                 "}"
             ]
         }
@@ -91,16 +91,16 @@
         ")",
         "$FinalConfig = $ConfigContent -join \"`r`n\"",
         "foreach ($f in @('PotPlayerMini64.ini', 'PotPlayerMini.ini')) {",
-        "    if (-not (Test-Path \"$persist_dir\\$f\")) {",
+        "    if (-not (Test-Path \"$persist_dir/$f\")) {",
         "        Write-Host 'File' $f 'does not exists. Creating' -f Yellow",
-        "        Set-Content \"$dir\\$f\" $FinalConfig -Encoding Ascii",
+        "        Set-Content \"$dir/$f\" $FinalConfig -Encoding Ascii",
         "    }",
         "}"
     ],
     "uninstaller": {
         "script": [
-            "Remove-Item $env:APPDATA\\Daum -Recurse -ErrorAction SilentlyContinue",
-            "Remove-Item HKCU:\\Software\\DAUM -Recurse -ErrorAction SilentlyContinue"
+            "Remove-Item $env:APPDATA/Daum -Recurse -ErrorAction SilentlyContinue",
+            "Remove-Item HKCU:/Software/DAUM -Recurse -ErrorAction SilentlyContinue"
         ]
     },
     "persist": [
