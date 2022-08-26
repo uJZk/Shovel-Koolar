@@ -26,7 +26,9 @@
 		"script": [
 			"$service = Get-Service -Name \"EnergyStar\" -ErrorAction SilentlyContinue",
 			"if ($service -ne $null) {",
-			"    nssm remove EnergyStar",
+			"    if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
+			"        Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm stop EnergyStar; nssm remove EnergyStar`\"\"",
+			"    }",
 			"}"
 		]
 	}
