@@ -13,7 +13,7 @@
                 "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
                 "    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cmd /c '$dir\\Install_MPCVR_64.cmd'`\"\"",
                 "} else {",
-                "    '$dir\\Install_MPCVR_64.cmd'",
+                "    \"$dir\\Install_MPCVR_64.cmd\"",
                 "}"
             ],
             "uninstaller": {
@@ -21,7 +21,7 @@
                     "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
                     "    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cmd /c '$dir\\Uninstall_MPCVR_64.cmd'`\"\"",
                     "} else {",
-                    "    '$dir\\Uninstall_MPCVR_64.cmd'",
+                    "    \"$dir\\Uninstall_MPCVR_64.cmd\"",
                     "}"
                 ]
             }
@@ -31,7 +31,7 @@
                 "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
                 "    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cmd /c '$dir\\Install_MPCVR_32.cmd'`\"\"",
                 "} else {",
-                "    '$dir\\Install_MPCVR_32.cmd'",
+                "    \"$dir\\Install_MPCVR_32.cmd\"",
                 "}"
             ],
             "uninstaller": {
@@ -39,7 +39,7 @@
                     "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
                     "    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"cmd /c '$dir\\Uninstall_MPCVR_32.cmd'`\"\"",
                     "} else {",
-                    "    '$dir\\Uninstall_MPCVR_32.cmd'",
+                    "    \"$dir\\Uninstall_MPCVR_32.cmd\"",
                     "}"
                 ]
             }
