@@ -1,0 +1,38 @@
+{
+    "version": "1.5.1",
+    "description": "Windows graphical interface for yt-dlp, designed as a simple YouTube downloader",
+    "homepage": "https://github.com/ErrorFlynn/ytdlp-interface",
+    "license": "MIT",
+    "suggest": {
+        "yt-dlp": "yt-dlp",
+        "ffmpeg": "ffmpeg",
+        "ffmpeg-shared": "ffmpeg-shared"
+    },
+    "url": "https://github.com/ErrorFlynn/ytdlp-interface/releases/download/v1.5.1/ytdlp-interface.7z",
+    "hash": "7539f05be60c6d7565d04fbc2337413f145421d89759cc6d6bdaf006bed988de",
+    "shortcuts": [
+        [
+            "ytdlp-interface.exe",
+            "ytdlp-interface"
+        ]
+    ],
+    "persist": "ytdlp-interface.json",
+    "pre_install": "if (!(Test-Path \"$persist_dir\\ytdlp-interface.json\")) { Set-Content \"$dir\\ytdlp-interface.json\" '{}' -Encoding Ascii }",
+    "post_install": [
+        "if (Test-Path \"$scoopdir\\apps\\yt-dlp\\current\\yt-dlp.exe\") {",
+        "    Remove-Item \"$dir\\yt-dlp.exe\"",
+        "}",
+        "if ((Test-Path \"$scoopdir\\apps\\ffmpeg-shared\\current\\bin\\ffmpeg.exe\") -or (Test-Path \"$scoopdir\\apps\\ffmpeg\\current\\bin\\ffmpeg.exe\")) {",
+        "    Remove-Item \"$dir\\ffmpeg.exe\"",
+        "    Remove-Item \"$dir\\ffprobe.exe\"",
+        "}"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ErrorFlynn/ytdlp-interface/releases/download/v$version/ytdlp-interface.7z"
+            }
+        }
+    }
+}
