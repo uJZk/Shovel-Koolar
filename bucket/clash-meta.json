@@ -18,6 +18,10 @@
         "        Rename-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" \"clash-win64.exe.bac\"",
         "    }",
         "    New-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -ItemType HardLink -Value \"$dir\\clash-meta.exe\" | Out-Null",
+        "}",
+        "if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe\") {",
+        "    Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" \"clash-meta.exe.bac\"",
+        "    New-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" -ItemType HardLink -Value \"$dir\\clash-meta.exe\" | Out-Null",
         "}"
     ],
     "uninstaller": {
@@ -25,6 +29,10 @@
             "if (Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\") {",
             "    Remove-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" -Force",
             "    Rename-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe.bac\" \"clash-win64.exe\"",
+            "}",
+            "if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac\") {",
+            "    Remove-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.exe\" -Force",
+            "    Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac\" \"clash-meta.exe\"",
             "}"
         ]
     },
