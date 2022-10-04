@@ -1,5 +1,5 @@
 {
-    "version": "1.19.30.04",
+    "version": "1.19.31.01",
     "description": "Bedrock Dedicated Server for Minecraft",
     "homepage": "https://www.minecraft.net/en-us/download/server/bedrock",
     "license": {
@@ -7,8 +7,8 @@
         "url": "https://www.minecraft.net/en-us/terms"
     },
     "depends": "nssm",
-    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.30.04.zip",
-    "hash": "e5319e9829ce9a43722be43efc27b11a1e60df7333e3e0b036f9f95a90862a04",
+    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.31.01.zip",
+    "hash": "7028a88f85649ded6647134dccb9566021bdf9bf6d95039aafa9197acfa185c9",
     "notes": [
         "Bedrock Server has been set as a service, it will automatically start when the system starts.",
         "Set Bedrock Server's startup type to maunal by running: nssm set 'Bedrock Server' Start SERVICE_DEMAND_START",
