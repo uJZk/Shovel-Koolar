@@ -3,7 +3,7 @@
 	"description": "Command-line utility to transcribe/translate from video/audio/subtitles to subtitles",
 	"homepage": "https://github.com/BingLingGroup/autosub",
 	"license": {
-		"identifier": "GPL-2.0"
+		"identifier": "GPL-2.0-only"
 	},
 	"url": "https://github.com/BingLingGroup/autosub/releases/download/0.5.7-alpha/autosub-0.5.7-alpha-win-x64-nuitka.7z",
 	"hash": "05a8a91b3726c7ef2ecc1c15bb416fd69c7ad0b4aad507f1cd484f7a3650b713",

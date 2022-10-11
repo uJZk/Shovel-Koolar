@@ -2,7 +2,7 @@
     "homepage": "https://github.com/Fndroid/clash_for_windows_pkg",
     "description": "A Windows GUI based on Clash",
     "version": "0.20.4",
-    "license": "MIT",
+    "license": "Freeware",
     "suggest": {
         "Clash.Meta": "Koolar/clash-meta",
         "Clash.Meta compatible": "Koolar/clash-meta-compatible"
