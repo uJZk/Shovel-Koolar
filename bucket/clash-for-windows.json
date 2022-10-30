@@ -4,7 +4,6 @@
     "version": "0.20.6",
     "license": "Freeware",
     "suggest": {
-        "Clash.Meta": "Koolar/clash-meta",
         "Clash.Meta compatible": "Koolar/clash-meta-compatible"
     },
     "architecture": {
