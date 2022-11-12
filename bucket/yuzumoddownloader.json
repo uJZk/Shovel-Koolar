@@ -1,0 +1,44 @@
+{
+    "version": "1.2.0.0",
+    "description": "A One-Click Yuzu Mod downloader for Yuzu Game Mods.",
+    "homepage": "https://github.com/amakvana/YuzuModDownloader",
+    "license": "GPL-3.0-only",
+    "suggest": {
+        "Yuzu (pinEApple)": "Koolar/yuzu-es",
+        "Yuzu": "yuzu"
+    },
+    "url": "https://github.com/amakvana/YuzuModDownloader/releases/download/v1.2.0.0/YuzuModDownloader.zip",
+    "hash": "11ba79f7519320b17a8c4f2d0f96a6e0eec190a0fc122e088806eb0ff7000a72",
+    "post_install": [
+        "if ((Test-Path \"$scoopdir\\apps\\yuzu-ea\\current\\yuzu.exe\")) {",
+        "    Copy-Item \"$dir\\YuzuModDownloader.exe\" -Destination \"$scoopdir\\apps\\yuzu-ea\\current\\\" -Force",
+        "    Copy-Item \"$dir\\HtmlAgilityPack.dll\" -Destination \"$scoopdir\\apps\\yuzu-ea\\current\\\" -Force",
+        "}",
+        "if ((Test-Path \"$scoopdir\\apps\\yuzu-dev\\current\\yuzu.exe\")) {",
+        "    Copy-Item \"$dir\\YuzuModDownloader.exe\" -Destination \"$scoopdir\\apps\\yuzu-dev\\current\\\" -Force",
+        "    Copy-Item \"$dir\\HtmlAgilityPack.dll\" -Destination \"$scoopdir\\apps\\yuzu-dev\\current\\\" -Force",
+        "}",
+        "if ((Test-Path \"$scoopdir\\apps\\yuzu\\current\\yuzu.exe\")) {",
+        "    Copy-Item \"$dir\\YuzuModDownloader.exe\" -Destination \"$scoopdir\\apps\\yuzu\\current\\\" -Force",
+        "    Copy-Item \"$dir\\HtmlAgilityPack.dll\" -Destination \"$scoopdir\\apps\\yuzu\\current\\\" -Force",
+        "}"
+    ],
+    "uninstaller": {
+        "script": [
+            "Remove-Item \"$scoopdir\\apps\\yuzu-ea\\current\\YuzuModDownloader.exe\" -Force -ErrorAction SilentlyContinue",
+            "Remove-Item \"$scoopdir\\apps\\yuzu-ea\\current\\HtmlAgilityPack.dll\" -Force -ErrorAction SilentlyContinue",
+            "Remove-Item \"$scoopdir\\apps\\yuzu-dev\\current\\YuzuModDownloader.exe\" -Force -ErrorAction SilentlyContinue",
+            "Remove-Item \"$scoopdir\\apps\\yuzu-dev\\current\\HtmlAgilityPack.dll\" -Force -ErrorAction SilentlyContinue",
+            "Remove-Item \"$scoopdir\\apps\\yuzu\\current\\YuzuModDownloader.exe\" -Force -ErrorAction SilentlyContinue",
+            "Remove-Item \"$scoopdir\\apps\\yuzu\\current\\HtmlAgilityPack.dll\" -Force -ErrorAction SilentlyContinue"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/amakvana/YuzuModDownloader/releases/download/v$version/YuzuModDownloader.zip"
+            }
+        }
+    }
+}

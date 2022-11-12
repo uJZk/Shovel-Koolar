@@ -1,0 +1,51 @@
+{
+    "version": "EA-3081",
+    "description": "A Yuzu Early Access fork with Linux-specific patches.",
+    "homepage": "https://github.com/pineappleEA/pineapple-src",
+    "license": "GPL-3.0-only",
+    "suggest": {
+        "Yuzu Mod Downloader": "Koolar/yuzumoddownloader"
+    },
+    "url": "https://github.com/pineappleEA/pineapple-src/releases/download/EA-3081/Windows-Yuzu-EA-3081.7z",
+    "hash": "9ab282bd79266063916b6ede2cc261a40828a2e69409a82e2cf916d26a0287da",
+    "extract_dir": "yuzu-windows-msvc-early-access",
+    "bin": [
+        [
+            "yuzu-cmd.exe",
+            "yuzu-cmd-ea"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "yuzu.exe",
+            "Yuzu (pinEApple)"
+        ]
+    ],
+    "persist": [
+        "user",
+        "plugins"
+    ],
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\")) {",
+        "   New-item \"$persist_dir\" -ItemType Directory | Out-Null",
+        "   New-item \"$persist_dir\\user\" -ItemType Directory | Out-Null",
+        "   if (Test-Path \"$env:APPDATA\\yuzu\") {",
+        "       Write-host \"Migrating AppData...\" -ForegroundColor yellow",
+        "       Copy-Item -Path \"$env:APPDATA\\yuzu\\*\" -Destination \"$persist_dir\\user\" -Recurse",
+        "       Remove-Item -Path \"$env:APPDATA\\yuzu\" -Recurse",
+        "   }",
+        "}"
+    ],
+    "post_install": [
+        "Copy-Item \"$scoopdir\\apps\\yuzumoddownloader\\current\\YuzuModDownloader.exe\" -Destination \"$dir\\\" -Force -ErrorAction SilentlyContinue",
+        "Copy-Item \"$scoopdir\\apps\\yuzumoddownloader\\current\\HtmlAgilityPack.dll\" -Destination \"$dir\\\" -Force -ErrorAction SilentlyContinue"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/pineappleEA/pineapple-src/releases/download/$version/Windows-Yuzu-$version.7z"
+            }
+        }
+    }
+}
