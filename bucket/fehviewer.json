@@ -1,12 +1,12 @@
 {
-    "version": "1.2.79+479",
+    "version": "1.2.81+481EX",
     "description": "An e-hentai/exhentai app make on flutter.",
     "homepage": "https://github.com/honjow/FEhViewer",
     "license": {
         "identifier": "Apache-2.0"
     },
-    "url": "https://github.com/honjow/FEhViewer/releases/download/v1.2.79+479/FEhViewer_1.2.79+479_windows.zip",
-    "hash": "bbd1966df1929b6a8249e873d34a5d76b6f601ce325f9e9c3fa5181f6acbb07a",
+    "url": "https://github.com/honjow/FEhViewer/releases/download/v1.2.81+481EX/FEhViewer_1.2.81+481EX_windows.zip",
+    "hash": "331a1ccf194877c706151a34dfc1e4f1496c024032cd047fcb4913dabce2897e",
     "extract_dir": "FEhViewer",
     "shortcuts": [
         [
@@ -28,7 +28,7 @@
     },
     "checkver": {
         "url": "https://github.com/honjow/FEhViewer/releases",
-        "regex": "v(\\d+(\\.\\d+)*\\+\\d+)"
+        "regex": ">v(\\d+(\\.\\d+)*(\\+\\d+)?(EX)?)"
     },
     "autoupdate": {
         "url": "https://github.com/honjow/FEhViewer/releases/download/v$version/FEhViewer_$version_windows.zip"

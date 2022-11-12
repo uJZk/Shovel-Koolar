@@ -1,0 +1,43 @@
+{
+    "version": "2.0-14",
+    "description": "A Nintendo WiiU emulator capable of online play (experimental version).",
+    "homepage": "https://github.com/cemu-project/Cemu",
+    "license": "MPL-2.0",
+    "url": "https://github.com/cemu-project/Cemu/releases/download/v2.0-13/cemu-2.0-13-windows-x64.zip",
+    "hash": "99f2bf98d350db01952456b6e1cd6b2078dba1d4bf4b8756a9df73f163d3c238",
+    "extract_dir": "cemu_2.0-14",
+    "bin": [
+        [
+            "Cemu.exe",
+            "cemu-beta"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "Cemu.exe",
+            "Cemu (beta)"
+        ]
+    ],
+    "persist": [
+        "controllerProfiles",
+        "gameProfiles",
+        "graphicPacks",
+        "mlc01",
+        "sharedFonts",
+        "shaderCache\\transferable",
+        "keys.txt",
+        "settings.xml"
+    ],
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\keys.txt\")) { Set-Content \"$dir\\keys.txt\" '{}' -Encoding Ascii }",
+        "if (!(Test-Path \"$persist_dir\\settings.xml\")) { Set-Content \"$dir\\settings.xml\" '{}' -Encoding Ascii }"
+    ],
+    "checkver": {
+        "url": "https://github.com/cemu-project/Cemu/releases",
+        "regex": "Cemu (\\d+(\\.\\d+)*(-\\d+)?)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/cemu-project/Cemu/releases/download/v2.0-13/cemu-2.0-13-windows-x64.zip",
+        "extract_dir": "cemu_$version"
+    }
+}
