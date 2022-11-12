@@ -5,7 +5,7 @@
     "license": "MPL-2.0",
     "url": "https://github.com/cemu-project/Cemu/releases/download/v2.0-13/cemu-2.0-13-windows-x64.zip",
     "hash": "99f2bf98d350db01952456b6e1cd6b2078dba1d4bf4b8756a9df73f163d3c238",
-    "extract_dir": "cemu_2.0-14",
+    "extract_dir": "2.0-14",
     "bin": [
         [
             "Cemu.exe",
@@ -38,6 +38,6 @@
     },
     "autoupdate": {
         "url": "https://github.com/cemu-project/Cemu/releases/download/v2.0-13/cemu-2.0-13-windows-x64.zip",
-        "extract_dir": "cemu_$version"
+        "extract_dir": "$version"
     }
 }
