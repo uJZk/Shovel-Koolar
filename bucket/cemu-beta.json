@@ -29,8 +29,8 @@
         "settings.xml"
     ],
     "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\keys.txt\")) { Set-Content \"$dir\\keys.txt\" '{}' -Encoding Ascii }",
-        "if (!(Test-Path \"$persist_dir\\settings.xml\")) { Set-Content \"$dir\\settings.xml\" '{}' -Encoding Ascii }"
+        "if (!(Test-Path \"$persist_dir\\keys.txt\")) { Set-Content \"$dir\\keys.txt\" '' -Encoding Ascii }",
+        "if (!(Test-Path \"$persist_dir\\settings.xml\")) { Set-Content \"$dir\\settings.xml\" '' -Encoding Ascii }"
     ],
     "checkver": {
         "url": "https://github.com/cemu-project/Cemu/releases",
