@@ -3,6 +3,7 @@
     "description": "A Windows GUI based on Clash",
     "version": "0.20.7",
     "license": "Freeware",
+    "depends": "sudo",
     "suggest": {
         "Clash.Meta compatible": "Koolar/clash-meta-compatible"
     },
@@ -47,11 +48,7 @@
         "script": [
             "$service = Get-Service -Name \"Clash Core Service\" -ErrorAction SilentlyContinue",
             "if ($service -ne $null) {",
-            "    if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-            "        Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"sc.exe delete 'Clash Core Service'`\"\"",
-            "    } else {",
-            "        sc.exe delete \"Clash Core Service\"",
-            "    }",
+            "    sudo sc delete \"Clash Core Service\"",
             "}",
             "",
             "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
