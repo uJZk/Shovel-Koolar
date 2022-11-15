@@ -3,6 +3,7 @@
     "description": "A Clash GUI based on tauri",
     "version": "1.1.2",
     "license": "GPL-3.0-only",
+    "depends": "sudo",
     "suggest": {
         "Clash.Meta": "Koolar/clash-meta",
         "Clash.Meta compatible": "Koolar/clash-meta-compatible"
@@ -34,11 +35,7 @@
         "script": [
             "$service = Get-Service -Name clash_verge_service -ErrorAction SilentlyContinue",
             "if ($service -ne $null) {",
-            "    if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-            "        Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"sc.exe delete clash_verge_service`\"\"",
-            "    } else {",
-            "        sc.exe delete clash_verge_service",
-            "    }",
+            "    sudo sc.exe delete clash_verge_service",
             "}"
         ]
     },
