@@ -1,0 +1,18 @@
+{
+    "version": "3.0.0",
+    "description": "Transparently compress active games and programs using Windows 10/11 APIs.",
+    "homepage": "https://github.com/IridiumIO/CompactGUI",
+    "license": "GPL-3.0-only",
+    "url": "https://github.com/ImminentFate/CompactGUI/releases/download/v3.0.0-beta.1/CompactGUI.exe",
+    "hash": "4f267d5e53b65bfc6a0c338dbbfffd922f9f92b9ffc4ab6e8f03f6d227b8e02c",
+    "shortcuts": [
+        [
+            "CompactGUI.exe",
+            "Compact GUI"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/ImminentFate/CompactGUI/releases/download/v3.0.0-beta.1/CompactGUI.exe"
+    }
+}
