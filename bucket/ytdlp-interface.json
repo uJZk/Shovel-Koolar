@@ -17,7 +17,7 @@
         ]
     ],
     "persist": "ytdlp-interface.json",
-    "pre_install": "if (!(Test-Path \"$persist_dir\\ytdlp-interface.json\")) { Set-Content \"$dir\\ytdlp-interface.json\" '{}' -Encoding Ascii }",
+    "pre_install": "if (-not (Test-Path \"$persist_dir\\ytdlp-interface.json\")) { Set-Content \"$dir\\ytdlp-interface.json\" '{}' -Encoding Ascii }",
     "post_install": [
         "if (Test-Path \"$scoopdir\\apps\\yt-dlp\\current\\yt-dlp.exe\") {",
         "    Remove-Item \"$dir\\yt-dlp.exe\"",

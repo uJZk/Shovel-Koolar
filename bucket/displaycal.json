@@ -7,15 +7,24 @@
 	"url": "https://downloads.sourceforge.net/project/dispcalgui/release/3.8.9.3/DisplayCAL-3.8.9.3-win32.zip",
 	"hash": "sha1:dc375258bb0c4e6df91ea3124734de65c1b1a3ad",
 	"extract_dir": "DisplayCAL-3.8.9.3",
+	"pre_install": [
+		"if (-not (Test-Path \"$persist_dir\\APPDATA\")) {",
+		"   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+		"   New-item \"$persist_dir\\APPDATA\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+		"   Move-Item -Path \"$env:APPDATA\\DisplayCAL\" -Destination \"$persist_dir\\APPDATA\" -Recurse -ErrorAction SilentlyContinue",
+		"} else {",
+		"   Remove-Item -Path \"$env:APPDATA\\DisplayCAL\" -Recurse -ErrorAction SilentlyContinue",
+		"}"
+	],
 	"post_install": [
 		"Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-		"Mount-ExternalRuntimeData -Source \"$persist_dir/DisplayCAL\" -Target \"$env:APPDATA/DisplayCAL\"",
+		"Mount-ExternalRuntimeData -Source \"$persist_dir\\APPDATA\" -Target \"$env:APPDATA\\DisplayCAL\"",
 		"Remove-Module -Name DoradoUtils"
 	],
 	"uninstaller": {
 		"script": [
 			"Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-			"Dismount-ExternalRuntimeData -Target \"$env:APPDATA/DisplayCAL\"",
+			"Dismount-ExternalRuntimeData -Target \"$env:APPDATA\\DisplayCAL\"",
 			"Remove-Module -Name DoradoUtils"
 		]
 	},

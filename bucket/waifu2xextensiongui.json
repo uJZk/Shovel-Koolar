@@ -15,7 +15,7 @@
         ]
     ],
     "persist": "waifu2x-extension-gui\\settings.ini",
-    "pre_install": "if(!(Test-Path \"$dir/waifu2x-extension-gui/settings.ini\")) { Add-Content \"$dir/waifu2x-extension-gui/settings.ini\" $null }",
+    "pre_install": "if(-not (Test-Path \"$dir/waifu2x-extension-gui/settings.ini\")) { Add-Content \"$dir/waifu2x-extension-gui/settings.ini\" $null }",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/AaronFeng753/Waifu2x-Extension-GUI/releases/download/v$version/Waifu2x-Extension-GUI-v$version-Win64.7z",

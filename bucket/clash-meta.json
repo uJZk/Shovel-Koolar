@@ -13,7 +13,7 @@
     "bin": "clash-meta.exe",
     "pre_install": "Rename-Item \"$dir\\Clash.Meta-windows-amd64.exe\" 'clash-meta.exe'",
     "post_install": [
-        "if ((Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\Clash for Windows.exe\") -and !(Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac\")) {",
+        "if ((Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\Clash for Windows.exe\") -and -not (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac\")) {",
         "    if (Test-Path \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\") {",
         "        Rename-Item \"$scoopdir\\apps\\clash-for-windows\\current\\resources\\static\\files\\win\\x64\\clash-win64.exe\" \"clash-win64.exe.bac\"",
         "    }",

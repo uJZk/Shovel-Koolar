@@ -18,7 +18,7 @@
 		"Querying the service's status by running: nssm status EnergyStar"
 	],
 	"post_install": [
-		"if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
+		"if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
 		"    Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm install EnergyStar '$dir\\EnergyStar.exe'; nssm set EnergyStar Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority BELOW_NORMAL_PRIORITY_CLASS`\"\"",
 		"} else {",
 		"    nssm install EnergyStar \"$dir\\EnergyStar.exe\"; nssm set EnergyStar Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority BELOW_NORMAL_PRIORITY_CLASS",
@@ -28,7 +28,7 @@
 		"script": [
 			"$service = Get-Service -Name \"EnergyStar\" -ErrorAction SilentlyContinue",
 			"if ($service -ne $null) {",
-			"    if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
+			"    if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
 			"        Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm stop EnergyStar; nssm remove EnergyStar`\"\"",
 			"    } else {",
 			"        nssm stop EnergyStar; nssm remove EnergyStar",

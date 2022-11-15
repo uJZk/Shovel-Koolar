@@ -10,15 +10,15 @@
     "url": "https://github.com/amakvana/YuzuModDownloader/releases/download/v1.2.0.0/YuzuModDownloader.zip",
     "hash": "11ba79f7519320b17a8c4f2d0f96a6e0eec190a0fc122e088806eb0ff7000a72",
     "post_install": [
-        "if ((Test-Path \"$scoopdir\\apps\\yuzu-ea\\current\\yuzu.exe\")) {",
+        "if (Test-Path \"$scoopdir\\apps\\yuzu-ea\\current\\yuzu.exe\") {",
         "    Copy-Item \"$dir\\YuzuModDownloader.exe\" -Destination \"$scoopdir\\apps\\yuzu-ea\\current\\\" -Force",
         "    Copy-Item \"$dir\\HtmlAgilityPack.dll\" -Destination \"$scoopdir\\apps\\yuzu-ea\\current\\\" -Force",
         "}",
-        "if ((Test-Path \"$scoopdir\\apps\\yuzu-dev\\current\\yuzu.exe\")) {",
+        "if (Test-Path \"$scoopdir\\apps\\yuzu-dev\\current\\yuzu.exe\") {",
         "    Copy-Item \"$dir\\YuzuModDownloader.exe\" -Destination \"$scoopdir\\apps\\yuzu-dev\\current\\\" -Force",
         "    Copy-Item \"$dir\\HtmlAgilityPack.dll\" -Destination \"$scoopdir\\apps\\yuzu-dev\\current\\\" -Force",
         "}",
-        "if ((Test-Path \"$scoopdir\\apps\\yuzu\\current\\yuzu.exe\")) {",
+        "if (Test-Path \"$scoopdir\\apps\\yuzu\\current\\yuzu.exe\") {",
         "    Copy-Item \"$dir\\YuzuModDownloader.exe\" -Destination \"$scoopdir\\apps\\yuzu\\current\\\" -Force",
         "    Copy-Item \"$dir\\HtmlAgilityPack.dll\" -Destination \"$scoopdir\\apps\\yuzu\\current\\\" -Force",
         "}"

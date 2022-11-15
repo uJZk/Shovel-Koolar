@@ -14,21 +14,30 @@
             "FEhViewer"
         ]
     ],
+    "pre_install": [
+        "if (-not (Test-Path \"$persist_dir\\APPDATA\")) {",
+        "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   New-item \"$persist_dir\\APPDATA\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   Move-Item -Path \"$env:APPDATA\\com.honjow\\fehviewer\" -Destination \"$persist_dir\\APPDATA\" -Recurse -ErrorAction SilentlyContinue",
+        "} else {",
+        "   Remove-Item -Path \"$env:APPDATA\\com.honjow\\fehviewer\" -Recurse -ErrorAction SilentlyContinue",
+        "}"
+    ],
     "post_install": [
         "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-        "Mount-ExternalRuntimeData -Source \"$persist_dir\\com.honjow\" -Target \"$env:APPDATA\\com.honjow\"",
+        "Mount-ExternalRuntimeData -Source \"$persist_dir\\APPDATA\" -Target \"$env:APPDATA\\com.honjow\\fehviewer\"",
         "Remove-Module -Name DoradoUtils"
     ],
     "uninstaller": {
         "script": [
             "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-            "Dismount-ExternalRuntimeData -Target \"$env:APPDATA\\com.honjow\"",
+            "Dismount-ExternalRuntimeData -Target \"$env:APPDATA\\com.honjow\\fehviewer\"",
             "Remove-Module -Name DoradoUtils"
         ]
     },
     "checkver": {
         "url": "https://github.com/honjow/FEhViewer/releases",
-        "regex": ">v(\\d+(\\.\\d+)*(\\+\\d+)?(EX)?)"
+        "regex": ">v(\\d+(\\.\\d+)*(\\+\\d+)?)"
     },
     "autoupdate": {
         "url": "https://github.com/honjow/FEhViewer/releases/download/v$version/FEhViewer_$version_windows.zip"
