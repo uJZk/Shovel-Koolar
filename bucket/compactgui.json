@@ -34,7 +34,7 @@
     },
     "checkver": {
         "url": "https://github.com/IridiumIO/CompactGUI/tags",
-        "regex": "/releases/tag/[vV]?(\\S+)\""
+        "regex": "/releases/tag/[vV]?(\\S+?)\""
     },
     "autoupdate": {
         "url": "https://github.com/ImminentFate/CompactGUI/releases/download/v$version/CompactGUI.exe"

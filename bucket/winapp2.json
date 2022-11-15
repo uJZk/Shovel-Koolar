@@ -28,7 +28,7 @@
 	},
 	"checkver": {
 		"url": "https://github.com/MoscaDotTo/Winapp2/raw/master/Winapp2.ini",
-		"regex": "Version:\\s*[vV]?(\\S+)"
+		"regex": "Version:\\s*(\\S+)"
 	},
 	"autoupdate": {
 		"url": "https://github.com/MoscaDotTo/Winapp2/raw/master/Winapp2.ini"

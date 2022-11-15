@@ -18,7 +18,7 @@
         "if (-not (Test-Path \"$persist_dir\\APPDATA\")) {",
         "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
         "   New-item \"$persist_dir\\APPDATA\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   Move-Item -Path \"$env:APPDATA\\com.honjow\\fehviewer\" -Destination \"$persist_dir\\APPDATA\" -ErrorAction SilentlyContinue",
+        "   Move-Item -Path \"$env:APPDATA\\com.honjow\\fehviewer\" -Destination \"$persist_dir\\APPDATA\" -Recurse -ErrorAction SilentlyContinue",
         "} else {",
         "   Remove-Item -Path \"$env:APPDATA\\com.honjow\\fehviewer\" -Recurse -ErrorAction SilentlyContinue",
         "}"
@@ -37,7 +37,7 @@
     },
     "checkver": {
         "url": "https://github.com/honjow/FEhViewer/releases",
-        "regex": ">v(\\S+)<"
+        "regex": "Link--primary\">[vV]?(\\S+?)<"
     },
     "autoupdate": {
         "url": "https://github.com/honjow/FEhViewer/releases/download/v$version/FEhViewer_$version_windows.zip"

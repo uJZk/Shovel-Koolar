@@ -9,8 +9,8 @@
 	"hash": "05a8a91b3726c7ef2ecc1c15bb416fd69c7ad0b4aad507f1cd484f7a3650b713",
 	"bin": "autosub\\autosub\\autosub.exe",
 	"checkver": {
-		"url": "https://github.com/BingLingGroup/autosub/tags",
-		"regex": "/releases/tag/[vV]?(\\S+)\""
+		"url": "https://github.com/BingLingGroup/autosub/releases",
+		"regex": "Link--primary\">[vV]?(\\S+?)<"
 	},
 	"autoupdate": {
 		"url": "https://github.com/BingLingGroup/autosub/releases/download/$version/autosub-$version-win-x64-nuitka.7z",
