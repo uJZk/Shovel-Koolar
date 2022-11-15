@@ -37,7 +37,7 @@
     },
     "checkver": {
         "url": "https://github.com/honjow/FEhViewer/releases",
-        "regex": ">v(\\d+(\\.\\d+)*(\\+\\d+)?)"
+        "regex": ">v(\\S+)<"
     },
     "autoupdate": {
         "url": "https://github.com/honjow/FEhViewer/releases/download/v$version/FEhViewer_$version_windows.zip"

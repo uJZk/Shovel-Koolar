@@ -59,7 +59,7 @@
     ],
     "checkver": {
         "url": "https://www.ccleaner.com/ccleaner/version-history",
-        "regex": ">v([\\d.]+)"
+        "regex": "version-history__latest-version\">[vV]?(\\S+)<"
     },
     "autoupdate": {
         "url": "https://download.ccleaner.com/portable/ccsetup$majorVersion$minorVersion.zip"

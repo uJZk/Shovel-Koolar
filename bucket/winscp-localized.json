@@ -36,7 +36,7 @@
     "persist": "winscp.ini",
     "checkver": {
         "url": "https://winscp.net/eng/downloads.php",
-        "regex": "WinSCP-([\\d.]+)-Portable\\.zip"
+        "regex": "WinSCP-(\\S+)-Portable\\.zip"
     },
     "autoupdate": {
         "url": "https://downloads.sourceforge.net/project/winscp/WinSCP/$version/WinSCP-$version-Portable.zip",

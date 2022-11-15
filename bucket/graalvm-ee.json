@@ -16,7 +16,7 @@
     },
     "checkver": {
         "url": "https://www.graalvm.org/downloads/",
-        "regex": "vm-([\\d.]+)"
+        "regex": "/releases/tag/vm-(\\S+)\""
     },
     "autoupdate": {
         "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_$underscoreVersion/graalvm-ee-java17-windows-amd64-$version.zip",

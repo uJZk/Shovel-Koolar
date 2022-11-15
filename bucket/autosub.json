@@ -10,7 +10,7 @@
 	"bin": "autosub\\autosub\\autosub.exe",
 	"checkver": {
 		"url": "https://github.com/BingLingGroup/autosub/tags",
-		"regex": "/releases/tag/([\\d\\.]+(-\\w+)?)"
+		"regex": "/releases/tag/[vV]?(\\S+)\""
 	},
 	"autoupdate": {
 		"url": "https://github.com/BingLingGroup/autosub/releases/download/$version/autosub-$version-win-x64-nuitka.7z",

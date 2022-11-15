@@ -47,7 +47,7 @@
     },
     "checkver": {
         "url": "https://openrgb.org/releases.html",
-        "regex": "/OpenRGB_([\\d.]+)_Windows_\\d+_(?<commit>[\\da-fA-F]{7})\\.zip"
+        "regex": "/OpenRGB_([\\S]+?)_Windows(_64)?_(?<commit>[\\da-fA-F]{7})\\.zip"
     },
     "autoupdate": {
         "architecture": {

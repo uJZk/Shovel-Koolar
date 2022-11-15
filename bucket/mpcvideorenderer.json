@@ -47,7 +47,7 @@
     },
     "checkver": {
         "url": "https://github.com/Aleksoid1978/VideoRenderer/releases",
-        "regex": "MPC Video Renderer (\\d+(\\.\\d+)*)"
+        "regex": "MPC Video Renderer [vV]?(\\S+)<"
     },
     "autoupdate": {
         "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/$majorVersion.$minorVersion.$patchVersion/MpcVideoRenderer-$version.zip"
