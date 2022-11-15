@@ -2,9 +2,7 @@
 	"version": "220615",
 	"description": "A database of extended cleaning routines for popular Windows PC based maintenance software.",
 	"homepage": "https://github.com/MoscaDotTo/Winapp2",
-	"license": {
-		"identifier": "CC-BY-SA-4.0"
-	},
+	"license": "CC-BY-SA-4.0",
 	"suggest": {
 		"CCleaner": "Koolar/ccleaner"
 	},

@@ -2,9 +2,7 @@
     "version": "1.13.2",
     "description": "A rule-based tunnel in Go.",
     "homepage": "https://github.com/MetaCubeX/Clash.Meta",
-    "license": {
-        "identifier": "GPL-3.0-only"
-    },
+    "license": "GPL-3.0-only",
     "suggest": {
         "Clash for Windows": "Koolar/clash-for-windows"
     },
