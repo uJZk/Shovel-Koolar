@@ -27,7 +27,7 @@
 	],
 	"checkver": {
 		"url": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/cheat-engine.json",
-		"regex": "\"version\":\\s\"(\\S+)\""
+		"regex": "\"version\":\\s\"(\\S+?)\""
 	},
 	"autoupdate": {
 		"url": "https://raw.githubusercontent.com/ScoopInstaller/Binary/master/cheat-engine/CheatEngine$cleanVersion.7z"

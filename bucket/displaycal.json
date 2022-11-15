@@ -36,7 +36,7 @@
 	],
 	"checkver": {
 		"url": "https://sourceforge.net/projects/dispcalgui/rss?path=/release",
-		"regex": "/DisplayCAL-(\\S+)-win32.zip"
+		"regex": "/DisplayCAL-(\\S+?)-win32.zip"
 	},
 	"autoupdate": {
 		"url": "https://downloads.sourceforge.net/project/dispcalgui/release/$version/DisplayCAL-$version-win32.zip",

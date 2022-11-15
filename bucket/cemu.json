@@ -33,8 +33,8 @@
         "if (-not (Test-Path \"$persist_dir\\settings.xml\")) { Set-Content \"$dir\\settings.xml\" '' -Encoding Ascii }"
     ],
     "checkver": {
-        "url": "https://github.com/cemu-project/Cemu/tags",
-        "regex": "/releases/tag/[vV]?(\\S+)\""
+        "url": "https://github.com/cemu-project/Cemu/releases",
+        "regex": "Link--primary\">[vV]?(\\S+?)<"
     },
     "autoupdate": {
         "url": "https://github.com/cemu-project/Cemu/releases/download/v$version/cemu-$version-windows-x64.zip",

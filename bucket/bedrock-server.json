@@ -48,7 +48,7 @@
     },
     "checkver": {
         "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
-        "regex": "bin-win/bedrock-server-[vV]?(\\S+)\\.zip",
+        "regex": "bin-win/bedrock-server-(\\S+?)\\.zip",
         "reverse": true
     },
     "autoupdate": {
