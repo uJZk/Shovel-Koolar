@@ -1,10 +1,10 @@
 {
-    "version": "3.0.0",
+    "version": "3.0.0-beta.1",
     "description": "Transparently compress active games and programs using Windows 10/11 APIs.",
     "homepage": "https://github.com/IridiumIO/CompactGUI",
     "license": "GPL-3.0-only",
     "url": "https://github.com/ImminentFate/CompactGUI/releases/download/v3.0.0-beta.1/CompactGUI.exe",
-    "hash": "4f267d5e53b65bfc6a0c338dbbfffd922f9f92b9ffc4ab6e8f03f6d227b8e02c",
+    "hash": "4d5bc15a1d8d1eb03df5c710ff23bd5f214a4d1f089c36d16aff54be241f2192",
     "shortcuts": [
         [
             "CompactGUI.exe",
@@ -32,7 +32,10 @@
             "Remove-Module -Name DoradoUtils"
         ]
     },
-    "checkver": "github",
+    "checkver": {
+        "url": "https://github.com/IridiumIO/CompactGUI/tags",
+        "regex": ">v(\\d+(\\.\\d+)*(-\\w+)?(\\.\\d+)?)"
+    },
     "autoupdate": {
         "url": "https://github.com/ImminentFate/CompactGUI/releases/download/v3.0.0-beta.1/CompactGUI.exe"
     }
