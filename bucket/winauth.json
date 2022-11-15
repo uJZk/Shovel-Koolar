@@ -11,6 +11,27 @@
             "WinAuth"
         ]
     ],
+    "pre_install": [
+        "if (-not (Test-Path \"$persist_dir\\APPDATA\")) {",
+        "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   New-item \"$persist_dir\\APPDATA\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   Move-Item -Path \"$env:APPDATA\\WinAuth\" -Destination \"$persist_dir\\APPDATA\" -ErrorAction SilentlyContinue",
+        "} else {",
+        "   Remove-Item -Path \"$env:APPDATA\\WinAuth\" -Recurse -ErrorAction SilentlyContinue",
+        "}"
+    ],
+    "post_install": [
+        "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
+        "Mount-ExternalRuntimeData -Source \"$persist_dir\\APPDATA\" -Target \"$env:APPDATA\\WinAuth\"",
+        "Remove-Module -Name DoradoUtils"
+    ],
+    "uninstaller": {
+        "script": [
+            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
+            "Dismount-ExternalRuntimeData -Target \"$env:APPDATA\\WinAuth\"",
+            "Remove-Module -Name DoradoUtils"
+        ]
+    },
     "checkver": {
         "url": "https://github.com/winauth/winauth/releases",
         "regex": "Link--primary\">[vV]?(\\S+?)<"
