@@ -1,0 +1,21 @@
+{
+    "version": "3.6.2",
+    "description": "Magpie magnifies any window to fullscreen with a handful of algorithms/filter. The main goal is to tackle the situations where the games either do not natively support fullscreen or display blurry images under fullscreen modes.",
+    "homepage": "https://github.com/winauth/winauth",
+    "license": "GPL-3.0-only",
+    "url": "https://github.com/winauth/winauth/releases/download/3.6.2/WinAuth-3.6.2.zip",
+    "hash": "3f34eb1ca342ad0783cd57c84f2f73c37df3ea880768dd415f509bfdbf02a785",
+    "shortcuts": [
+        [
+            "WinAuth.exe",
+            "WinAuth"
+        ]
+    ],
+    "checkver": {
+        "url": "https://github.com/winauth/winauth/tags",
+        "regex": "/releases/tag/[vV]?(\\S+)\""
+    },
+    "autoupdate": {
+        "url": "https://github.com/winauth/winauth/releases/download/$version/WinAuth-$version.zip"
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "version": "EA-3118",
+    "description": "A Yuzu Early Access fork with Linux-specific patches.",
+    "homepage": "https://github.com/pineappleEA/pineapple-src",
+    "license": "GPL-3.0-only",
+    "suggest": {
+        "Yuzu Mod Downloader": "Koolar/yuzumoddownloader"
+    },
+    "url": "https://github.com/pineappleEA/pineapple-src/releases/download/EA-3118/Windows-Yuzu-EA-3118.zip",
+    "hash": "1d3e08c752d4d21ad7b9cbe6a760c22c19f4e691c071b1ffcbf72b779503cbbb",
+    "extract_dir": "yuzu-windows-msvc-early-access",
+    "bin": [
+        [
+            "yuzu-cmd.exe",
+            "yuzu-cmd-ea"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "yuzu.exe",
+            "Yuzu"
+        ]
+    ],
+    "persist": [
+        "user",
+        "plugins"
+    ],
+    "pre_install": [
+        "if (-not (Test-Path \"$persist_dir\\user\")) {",
+        "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   New-item \"$persist_dir\\user\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   Move-Item -Path \"$env:APPDATA\\yuzu\" -Destination \"$persist_dir\\user\" -ErrorAction SilentlyContinue",
+        "}"
+    ],
+    "post_install": [
+        "Copy-Item \"$scoopdir\\apps\\yuzumoddownloader\\current\\YuzuModDownloader.exe\" -Destination \"$dir\\\" -Force -ErrorAction SilentlyContinue",
+        "Copy-Item \"$scoopdir\\apps\\yuzumoddownloader\\current\\HtmlAgilityPack.dll\" -Destination \"$dir\\\" -Force -ErrorAction SilentlyContinue"
+    ],
+    "checkver": {
+        "url": "https://github.com/pineappleEA/pineapple-src/tags",
+        "regex": "/releases/tag/[vV]?(\\S+)\""
+    },
+    "autoupdate": {
+        "url": "https://github.com/pineappleEA/pineapple-src/releases/download/$version/Windows-Yuzu-$version.zip"
+    }
+}
