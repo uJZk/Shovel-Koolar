@@ -5,27 +5,13 @@
     "license": "GPL-3.0-only",
     "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/0.6.3/MpcVideoRenderer-0.6.3.1956.zip",
     "hash": "15341c6d444c21928af15bd2ef42e12d0c7676e81419ab6f90b5ef9616470e48",
-    "architecture": {
-        "64bit": {
-            "post_install": [
-                "sudo \"$dir\\Install_MPCVR_64.cmd\""
-            ],
-            "uninstaller": {
-                "script": [
-                    "sudo \"$dir\\Uninstall_MPCVR_64.cmd\""
-                ]
-            }
-        },
-        "32bit": {
-            "post_install": [
-                "sudo \"$dir\\Install_MPCVR_32.cmd\""
-            ],
-            "uninstaller": {
-                "script": [
-                    "sudo \"$dir\\Uninstall_MPCVR_32.cmd\""
-                ]
-            }
-        }
+    "post_install": [
+        "sudo PowerShell -NoProfile -command \"`$dir\\Install_MPCVR_32.cmd`; `$dir\\Install_MPCVR_64.cmd`\""
+    ],
+    "uninstaller": {
+        "script": [
+            "sudo PowerShell -NoProfile -command \"`$dir\\Uninstall_MPCVR_32.cmd`; `$dir\\Uninstall_MPCVR_64.cmd`\""
+        ]
     },
     "checkver": {
         "url": "https://github.com/Aleksoid1978/VideoRenderer/releases",
