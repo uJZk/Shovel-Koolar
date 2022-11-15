@@ -1,0 +1,39 @@
+{
+    "version": "0.77",
+    "description": "Open-Source DirectShow Media Splitter and Decoders.",
+    "homepage": "https://github.com/Nevcairiel/LAVFilters",
+    "license": "GPL-2.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/0.77/LAVFilters-0.77-x64.zip",
+            "hash": "95e6729a73e4217246d7a517711121fad7b2b7c49bec7f32e7196b4b45eb24a5"
+        },
+        "32bit": {
+            "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/0.77/LAVFilters-0.77-x86.zip",
+            "hash": "88a441685e34960a591cdd7049e5cc91838a0e46b8d9148f557a726a1866f35f"
+        }
+    },
+    "post_install": [
+        "sudo \"$dir\\install_audio.bat\"",
+        "sudo \"$dir\\install_video.bat\"",
+        "sudo \"$dir\\install_splitter.bat\""
+    ],
+    "uninstaller": {
+        "script": [
+            "sudo \"$dir\\uninstall_audio.bat\"",
+            "sudo \"$dir\\uninstall_video.bat\"",
+            "sudo \"$dir\\uninstall_splitter.bat\""
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/$version/LAVFilters-$version-x64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/$version/LAVFilters-$version-x86.zip"
+            }
+        }
+    }
+}
