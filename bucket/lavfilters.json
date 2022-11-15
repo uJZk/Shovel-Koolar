@@ -3,6 +3,7 @@
     "description": "Open-Source DirectShow Media Splitter and Decoders.",
     "homepage": "https://github.com/Nevcairiel/LAVFilters",
     "license": "GPL-2.0-only",
+    "depends": "sudo",
     "architecture": {
         "64bit": {
             "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/0.77/LAVFilters-0.77-x64.zip",
