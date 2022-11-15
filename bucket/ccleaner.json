@@ -18,7 +18,7 @@
         "Copy-Item \"$persist_dir\\*\" \"$dir\" -Include 'branding.dll', 'CCleaner.dat'"
     ],
     "post_install": [
-        "Remove-Item \"$dir\\x64\",\"$dir\\x86\"  -Force -Recurse",
+        "Remove-Item \"$dir\\x64\",\"$dir\\x86\" -Force -Recurse",
         "",
         "if (Test-Path \"$scoopdir\\apps\\winapp2\\current\\Winapp2.ini\") {",
         "    Copy-Item \"$scoopdir\\apps\\winapp2\\current\\Winapp2.ini\" -Destination \"$dir\\Winapp2.ini\" -Force",

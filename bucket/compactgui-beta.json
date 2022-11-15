@@ -15,7 +15,7 @@
         "if (-not (Test-Path \"$persist_dir\\LOCALAPPDATA\")) {",
         "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
         "   New-item \"$persist_dir\\LOCALAPPDATA\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   Move-Item -Path \"$env:LOCALAPPDATA\\IridiumIO\\CompactGUI\" -Destination \"$persist_dir\\LOCALAPPDATA\" -Recurse -ErrorAction SilentlyContinue",
+        "   Move-Item -Path \"$env:LOCALAPPDATA\\IridiumIO\\CompactGUI\" -Destination \"$persist_dir\\LOCALAPPDATA\" -ErrorAction SilentlyContinue",
         "} else {",
         "   Remove-Item -Path \"$env:LOCALAPPDATA\\IridiumIO\\CompactGUI\" -Recurse -ErrorAction SilentlyContinue",
         "}"
