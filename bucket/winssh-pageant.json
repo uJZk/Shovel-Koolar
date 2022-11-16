@@ -17,7 +17,7 @@
             "hash": "e770a81cb427b73268aab65dc725230fae5fefd466660a8582bbda4f641c1236"
         }
     },
-    "post_install": "sudo nssm install \"WinSSH Pageant\" \"$dir\\WinSSHPageant.exe\"",
+    "post_install": "sudo nssm install 'WinSSH Pageant' '$dir\\winssh-pageant.exe'",
     "uninstaller": {
         "script": "sudo PowerShell -NoProfile -command \"nssm stop 'WinSSH Pageant'; nssm remove 'WinSSH Pageant' confirm\""
     },

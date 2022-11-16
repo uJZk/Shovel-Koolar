@@ -14,9 +14,9 @@
             "hash": "f2243b615801bb417a497c951af36fae9a939a034c2cfbe9adcfbd23e39b0d9c"
         }
     },
-    "post_install": "sudo PowerShell -NoProfile -command \"`$dir\\install_audio.bat`; `$dir\\install_video.bat`; `$dir\\install_splitter.bat`\"",
+    "post_install": "sudo PowerShell -NoProfile -command \"'$dir\\install_audio.bat'; '$dir\\install_video.bat'; '$dir\\install_splitter.bat'\"",
     "uninstaller": {
-        "script": "sudo PowerShell -NoProfile -command \"`$dir\\uninstall_audio.bat`; `$dir\\uninstall_video.bat`; `$dir\\uninstall_splitter.bat`\""
+        "script": "sudo PowerShell -NoProfile -command \"'$dir\\uninstall_audio.bat'; '$dir\\uninstall_video.bat'; '$dir\\uninstall_splitter.bat'\""
     },
     "checkver": "github",
     "autoupdate": {
