@@ -19,7 +19,7 @@
     },
     "post_install": "sudo nssm install \"WinSSH Pageant\" \"$dir\\WinSSHPageant.exe\"",
     "uninstaller": {
-        "script": "sudo nssm remove \"WinSSH Pageant\" confirm"
+        "script": "sudo PowerShell -NoProfile -command \"nssm stop 'WinSSH Pageant'; nssm remove 'WinSSH Pageant' confirm\""
     },
     "checkver": "github",
     "autoupdate": {

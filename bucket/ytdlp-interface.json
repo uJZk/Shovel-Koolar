@@ -3,8 +3,8 @@
     "description": "Windows graphical interface for yt-dlp, designed as a simple YouTube downloader",
     "homepage": "https://github.com/ErrorFlynn/ytdlp-interface",
     "license": "MIT",
+    "depends": "yt-dlp",
     "suggest": {
-        "yt-dlp": "yt-dlp",
         "ffmpeg": "ffmpeg",
         "ffmpeg-shared": "ffmpeg-shared"
     },
