@@ -37,8 +37,8 @@
         "Copy-Item \"$scoopdir\\apps\\yuzumoddownloader\\current\\HtmlAgilityPack.dll\" -Destination \"$dir\\\" -Force -ErrorAction SilentlyContinue"
     ],
     "checkver": {
-        "url": "https://github.com/pineappleEA/pineapple-src/releases",
-        "regex": "Link--primary\">[vV]?(\\S+?)<"
+        "url": "https://github.com/pineappleEA/pineapple-src/tags.atom",
+        "regex": "/releases/tag/[vV]?(\\S+?)\""
     },
     "autoupdate": {
         "url": "https://github.com/pineappleEA/pineapple-src/releases/download/$version/Windows-Yuzu-$version.zip"

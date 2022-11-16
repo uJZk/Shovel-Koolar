@@ -14,7 +14,7 @@
         ]
     },
     "checkver": {
-        "url": "https://github.com/Aleksoid1978/VideoRenderer/releases",
+        "url": "https://github.com/Aleksoid1978/VideoRenderer/releases.atom",
         "regex": "MPC Video Renderer (\\S+?)<"
     },
     "autoupdate": {

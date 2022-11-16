@@ -14,8 +14,8 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/qwqcode/SubRenamer/releases",
-        "regex": "Link--primary\">[vV]?(\\S+?)<"
+        "url": "https://github.com/qwqcode/SubRenamer/tags.atom",
+        "regex": "/releases/tag/[vV]?(\\S+?)\""
     },
     "autoupdate": {
         "url": "https://github.com/qwqcode/SubRenamer/releases/download/$version/SubRenamer.v$matchLong.exe#/SubRenamer.exe"

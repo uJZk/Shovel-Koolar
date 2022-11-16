@@ -34,8 +34,8 @@
         ]
     },
     "checkver": {
-        "url": "https://github.com/honjow/FEhViewer/releases",
-        "regex": "Link--primary\">[vV]?(\\S+?)<"
+        "url": "https://github.com/honjow/FEhViewer/tags.atom",
+        "regex": "/releases/tag/[vV]?(\\S+?)\""
     },
     "autoupdate": {
         "url": "https://github.com/honjow/FEhViewer/releases/download/v$version/FEhViewer_$version_windows.zip"
