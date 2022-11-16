@@ -6,10 +6,7 @@
         "identifier": "Proprietary",
         "url": "https://www.minecraft.net/en-us/terms"
     },
-    "depends": [
-        "sudo",
-        "nssm"
-    ],
+    "depends": "nssm",
     "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.40.02.zip",
     "hash": "3cd999ffbfc312e724a273f4779d968d7b4ba9618d6373b6666797e154dfe6ee",
     "notes": [
@@ -31,13 +28,13 @@
         "if(-not (Test-Path \"$dir/permissions.json\")) { Add-Content \"$dir/permissions.json\" $null }",
         "if(-not (Test-Path \"$dir/server.properties\")) { Add-Content \"$dir/server.properties\" $null }",
         "",
-        "sudo PowerShell -NoProfile -command \"nssm install 'Bedrock Server' '$dir/bedrock_server.exe'; nssm set 'Bedrock Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority ABOVE_NORMAL_PRIORITY_CLASS\""
+        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm install 'Bedrock Server' '$dir/bedrock_server.exe'; nssm set 'Bedrock Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority ABOVE_NORMAL_PRIORITY_CLASS`\"\""
     ],
     "uninstaller": {
         "script": [
             "$service = Get-Service -Name \"Bedrock Server\" -ErrorAction SilentlyContinue",
             "if ($service -ne $null) {",
-            "   sudo PowerShell -NoProfile -command \"nssm stop 'Bedrock Server'; nssm remove 'Bedrock Server' confirm\"",
+            "   Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm stop 'Bedrock Server'; nssm remove 'Bedrock Server' confirm`\"\"",
             "}"
         ]
     },
