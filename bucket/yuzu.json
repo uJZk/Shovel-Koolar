@@ -1,13 +1,13 @@
 {
-    "version": "EA-3121",
+    "version": "EA-3122",
     "description": "A Yuzu Early Access fork with Linux-specific patches.",
     "homepage": "https://github.com/pineappleEA/pineapple-src",
     "license": "GPL-3.0-only",
     "suggest": {
         "Yuzu Mod Downloader": "Koolar/yuzumoddownloader"
     },
-    "url": "https://github.com/pineappleEA/pineapple-src/releases/download/EA-3121/Windows-Yuzu-EA-3121.zip",
-    "hash": "09119eab4166b10ed615b1874312e267a9e8fd5a4717cb320c0e432e13103c26",
+    "url": "https://github.com/pineappleEA/pineapple-src/releases/download/EA-3122/Windows-Yuzu-EA-3122.zip",
+    "hash": "60408d35decaa7f4ee9d9a4bf7fc0545a918f32ce9d5c4bbde95253b8cd00a37",
     "extract_dir": "yuzu-windows-msvc-early-access",
     "bin": [
         [
