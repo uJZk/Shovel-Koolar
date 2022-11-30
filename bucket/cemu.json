@@ -9,7 +9,7 @@
     "bin": [
         [
             "Cemu.exe",
-            "cemu-beta"
+            "cemu"
         ]
     ],
     "shortcuts": [

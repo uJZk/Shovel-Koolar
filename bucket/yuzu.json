@@ -12,7 +12,7 @@
     "bin": [
         [
             "yuzu-cmd.exe",
-            "yuzu-cmd-ea"
+            "yuzu-cmd"
         ]
     ],
     "shortcuts": [
