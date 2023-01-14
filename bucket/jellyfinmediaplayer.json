@@ -27,13 +27,13 @@
             "New-item -ItemType Directory -Path \"$env:LOCALAPPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\" -ErrorAction SilentlyContinue | Out-Null",
             "New-item -ItemType Directory -Path \"$env:LOCALAPPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\" -ErrorAction SilentlyContinue | Out-Null",
             "New-item -ItemType Directory -Path \"$env:LOCALAPPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\\leveldb\" -ErrorAction SilentlyContinue | Out-Null",
-            "Copy-Item -Path \"$persist_dir\\MANIFEST-000001\" -Destination \"$env:LOCALAPPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\\leveldb\\MANIFEST-000001\" -ErrorAction SilentlyContinue"
+            "Copy-Item -Path \"$persist_dir\\config\" -Destination \"$env:LOCALAPPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\\leveldb\\000003.log\" -ErrorAction SilentlyContinue"
         ]
     },
     "uninstaller": {
         "script": [
             "New-item -ItemType Directory -Path \"$persist_dir\" -ErrorAction SilentlyContinue | Out-Null",
-            "Move-Item -Path \"$env:LOCALAPPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\\leveldb\\MANIFEST-000001\" -Destination \"$persist_dir\\MANIFEST-000001\" -ErrorAction SilentlyContinue",
+            "Move-Item -Path \"$env:LOCALAPPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\\leveldb\\000003.log\" -Destination \"$persist_dir\\config\" -ErrorAction SilentlyContinue",
             "Remove-Item -Path \"$env:LOCALAPPDATA\\Jellyfin Media Player\" -Recurse -ErrorAction SilentlyContinue",
             "Remove-Item -Path \"$env:LOCALAPPDATA\\JellyfinMediaPlayer\" -Recurse -ErrorAction SilentlyContinue"
         ]
