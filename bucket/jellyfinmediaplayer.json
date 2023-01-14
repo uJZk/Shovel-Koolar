@@ -13,6 +13,16 @@
             "url": "https://github.com/jellyfin/jellyfin-media-player/releases/download/v1.7.1/JellyfinMediaPlayer-1.7.1-windows-x64.exe"
         }
     },
+    "installer": {
+        "script": [
+            "$extracted = \"$dir\\extracted\"",
+            "$msi = \"$dir\\msi\"",
+            "Expand-DarkArchive \"$dir\\$fname\" \"$extracted\"",
+            "Expand-MsiArchive \"$extracted\\AttachedContainer\\PMP.msi\" \"$msi\"",
+            "Move-Item \"$msi\\Msi\\*\" \"$dir\" -Force",
+            "Remove-Item $extracted, $msi, \"$dir\\$fname\" -Force -Recurse"
+        ]
+    },
     "pre_install": [
         "if (-not (Test-Path \"$persist_dir\\APPDATA\\QtWebEngine\\Default\\Local Storage\")) {",
         "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
@@ -28,14 +38,7 @@
     "post_install": [
         "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
         "Mount-ExternalRuntimeData -Source \"$persist_dir\\APPDATA\\QtWebEngine\\Default\\Local Storage\" -Target \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\"",
-        "Remove-Module -Name DoradoUtils",
-        "",
-        "$extracted = \"$dir\\extracted\"",
-        "$msi = \"$dir\\msi\"",
-        "Expand-DarkArchive \"$dir\\$fname\" \"$extracted\"",
-        "Expand-MsiArchive \"$extracted\\AttachedContainer\\PMP.msi\" \"$msi\"",
-        "Move-Item \"$msi\\Msi\\*\" \"$dir\" -Force",
-        "Remove-Item $extracted, $msi, \"$dir\\$fname\" -Force -Recurse"
+        "Remove-Module -Name DoradoUtils"
     ],
     "uninstaller": {
         "script": [
