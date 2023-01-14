@@ -3,6 +3,7 @@
     "description": "Open-Source DirectShow Media Splitter and Decoders.",
     "homepage": "https://github.com/Nevcairiel/LAVFilters",
     "license": "GPL-2.0-only",
+    "depends": "sudo",
     "architecture": {
         "64bit": {
             "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/0.77.1/LAVFilters-0.77.1-x64.zip",
@@ -15,7 +16,7 @@
     },
     "post_install": "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\install_audio.bat'; '$dir\\install_video.bat'; '$dir\\install_splitter.bat'`\"\"",
     "uninstaller": {
-        "script": "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\uninstall_audio.bat'; '$dir\\uninstall_video.bat'; '$dir\\uninstall_splitter.bat'`\"\""
+        "script": "sudo PowerShell -NoProfile -command \"'$dir\\uninstall_audio.bat'; '$dir\\uninstall_video.bat'; '$dir\\uninstall_splitter.bat'\""
     },
     "checkver": "github",
     "autoupdate": {

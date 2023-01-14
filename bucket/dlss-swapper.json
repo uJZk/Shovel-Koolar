@@ -1,0 +1,32 @@
+{
+    "version": "0.9.15.0",
+    "description": "DLSS Swapper is a tool that allows you to conveniently download, manage, and swap DLSS dlls allowing you to upgrade or downgrade DLSS version in a game without the game needing an update.",
+    "homepage": "https://github.com/beeradmoore/dlss-swapper",
+    "license": "GPL-3.0-only",
+    "depends": "sudo",
+    "url": [
+        "https://github.com/beeradmoore/dlss-swapper/releases/download/v0.9.15.0/bundle-x64.msixbundle#/dl.msixbundle",
+        "https://github.com/beeradmoore/dlss-swapper/releases/download/v0.9.15.0/dependency-Microsoft.WindowsAppRuntime.1.1.msix#/dl.msix",
+        "https://github.com/beeradmoore/dlss-swapper/releases/download/v0.9.15.0/dlss-swapper.cer#/dl.cer"
+    ],
+    "hash": [
+        "c013915d3cd6261691924253970de4b3797356288c8237e395c63ab1020b2341",
+        "fb8d5c451916fad908275161ff098f197dd3bf333dee782490c480e81eb58ec3",
+        "35bf3d69e39c007a6e0eb73ee51f530dccac705878f71f0839798ae1acf344ea"
+    ],
+    "post_install": [
+        "sudo Import-Certificate -Filepath $dir\\dl.cer -CertStoreLocation Cert:\\LocalMachine\\TrustedPeople",
+        "Add-AppxPackage $dir\\dl.msix",
+        "Add-AppxPackage $dir\\dl.msixbundle"
+    ],
+    "uninstaller": {
+        "script": [
+            "Get-AppxPackage cc5a0fee-f182-4d02-a177-3c2f002b4f34 | Remove-AppxPackage",
+            "sudo Remove-Item Cert:\\LocalMachine\\TrustedPeople\\D5CAE923CA9A2DC7C2F19BEF6202077BA4CFF0C0"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/beeradmoore/dlss-swapper/releases/download/v$version/bundle-x64.msixbundle#/dl.msixbundle"
+    }
+}
