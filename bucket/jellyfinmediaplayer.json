@@ -32,6 +32,7 @@
     },
     "uninstaller": {
         "script": [
+            "Move-Item -Path \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\\leveldb\\MANIFEST-000001\" -Destination \"$persist_dir\\MANIFEST-000001\" -ErrorAction SilentlyContinue",
             "Remove-Item -Path \"$env:APPDATA\\Jellyfin Media Player\" -Recurse -ErrorAction SilentlyContinue",
             "Remove-Item -Path \"$env:APPDATA\\JellyfinMediaPlayer\" -Recurse -ErrorAction SilentlyContinue"
         ]
