@@ -23,22 +23,22 @@
         "   Move-Item -Path \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\" -Destination \"$persist_dir\\APPDATA\\QtWebEngine\\Default\\Local Storage\" -ErrorAction SilentlyContinue",
         "} else {",
         "   Remove-Item -Path \"$env:APPDATA\\Jellyfin Media Player\" -Recurse -ErrorAction SilentlyContinue",
-        "}"
+        "}",
+        "",
+        "if(-not (Test-Path \"$dir/JellyfinMediaPlayer.exe\")) { Add-Content \"$dir/JellyfinMediaPlayer.exe\" $null }"
     ],
-    "installer": {
-        "script": [
-            "$extracted = \"$dir\\extracted\"",
-            "$msi = \"$dir\\msi\"",
-            "Expand-DarkArchive \"$dir\\$fname\" \"$extracted\"",
-            "Expand-MsiArchive \"$extracted\\AttachedContainer\\PMP.msi\" \"$msi\"",
-            "Move-Item \"$msi\\Msi\\*\" \"$dir\" -Force",
-            "Remove-Item $extracted, $msi, \"$dir\\$fname\" -Force -Recurse"
-        ]
-    },
     "post_install": [
         "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
         "Mount-ExternalRuntimeData -Source \"$persist_dir\\APPDATA\\QtWebEngine\\Default\\Local Storage\" -Target \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\"",
-        "Remove-Module -Name DoradoUtils"
+        "Remove-Module -Name DoradoUtils",
+        "",
+        "Remove-Item \"$dir\\JellyfinMediaPlayer.exe\"",
+        "$extracted = \"$dir\\extracted\"",
+        "$msi = \"$dir\\msi\"",
+        "Expand-DarkArchive \"$dir\\$fname\" \"$extracted\"",
+        "Expand-MsiArchive \"$extracted\\AttachedContainer\\PMP.msi\" \"$msi\"",
+        "Move-Item \"$msi\\Msi\\*\" \"$dir\" -Force",
+        "Remove-Item $extracted, $msi, \"$dir\\$fname\" -Force -Recurse"
     ],
     "uninstaller": {
         "script": [
