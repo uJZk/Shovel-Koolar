@@ -13,44 +13,25 @@
             "url": "https://github.com/jellyfin/jellyfin-media-player/releases/download/v1.7.1/JellyfinMediaPlayer-1.7.1-windows-x64.exe"
         }
     },
-    "pre_install": [
-        "if (-not (Test-Path \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\")) {",
-        "   New-item \"$env:APPDATA\\Jellyfin Media Player\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   New-item \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   New-item \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "}",
-        "if (-not (Test-Path \"$persist_dir\\APPDATA\\QtWebEngine\\Default\\Local Storage\")) {",
-        "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   New-item \"$persist_dir\\APPDATA\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   New-item \"$persist_dir\\APPDATA\\QtWebEngine\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   New-item \"$persist_dir\\APPDATA\\QtWebEngine\\Default\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   New-item \"$persist_dir\\APPDATA\\QtWebEngine\\Default\\Local Storage\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   Move-Item -Path \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\" -Destination \"$persist_dir\\APPDATA\\QtWebEngine\\Default\\Local Storage\" -ErrorAction SilentlyContinue",
-        "} else {",
-        "   Remove-Item -Path \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\" -Recurse -ErrorAction SilentlyContinue",
-        "}",
-        "",
-        "if(-not (Test-Path \"$dir/JellyfinMediaPlayer.exe\")) { Add-Content \"$dir/JellyfinMediaPlayer.exe\" $null }"
-    ],
-    "post_install": [
-        "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-        "Mount-ExternalRuntimeData -Source \"$persist_dir\\APPDATA\\QtWebEngine\\Default\\Local Storage\" -Target \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\"",
-        "Remove-Module -Name DoradoUtils",
-        "",
-        "Remove-Item \"$dir\\JellyfinMediaPlayer.exe\"",
-        "$extracted = \"$dir\\extracted\"",
-        "$msi = \"$dir\\msi\"",
-        "Expand-DarkArchive \"$dir\\$fname\" \"$extracted\"",
-        "Expand-MsiArchive \"$extracted\\AttachedContainer\\PMP.msi\" \"$msi\"",
-        "Move-Item \"$msi\\Msi\\*\" \"$dir\" -Force",
-        "Remove-Item $extracted, $msi, \"$dir\\$fname\" -Force -Recurse"
-    ],
+    "installer": {
+        "script": [
+            "$extracted = \"$dir\\extracted\"",
+            "$msi = \"$dir\\msi\"",
+            "Expand-DarkArchive \"$dir\\$fname\" \"$extracted\"",
+            "Expand-MsiArchive \"$extracted\\AttachedContainer\\PMP.msi\" \"$msi\"",
+            "Move-Item \"$msi\\Msi\\*\" \"$dir\" -Force",
+            "Remove-Item $extracted, $msi, \"$dir\\$fname\" -Force -Recurse",
+            "",
+            "New-item -ItemType Directory -Path \"$env:APPDATA\\Jellyfin Media Player\" -ErrorAction SilentlyContinue",
+            "New-item -ItemType Directory -Path \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\" -ErrorAction SilentlyContinue",
+            "New-item -ItemType Directory -Path \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\" -ErrorAction SilentlyContinue",
+            "New-item -ItemType Directory -Path \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\" -ErrorAction SilentlyContinue",
+            "New-item -ItemType Directory -Path \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\\leveldb\" -ErrorAction SilentlyContinue",
+            "Move-Item -Path \"$persist_dir\\MANIFEST-000001\" -Destination \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\\leveldb\\MANIFEST-000001\" -ErrorAction SilentlyContinue"
+        ]
+    },
     "uninstaller": {
         "script": [
-            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-            "Dismount-ExternalRuntimeData -Target \"$env:APPDATA\\Jellyfin Media Player\\QtWebEngine\\Default\\Local Storage\"",
-            "Remove-Module -Name DoradoUtils",
-            "",
             "Remove-Item -Path \"$env:APPDATA\\Jellyfin Media Player\" -Recurse -ErrorAction SilentlyContinue",
             "Remove-Item -Path \"$env:APPDATA\\JellyfinMediaPlayer\" -Recurse -ErrorAction SilentlyContinue"
         ]
