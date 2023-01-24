@@ -1,22 +1,22 @@
 {
     "description": "High-performance, embeddable, polyglot Virtual Machine for JVM-langs (Java, Scala, Kotlin), JavaScript/NodeJS, Python, Ruby, R, and LLVM-langs (C, C++, Rust)",
-    "version": "22.3.0",
+    "version": "22.3.1",
     "homepage": "https://www.graalvm.org/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://docs.oracle.com/en/graalvm/enterprise/22/docs/licensing-information/"
     },
-    "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_0/graalvm-ee-java17-windows-amd64-22.3.0.zip",
-    "hash": "fac41f3f067aa8f5bf82832dade599fcfbab405986d4b3796dacfdccb330e7f2",
-    "extract_dir": "graalvm-ee-java17-22.3.0",
+    "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-windows-amd64-22.3.1.zip",
+    "hash": "8e667e7ea596ccd96e6c14f1f6990b41a93ee5340dd6a289fc96d7da3d8a41b9",
+    "extract_dir": "graalvm-ee-java17-22.3.1",
     "env_add_path": "bin",
     "env_set": {
         "JAVA_HOME": "$dir",
         "GRAALVM_HOME": "$dir"
     },
     "checkver": {
-        "url": "https://www.graalvm.org/downloads/",
-        "regex": "/releases/tag/vm-(\\S+?)\""
+        "url": "https://docs.oracle.com/en/graalvm/enterprise/22/docs/release-notes/",
+        "regex": "Oracle GraalVM Enterprise Edition (\\S+?)<"
     },
     "autoupdate": {
         "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_$underscoreVersion/graalvm-ee-java17-windows-amd64-$version.zip",
