@@ -1,18 +1,14 @@
 {
-    "version": "0.6.3.1956",
+    "version": "0.6.5.1995",
     "description": "MPC Video Renderer is a free and open-source video renderer for DirectShow.",
     "homepage": "https://github.com/Aleksoid1978/VideoRenderer",
     "license": "GPL-3.0-only",
     "depends": "sudo",
-    "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/0.6.3/MpcVideoRenderer-0.6.3.1956.zip",
-    "hash": "15341c6d444c21928af15bd2ef42e12d0c7676e81419ab6f90b5ef9616470e48",
-    "post_install": [
-        "sudo PowerShell -NoProfile -command \"'$dir\\Install_MPCVR_32.cmd'; '$dir\\Install_MPCVR_64.cmd'\""
-    ],
+    "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/0.6.5/MpcVideoRenderer-0.6.5.1995.zip",
+    "hash": "713f1adead0d380b7d01a7ccc818d898b6cec10503f38687797b13ea1428cf84",
+    "post_install": "sudo PowerShell -NoProfile -command \"'$dir\\Install_MPCVR_32.cmd'; '$dir\\Install_MPCVR_64.cmd'\"",
     "uninstaller": {
-        "script": [
-            "sudo PowerShell -NoProfile -command \"'$dir\\Uninstall_MPCVR_32.cmd'; '$dir\\Uninstall_MPCVR_64.cmd'\""
-        ]
+        "script": "sudo PowerShell -NoProfile -command \"'$dir\\Uninstall_MPCVR_32.cmd'; '$dir\\Uninstall_MPCVR_64.cmd'\""
     },
     "checkver": {
         "url": "https://github.com/Aleksoid1978/VideoRenderer/releases.atom",
