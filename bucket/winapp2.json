@@ -1,5 +1,5 @@
 {
-    "version": "230215",
+    "version": "230217",
     "description": "A database of extended cleaning routines for popular Windows PC based maintenance software.",
     "homepage": "https://github.com/MoscaDotTo/Winapp2",
     "license": "CC-BY-SA-4.0",
@@ -7,7 +7,7 @@
         "CCleaner": "Koolar/ccleaner"
     },
     "url": "https://github.com/MoscaDotTo/Winapp2/raw/master/Winapp2.ini",
-    "hash": "e8f8771dbe3b17ddd42cc9cbbc5cb5332700da10ce9ef11a1df30b0c0c7f2a1a",
+    "hash": "233f96a7ba2b35bc9bd5237c9dad768b72a75537f98135d1ab7ce5169955dfb9",
     "post_install": [
         "if (Test-Path \"$scoopdir\\apps\\ccleaner\\current\\x64\\CCleaner64.exe\") {",
         "    Copy-Item \"$dir\\Winapp2.ini\" -Destination \"$scoopdir\\apps\\ccleaner\\current\\x64\\Winapp2.ini\" -Force",
