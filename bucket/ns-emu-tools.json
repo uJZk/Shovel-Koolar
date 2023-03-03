@@ -7,13 +7,16 @@
     },
     "url": "https://github.com/triwinds/ns-emu-tools/releases/download/0.3.3/NsEmuTools.exe",
     "hash": "c136e613bd4cc6e589799b457199f3af06f7a4b3ae34741f4688ff93e32bdd42",
+    "pre_install": [
+        "if(-not (Test-Path \"$dir/config.json\")) { Add-Content \"$dir/config.json\" $null }"
+    ],
     "shortcuts": [
         [
             "NsEmuTools.exe",
             "Ns Emu Tools"
         ]
     ],
-    "persist": "NsEmuTools.exe.WebView2",
+    "persist": "config.json",
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/triwinds/ns-emu-tools/releases/download/$version/NsEmuTools.exe"

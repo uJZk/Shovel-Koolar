@@ -4,7 +4,7 @@
     "homepage": "https://github.com/amakvana/YuzuModDownloader",
     "license": "GPL-3.0-only",
     "suggest": {
-        "Yuzu": "Koolar/yuzu-es"
+        "Yuzu": "Koolar/yuzu"
     },
     "url": "https://github.com/amakvana/YuzuModDownloader/releases/download/v1.2.0.0/YuzuModDownloader.zip",
     "hash": "11ba79f7519320b17a8c4f2d0f96a6e0eec190a0fc122e088806eb0ff7000a72",
