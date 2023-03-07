@@ -6,6 +6,10 @@
         "identifier": "Freeware",
         "url": "https://potplayer.daum.net/publicRelation"
     },
+    "suggest": {
+        "LAV Filters": "Koolar/lavfilters",
+        "MPC Video Renderer": "Koolar/mpcvideorenderer"
+    },
     "architecture": {
         "64bit": {
             "url": [

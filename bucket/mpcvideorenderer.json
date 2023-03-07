@@ -1,20 +1,21 @@
 {
-    "version": "0.6.5.1995",
-    "description": "MPC Video Renderer is a free and open-source video renderer for DirectShow.",
-    "homepage": "https://github.com/Aleksoid1978/VideoRenderer",
+    "version": "rtx-1.1",
+    "description": "a free and open-source video renderer for DirectShow. (NV/Intel SuperRes modded)",
+    "homepage": "https://github.com/emoose/VideoRenderer/",
     "license": "GPL-3.0-only",
     "depends": "sudo",
-    "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/0.6.5/MpcVideoRenderer-0.6.5.1995.zip",
-    "hash": "713f1adead0d380b7d01a7ccc818d898b6cec10503f38687797b13ea1428cf84",
+    "url": "https://github.com/emoose/VideoRenderer/releases/download/rtx-1.1/mpc-videorenderer-rtx1.1-4e2e160.zip",
+    "hash": "c86f7e239d0f9bf57a50cd9e15f8ec995ff7407809c08661bc2d86e2064c046b",
     "post_install": "sudo PowerShell -NoProfile -command \"'$dir\\Install_MPCVR_32.cmd'; '$dir\\Install_MPCVR_64.cmd'\"",
     "uninstaller": {
         "script": "sudo PowerShell -NoProfile -command \"'$dir\\Uninstall_MPCVR_32.cmd'; '$dir\\Uninstall_MPCVR_64.cmd'\""
     },
     "checkver": {
-        "url": "https://github.com/Aleksoid1978/VideoRenderer/releases.atom",
-        "regex": "MPC Video Renderer (\\S+?)<"
+        "url": "https://github.com/emoose/VideoRenderer/releases.atom",
+        "regex": "<title>.+(?<short>\\d+\\.\\d+).+\\d+\\.\\d+\\.\\d+-(?<commit>\\w+)</title>",
+        "replace": "rtx-${short}"
     },
     "autoupdate": {
-        "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/$majorVersion.$minorVersion.$patchVersion/MpcVideoRenderer-$version.zip"
+        "url": "https://github.com/emoose/VideoRenderer/releases/download/$version/mpc-videorenderer-rtx$matchShort-$matchCommit.zip"
     }
 }
