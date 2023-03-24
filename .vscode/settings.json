@@ -84,4 +84,5 @@
             ".github/workflows/*.y*ml",
         ],
     },
+    "remote.WSL1.connectionMethod": "wslExeProxy",
 }
