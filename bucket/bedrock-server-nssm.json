@@ -1,0 +1,58 @@
+{
+    "version": "1.19.72.01",
+    "description": "Bedrock Dedicated Server for Minecraft",
+    "homepage": "https://www.minecraft.net/en-us/download/server/bedrock",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://www.minecraft.net/en-us/terms"
+    },
+    "depends": "nssm",
+    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.72.01.zip",
+    "hash": "24cab9c47f8a1e9356154ffcbc14712e51849ffdb3f0e1c6b309ffb3d8a77377",
+    "notes": [
+        "Change the service's configuration by running: nssm edit 'Bedrock Server'",
+        "Start the service by running: nssm start 'Bedrock Server'",
+        "Stop the service by running: nssm stop 'Bedrock Server'",
+        "Restart the service by running: nssm restart 'Bedrock Server'",
+        "Querying the service's status by running: nssm status 'Bedrock Server'",
+        "Uninstall the service by running: nssm remove 'Bedrock Server' confirm",
+        "You should remove the service before uninstalling this package."
+    ],
+    "persist": [
+        "allowlist.json",
+        "permissions.json",
+        "server.properties",
+        "worlds"
+    ],
+    "pre_install": [
+        "if(-not (Test-Path \"$dir/allowlist.json\")) { Add-Content \"$dir/allowlist.json\" $null }",
+        "if(-not (Test-Path \"$dir/permissions.json\")) { Add-Content \"$dir/permissions.json\" $null }",
+        "if(-not (Test-Path \"$dir/server.properties\")) { Add-Content \"$dir/server.properties\" $null }"
+    ],
+    "post_install": [
+        "$service = Get-Service -Name \"Bedrock Server\" -ErrorAction SilentlyContinue",
+        "if ($service -eq $null) {",
+        "   Write-Host 'Service not found, creating...' -ForegroundColor Yellow",
+        "   Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm install 'Bedrock Server' '$dir/bedrock_server.exe'; nssm set 'Bedrock Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Bedrock Server' AppPriority ABOVE_NORMAL_PRIORITY_CLASS`\"\"",
+        "   Write-Host 'Bedrock Server has been set as a service, it will automatically start when the system starts.' -ForegroundColor Yellow",
+        "   Write-Host 'The process priority has been set to higher than normal.' -ForegroundColor Yellow",
+        "}",
+        "",
+        "Write-Host 'Creating firewall exception...' -ForegroundColor Yellow",
+        "New-NetFirewallRule -DisplayName 'Bedrock Server' -Direction Inbound -Program '$dir/bedrock_server.exe' -Protocol UDP -Action Allow"
+    ],
+    "uninstaller": {
+        "script": [
+            "Write-Host 'Removing firewall exception...' -ForegroundColor Yellow",
+            "Remove-NetFirewallRule -DisplayName 'Bedrock Server'"
+        ]
+    },
+    "checkver": {
+        "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
+        "regex": "bin-win/bedrock-server-(\\S+?)\\.zip",
+        "reverse": true
+    },
+    "autoupdate": {
+        "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-$version.zip"
+    }
+}
