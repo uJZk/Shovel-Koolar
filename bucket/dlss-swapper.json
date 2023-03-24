@@ -3,7 +3,6 @@
     "description": "DLSS Swapper is a tool that allows you to conveniently download, manage, and swap DLSS dlls allowing you to upgrade or downgrade DLSS version in a game without the game needing an update.",
     "homepage": "https://github.com/beeradmoore/dlss-swapper",
     "license": "GPL-3.0-only",
-    "depends": "sudo",
     "url": "https://github.com/beeradmoore/dlss-swapper/releases/download/v1.0.0.0/DLSS.Swapper-1.0.0.0-portable.zip",
     "hash": "5ea098402acea0fc5e6ea789fa91695e4ef30dda2937e88a20eafdfe03b4f927",
     "shortcuts": [
@@ -12,13 +11,6 @@
             "DLSS Swapper"
         ]
     ],
-    "uninstaller": {
-        "script": [
-            "if (Test-Path Cert:\\LocalMachine\\TrustedPeople\\D5CAE923CA9A2DC7C2F19BEF6202077BA4CFF0C0) {",
-            "   sudo Remove-Item Cert:\\LocalMachine\\TrustedPeople\\D5CAE923CA9A2DC7C2F19BEF6202077BA4CFF0C0",
-            "}"
-        ]
-    },
     "persist": "StoredData",
     "checkver": "github",
     "autoupdate": {
