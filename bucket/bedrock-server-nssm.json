@@ -39,12 +39,12 @@
         "}",
         "",
         "Write-Host 'Creating firewall exception...' -ForegroundColor Yellow",
-        "New-NetFirewallRule -DisplayName 'Bedrock Server' -Direction Inbound -Program \"$dir/bedrock_server.exe\" -Protocol UDP -Action Allow"
+        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"New-NetFirewallRule -DisplayName 'Bedrock Server' -Direction Inbound -Program '$scoopdir\\apps\\$app\\$version\\bedrock_server.exe' -Protocol UDP -Action Allow`\"\""
     ],
     "uninstaller": {
         "script": [
             "Write-Host 'Removing firewall exception...' -ForegroundColor Yellow",
-            "Remove-NetFirewallRule -DisplayName 'Bedrock Server'"
+            "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"Remove-NetFirewallRule -DisplayName 'Bedrock Server'`\"\""
         ]
     },
     "checkver": {
