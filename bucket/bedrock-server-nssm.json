@@ -39,7 +39,7 @@
         "}",
         "",
         "Write-Host 'Creating firewall exception...' -ForegroundColor Yellow",
-        "New-NetFirewallRule -DisplayName 'Bedrock Server' -Direction Inbound -Program '$dir/bedrock_server.exe' -Protocol UDP -Action Allow"
+        "New-NetFirewallRule -DisplayName 'Bedrock Server' -Direction Inbound -Program \"$dir/bedrock_server.exe\" -Protocol UDP -Action Allow"
     ],
     "uninstaller": {
         "script": [
