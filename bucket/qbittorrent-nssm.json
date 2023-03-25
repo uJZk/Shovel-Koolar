@@ -58,8 +58,7 @@
         "}",
         "",
         "Write-Host 'Creating firewall exception...' -ForegroundColor Yellow",
-        "New-NetFirewallRule -DisplayName 'qBittorrent' -Direction Inbound -Program \"$dir/qbittorrent.exe\" -Protocol TCP -Action Allow",
-        "New-NetFirewallRule -DisplayName 'qBittorrent' -Direction Inbound -Program \"$dir/qbittorrent.exe\" -Protocol UDP -Action Allow"
+        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"New-NetFirewallRule -DisplayName 'qBittorrent' -Direction Inbound -Program '$dir/qbittorrent.exe' -Protocol TCP -Action Allow; New-NetFirewallRule -DisplayName 'qBittorrent' -Direction Inbound -Program '$dir/qbittorrent.exe' -Protocol UDP -Action Allow`\"\""
     ],
     "uninstaller": {
         "script": [
