@@ -8,21 +8,21 @@
     },
     "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/Prerelease-Alpha/clash.meta-windows-amd64-alpha-e4364cc.zip",
     "hash": "d358713b3039302a443808f7c8c28e63f9246377bbee8c9c736926e5aee0d5ac",
-    "bin": "clash-meta.exe",
-    "pre_install": "Rename-Item '$dir\\clash.Meta-windows-amd64-compatible.exe' 'clash-meta.exe'",
+    "bin": "clash.meta.exe",
+    "pre_install": "Rename-Item '$dir\\clash.meta-windows-amd64.exe' 'clash.meta.exe'",
     "post_install": [
         "if (Test-Path '$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe') {",
-        "    if (Test-Path '$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe') {",
-        "        Rename-Item '$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe' 'clash-meta.exe.bac'",
+        "    if (Test-Path '$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe') {",
+        "        Rename-Item '$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe' 'clash.meta.exe.bac'",
         "    }",
-        "    Copy-Item '$dir\\clash-meta.exe' '$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe' | Out-Null",
+        "    Copy-Item '$dir\\clash.meta.exe' '$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe' | Out-Null",
         "}"
     ],
     "uninstaller": {
         "script": [
-            "if (Test-Path '$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac') {",
-            "    Remove-Item '$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.exe' -Force",
-            "    Rename-Item '$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe.bac' 'clash-meta.exe'",
+            "if (Test-Path '$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe.bac') {",
+            "    Remove-Item '$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe.exe' -Force",
+            "    Rename-Item '$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe.bac' 'clash.meta.exe'",
             "}"
         ]
     },

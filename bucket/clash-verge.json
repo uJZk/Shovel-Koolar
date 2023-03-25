@@ -24,12 +24,12 @@
         "    New-Item -Path '$persist_dir\\.config\\PORTABLE' -ItemType file | Out-Null",
         "}",
         "",
-        "if (Test-Path '$scoopdir\\apps\\clash-meta\\current\\clash-meta.exe') {",
-        "    Rename-Item '$dir\\clash-meta.exe' 'clash-meta.exe.bac'",
-        "    Copy-Item '$scoopdir\\apps\\clash-meta\\current\\clash-meta.exe' '$dir\\clash-meta.exe' | Out-Null",
-        "} elseif (Test-Path '$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe') {",
-        "    Rename-Item '$dir\\clash-meta.exe' 'clash-meta.exe.bac'",
-        "    Copy-Item '$scoopdir\\apps\\clash-meta-compatible\\current\\clash-meta.exe' '$dir\\clash-meta.exe' | Out-Null",
+        "if (Test-Path '$scoopdir\\apps\\clash.meta\\current\\clash.meta.exe') {",
+        "    Rename-Item '$dir\\clash.meta.exe' 'clash.meta.exe.bac'",
+        "    Copy-Item '$scoopdir\\apps\\clash.meta\\current\\clash.meta.exe' '$dir\\clash.meta.exe' | Out-Null",
+        "} elseif (Test-Path '$scoopdir\\apps\\clash.meta-compatible\\current\\clash.meta.exe') {",
+        "    Rename-Item '$dir\\clash.meta.exe' 'clash.meta.exe.bac'",
+        "    Copy-Item '$scoopdir\\apps\\clash.meta-compatible\\current\\clash.meta.exe' '$dir\\clash.meta.exe' | Out-Null",
         "}"
     ],
     "uninstaller": {
