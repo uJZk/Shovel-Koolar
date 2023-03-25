@@ -36,7 +36,7 @@
         "}",
         "",
         "Write-Host 'Creating firewall exception...' -ForegroundColor Yellow",
-        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"New-NetFirewallRule -DisplayName 'Jellyfin Server' -Direction Inbound -Program '$scoopdir\\apps\\$app\\$version\\system\\jellyfin.exe' -Protocol TCP -Action Allow; New-NetFirewallRule -DisplayName 'Jellyfin Server' -Direction Inbound -Program '$scoopdir\\apps\\$app\\$version\\system\\jellyfin.exe' -Protocol UDP -Action Allow -LocalPort 1900,7359`\"\""
+        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"New-NetFirewallRule -DisplayName 'Jellyfin Server' -Direction Inbound -Program '$scoopdir\\apps\\jellyfin-nssm\\$version\\system\\jellyfin.exe' -Protocol TCP -Action Allow; New-NetFirewallRule -DisplayName 'Jellyfin Server' -Direction Inbound -Program '$scoopdir\\apps\\jellyfin-nssm\\$version\\system\\jellyfin.exe' -Protocol UDP -Action Allow -LocalPort 1900,7359`\"\""
     ],
     "uninstaller": {
         "script": [
