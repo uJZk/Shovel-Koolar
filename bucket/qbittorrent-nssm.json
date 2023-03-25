@@ -63,7 +63,7 @@
     "uninstaller": {
         "script": [
             "Write-Host 'Removing firewall exception...' -ForegroundColor Yellow",
-            "Remove-NetFirewallRule -DisplayName 'qBittorrent'"
+            "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"Remove-NetFirewallRule -DisplayName 'qBittorrent'`\"\""
         ]
     },
     "persist": "profile",
