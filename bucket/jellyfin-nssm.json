@@ -36,8 +36,8 @@
         "}",
         "",
         "Write-Host 'Creating firewall exception...' -ForegroundColor Yellow",
-        "New-NetFirewallRule -DisplayName 'Jellyfin Server' -Direction Inbound -Program '$dir/system/jellyfin.exe' -Protocol TCP -Action Allow",
-        "New-NetFirewallRule -DisplayName 'Jellyfin Server' -Direction Inbound -Program '$dir/system/jellyfin.exe' -Protocol UDP -Action Allow -LocalPort 1900,7359"
+        "New-NetFirewallRule -DisplayName 'Jellyfin Server' -Direction Inbound -Program \"$dir/system/jellyfin.exe\" -Protocol TCP -Action Allow",
+        "New-NetFirewallRule -DisplayName 'Jellyfin Server' -Direction Inbound -Program \"$dir/system/jellyfin.exe\" -Protocol UDP -Action Allow -LocalPort 1900,7359"
     ],
     "uninstaller": {
         "script": [
