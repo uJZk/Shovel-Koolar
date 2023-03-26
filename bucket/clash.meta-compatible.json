@@ -11,11 +11,11 @@
     "bin": "clash.meta.exe",
     "pre_install": "Rename-Item \"$dir\\clash.meta-windows-amd64-compatible\" 'clash.meta.exe'",
     "post_install": [
-        "if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe\") {",
-        "    if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe\") {",
-        "        Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe\" 'clash.meta.exe.bac'",
+        "if (-not (Test-Path \"$scoopdir\\apps\\clash.meta\\current\\clash.meta.exe\") -and (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe\")) {",
+        "    if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\") {",
+        "        Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" 'clash-meta.exe.bac'",
         "    }",
-        "    Copy-Item \"$dir\\clash.meta.exe\" \"$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe\" | Out-Null",
+        "    Copy-Item \"$dir\\clash.meta.exe\" \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" | Out-Null",
         "}"
     ],
     "uninstaller": {
