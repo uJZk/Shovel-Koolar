@@ -13,16 +13,16 @@
     "post_install": [
         "if (-not (Test-Path \"$scoopdir\\apps\\clash.meta\\current\\clash.meta.exe\") -and (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe\")) {",
         "    if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\") {",
-        "        Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" 'clash-meta.exe.old'",
+        "        Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" 'clash-meta_exe_bac'",
         "    }",
         "    Copy-Item \"$dir\\clash.meta.exe\" \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" | Out-Null",
         "}"
     ],
     "uninstaller": {
         "script": [
-            "if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe.old\") {",
-            "    Remove-Item \"$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe.exe\" -Force",
-            "    Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash.meta.exe.old\" 'clash.meta.exe'",
+            "if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta_exe_bac\") {",
+            "    Remove-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" -Force",
+            "    Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta_exe_bac\" 'clash-meta.exe'",
             "}"
         ]
     },
