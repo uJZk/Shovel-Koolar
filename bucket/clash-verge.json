@@ -25,10 +25,10 @@
         "}",
         "",
         "if (Test-Path \"$scoopdir\\apps\\clash.meta\\current\\clash.meta.exe\") {",
-        "    Rename-Item \"$dir\\clash.meta.exe\" 'clash.meta.exe.bac'",
+        "    Rename-Item \"$dir\\clash.meta.exe\" 'clash.meta.exe.old'",
         "    Copy-Item \"$scoopdir\\apps\\clash.meta\\current\\clash.meta.exe\" \"$dir\\clash.meta.exe\" | Out-Null",
         "} elseif (Test-Path \"$scoopdir\\apps\\clash.meta-compatible\\current\\clash.meta.exe\") {",
-        "    Rename-Item \"$dir\\clash.meta.exe\" 'clash.meta.exe.bac'",
+        "    Rename-Item \"$dir\\clash.meta.exe\" 'clash.meta.exe.old'",
         "    Copy-Item \"$scoopdir\\apps\\clash.meta-compatible\\current\\clash.meta.exe\" \"$dir\\clash.meta.exe\" | Out-Null",
         "}"
     ],
