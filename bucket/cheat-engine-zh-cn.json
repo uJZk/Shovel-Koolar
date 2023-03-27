@@ -1,5 +1,5 @@
 {
-	"version": "7.4",
+	"version": "7.5",
 	"description": "Tool for modifying/debugging single player games and applications.",
 	"homepage": "https://cheatengine.org/index.php",
 	"license": {
@@ -7,11 +7,11 @@
 		"url": "https://github.com/cheat-engine/cheat-engine/issues/60#issuecomment-467317576"
 	},
 	"url": [
-		"https://raw.githubusercontent.com/ScoopInstaller/Binary/master/cheat-engine/CheatEngine74.7z",
+		"https://github.com/LuoHuiRu/Binary/blob/master/CheatEngine/CheatEngine75.7z",
 		"https://cheatengine.org/download/zh_CN.zip"
 	],
 	"hash": [
-		"a6389d5da704123e28ba647111970de570dcf27dc2fb607c675c073c0e95bf0a",
+		"f0ac0456880d628c231c54467f19fda53680eea2a9badc594859618acbb39208",
 		"40938ae451c7601d98ba2aa7738aa53e25cdb9e69d4a1303f29a20cb51eb78c6"
 	],
 	"extract_to": [
@@ -27,9 +27,9 @@
 	],
 	"checkver": {
 		"url": "https://github.com/LuoHuiRu/ScoopBucket/raw/master/bucket/CheatEngine-zh.json",
-		"regex": "\"version\":\\s\"(\\S+?)\""
+		"regex": "\\\"version\\\":\\s\\\"(\\S+?)\\\""
 	},
 	"autoupdate": {
-		"url": "https://github.com/LuoHuiRu/Binary/blob/master/CheatEngine/$cleanVersion.7z"
+		"url": "https://github.com/LuoHuiRu/Binary/blob/master/CheatEngine/CheatEngine$cleanVersion.7z"
 	}
 }
