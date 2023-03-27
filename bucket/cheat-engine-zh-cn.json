@@ -7,7 +7,7 @@
         "url": "https://github.com/cheat-engine/cheat-engine/issues/60#issuecomment-467317576"
     },
     "url": [
-        "https://github.com/LuoHuiRu/Binary/blob/master/CheatEngine/CheatEngine75.7z",
+        "https://github.com/LuoHuiRu/Binary/raw/master/CheatEngine/CheatEngine75.7z",
         "https://cheatengine.org/download/zh_CN.rar"
     ],
     "hash": [
@@ -30,6 +30,6 @@
         "regex": "\\\"version\\\":\\s\\\"(\\S+?)\\\""
     },
     "autoupdate": {
-        "url": "https://github.com/LuoHuiRu/Binary/blob/master/CheatEngine/CheatEngine$cleanVersion.7z"
+        "url": "https://github.com/LuoHuiRu/Binary/raw/master/CheatEngine/CheatEngine$cleanVersion.7z"
     }
 }
