@@ -66,7 +66,16 @@
             "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"Remove-NetFirewallRule -DisplayName 'qBittorrent'`\"\""
         ]
     },
-    "persist": "profile",
+    "persist": [
+        [
+            "profile\\qBittorrent\\config",
+            "config"
+        ],
+        [
+            "profile\\qBittorrent\\data",
+            "data"
+        ]
+    ],
     "checkver": {
         "url": "https://www.qbittorrent.org/download.php",
         "regex": "Latest:\\s+v([\\d.]+)"
