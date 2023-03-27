@@ -29,7 +29,7 @@
         "        Rename-Item \"$dir\\clash-meta.exe\" 'clash-meta_exe_bac'",
         "        Copy-Item \"$scoopdir\\apps\\clash.meta\\current\\clash.meta.exe\" \"$dir\\clash-meta.exe\" | Out-Null",
         "    } elseif (Test-Path \"$scoopdir\\apps\\clash.meta-compatible\\current\\clash.meta.exe\") {",
-        "        Rename-Item \"$dir\\clash-meta.exe\" clash-meta_exe_bac'",
+        "        Rename-Item \"$dir\\clash-meta.exe\" 'clash-meta_exe_bac'",
         "        Copy-Item \"$scoopdir\\apps\\clash.meta-compatible\\current\\clash.meta.exe\" \"$dir\\clash-meta.exe\" | Out-Null",
         "    }",
         "}"
