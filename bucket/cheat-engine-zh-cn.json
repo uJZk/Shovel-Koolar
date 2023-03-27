@@ -1,35 +1,35 @@
 {
-	"version": "7.5",
-	"description": "Tool for modifying/debugging single player games and applications.",
-	"homepage": "https://cheatengine.org/index.php",
-	"license": {
-		"identifier": "Freeware",
-		"url": "https://github.com/cheat-engine/cheat-engine/issues/60#issuecomment-467317576"
-	},
-	"url": [
-		"https://github.com/LuoHuiRu/Binary/blob/master/CheatEngine/CheatEngine75.7z",
-		"https://cheatengine.org/download/zh_CN.rar"
-	],
-	"hash": [
-		"f0ac0456880d628c231c54467f19fda53680eea2a9badc594859618acbb39208",
-		"40938ae451c7601d98ba2aa7738aa53e25cdb9e69d4a1303f29a20cb51eb78c6"
-	],
-	"extract_to": [
-		"",
-		"languages\\zh_CN"
-	],
-	"shortcuts": [
-		[
-			"Cheat Engine.exe",
-			"Cheat Engine",
-			"--LANG zh_CN"
-		]
-	],
-	"checkver": {
-		"url": "https://github.com/LuoHuiRu/ScoopBucket/raw/master/bucket/CheatEngine-zh.json",
-		"regex": "\\\"version\\\":\\s\\\"(\\S+?)\\\""
-	},
-	"autoupdate": {
-		"url": "https://github.com/LuoHuiRu/Binary/blob/master/CheatEngine/CheatEngine$cleanVersion.7z"
-	}
+    "version": "7.5",
+    "description": "Tool for modifying/debugging single player games and applications.",
+    "homepage": "https://cheatengine.org/index.php",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/cheat-engine/cheat-engine/issues/60#issuecomment-467317576"
+    },
+    "url": [
+        "https://github.com/LuoHuiRu/Binary/blob/master/CheatEngine/CheatEngine75.7z",
+        "https://cheatengine.org/download/zh_CN.rar"
+    ],
+    "hash": [
+        "8e91a5c13667e5efa6942746369ebc8a82008aa839e22f5ee591b06299b81d39",
+        "58f1f16f743060f76c7d70a916f504e2f93ed25b5bf5313b3eb6767f1d5918c1"
+    ],
+    "extract_to": [
+        "",
+        "languages\\zh_CN"
+    ],
+    "shortcuts": [
+        [
+            "Cheat Engine.exe",
+            "Cheat Engine",
+            "--LANG zh_CN"
+        ]
+    ],
+    "checkver": {
+        "url": "https://github.com/LuoHuiRu/ScoopBucket/raw/master/bucket/CheatEngine-zh.json",
+        "regex": "\\\"version\\\":\\s\\\"(\\S+?)\\\""
+    },
+    "autoupdate": {
+        "url": "https://github.com/LuoHuiRu/Binary/blob/master/CheatEngine/CheatEngine$cleanVersion.7z"
+    }
 }
