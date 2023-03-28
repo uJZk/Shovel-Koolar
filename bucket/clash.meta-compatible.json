@@ -13,6 +13,7 @@
     "post_install": [
         "if (-not (Test-Path \"$scoopdir\\apps\\clash.meta\\current\\clash.meta.exe\") -and (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe\")) {",
         "    if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\") {",
+        "        Remove-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta_exe_bac\" -ErrorAction SilentlyContinue",
         "        Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" 'clash-meta_exe_bac'",
         "    }",
         "    Copy-Item \"$dir\\clash.meta.exe\" \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" | Out-Null",
