@@ -1,13 +1,13 @@
 {
-    "version": "cfd03a9",
+    "version": "54cad53",
     "description": "A rule-based tunnel in Go.",
     "homepage": "https://github.com/MetaCubeX/Clash.Meta",
     "license": "GPL-3.0-only",
     "suggest": {
         "Clash Verge": "Koolar/clash-verge"
     },
-    "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/Prerelease-Alpha/clash.meta-windows-amd64-compatible-alpha-cfd03a9.zip",
-    "hash": "e37ff8d1ae22968bc0d05b6291b1825350849e44971ba884389394f7d83ec877",
+    "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/Prerelease-Alpha/clash.meta-windows-amd64-compatible-alpha-54cad53.zip",
+    "hash": "6af0f643d89e8425fa49f06a3cabfd720106b676ccd04df69137bff8f06d10ea",
     "bin": "clash.meta.exe",
     "pre_install": "Rename-Item \"$dir\\clash.meta-windows-amd64-compatible\" 'clash.meta.exe'",
     "post_install": [
