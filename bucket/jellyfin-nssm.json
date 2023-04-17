@@ -28,7 +28,7 @@
         "   Write-Host 'Service not found, creating...' -ForegroundColor Yellow",
         "   $cores = (Get-WmiObject Win32_ComputerSystem).NumberOfLogicalProcessors",
         "   $affinity = \"$($cores/2)-$($cores-1)\"",
-        "   Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm install 'Jellyfin Server' '$dir\\system\\jellyfin.exe' ```\"-d ``\"$dir\\data``\"```\"; nssm set 'Jellyfin Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Jellyfin Server' AppPriority BELOW_NORMAL_PRIORITY_CLASS; nssm set 'Jellyfin Server' AppAffinity $affinity`\"\"",
+        "   Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm install 'Jellyfin Server' '$dir\\system\\jellyfin.exe' ``\"-d ```\"-dir\\data```\"-\"``\"; nssm set 'Jellyfin Server' Start SERVICE_DELAYED_AUTO_START; nssm set 'Jellyfin Server' AppPriority BELOW_NORMAL_PRIORITY_CLASS; nssm set 'Jellyfin Server' AppAffinity $affinity`\"\"",
         "   Write-Host 'Jellyfin Server has been set as a service, it will automatically start when the system starts.' -ForegroundColor Yellow",
         "   Write-Host 'The process affinity has been set the latter half of your CPU cores.' -ForegroundColor Yellow",
         "   Write-Host 'The process priority has been set to lower than normal.' -ForegroundColor Yellow",
