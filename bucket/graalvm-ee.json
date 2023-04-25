@@ -1,14 +1,14 @@
 {
     "description": "High-performance, embeddable, polyglot Virtual Machine for JVM-langs (Java, Scala, Kotlin), JavaScript/NodeJS, Python, Ruby, R, and LLVM-langs (C, C++, Rust)",
-    "version": "22.3.1",
+    "version": "22.3.2",
     "homepage": "https://www.graalvm.org/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://docs.oracle.com/en/graalvm/enterprise/22/docs/licensing-information/"
     },
-    "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-windows-amd64-22.3.1.zip",
-    "hash": "8e667e7ea596ccd96e6c14f1f6990b41a93ee5340dd6a289fc96d7da3d8a41b9",
-    "extract_dir": "graalvm-ee-java17-22.3.1",
+    "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_2/graalvm-ee-java17-windows-amd64-22.3.2.zip",
+    "hash": "a34554c117f376ab52a548bdf2609dbbad5965b357998c752a6e35495a680856",
+    "extract_dir": "graalvm-ee-java17-22.3.2",
     "env_add_path": "bin",
     "env_set": {
         "JAVA_HOME": "$dir",
