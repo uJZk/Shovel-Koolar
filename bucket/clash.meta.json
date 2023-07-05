@@ -7,7 +7,7 @@
         "Clash Verge": "Koolar/clash-verge"
     },
     "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/Prerelease-Alpha/clash.meta-windows-amd64-alpha-0b1aff5.zip",
-    "hash": "d902358a69ca082ecaf5a26b792d8bf1c6610fd63c42c71111db76ba55090922",
+    "hash": "31b4051e793746dce503c4553ad3d8313eb7efe273cb212a5ffdae9c00768ce0",
     "bin": "clash.meta.exe",
     "pre_install": "Rename-Item \"$dir\\clash.meta-windows-amd64.exe\" 'clash.meta.exe'",
     "post_install": [
