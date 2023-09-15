@@ -11,13 +11,11 @@
     "post_install": [
         "if (Test-Path \"$scoopdir\\apps\\yuzu\\current\\yuzu.exe\") {",
         "    Copy-Item \"$dir\\YuzuModDownloader.exe\" -Destination \"$scoopdir\\apps\\yuzu\\current\\\" -Force",
-        "    Copy-Item \"$dir\\HtmlAgilityPack.dll\" -Destination \"$scoopdir\\apps\\yuzu\\current\\\" -Force",
         "}"
     ],
     "uninstaller": {
         "script": [
-            "Remove-Item \"$scoopdir\\apps\\yuzu\\current\\YuzuModDownloader.exe\" -Force -ErrorAction SilentlyContinue",
-            "Remove-Item \"$scoopdir\\apps\\yuzu\\current\\HtmlAgilityPack.dll\" -Force -ErrorAction SilentlyContinue"
+            "Remove-Item \"$scoopdir\\apps\\yuzu\\current\\YuzuModDownloader.exe\" -Force -ErrorAction SilentlyContinue"
         ]
     },
     "checkver": "github",
