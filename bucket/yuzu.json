@@ -17,7 +17,7 @@
     ],
     "shortcuts": [
         [
-            "yuzu.exe",
+            "cemu.exe",
             "Yuzu"
         ]
     ],
@@ -30,9 +30,14 @@
         "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
         "   New-item \"$persist_dir\\user\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
         "   Move-Item -Path \"$env:APPDATA\\yuzu\" -Destination \"$persist_dir\\user\" -ErrorAction SilentlyContinue",
-        "}"
+        "}",
+        "",
+        "New-Item -Path \"$dir\\cemu.exe\" -Force | Out-Null"
     ],
     "post_install": [
+        "Remove-Item -Path \"$dir\\cemu.exe\" -Force",
+        "Move-Item -Path \"$dir\\yuzu.exe\" -Destination \"$dir\\cemu.exe\" -Force",
+        "",
         "Copy-Item \"$scoopdir\\apps\\yuzumoddownloader\\current\\YuzuModDownloader.exe\" -Destination \"$dir\\\" -Force -ErrorAction SilentlyContinue",
         "Copy-Item \"$scoopdir\\apps\\yuzumoddownloader\\current\\HtmlAgilityPack.dll\" -Destination \"$dir\\\" -Force -ErrorAction SilentlyContinue"
     ],
