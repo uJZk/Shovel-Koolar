@@ -1,5 +1,5 @@
 {
-    "version": "1.5.1",
+    "version": "2.6.0",
     "description": "Windows graphical interface for yt-dlp, designed as a simple YouTube downloader",
     "homepage": "https://github.com/ErrorFlynn/ytdlp-interface",
     "license": "MIT",
@@ -8,8 +8,16 @@
         "ffmpeg": "ffmpeg",
         "ffmpeg-shared": "ffmpeg-shared"
     },
-    "url": "https://github.com/ErrorFlynn/ytdlp-interface/releases/download/v1.5.1/ytdlp-interface.7z",
-    "hash": "7539f05be60c6d7565d04fbc2337413f145421d89759cc6d6bdaf006bed988de",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ErrorFlynn/ytdlp-interface/releases/download/v2.6.0/ytdlp-interface.7z",
+            "hash": "b665602c9bc8afa6f4318d0c433ae0ca4d3056b19ae734dc9bb3003146f0b2b3"
+        },
+        "32bit": {
+            "url": "https://github.com/ErrorFlynn/ytdlp-interface/releases/download/v2.6.0/ytdlp-interface_x86.7z",
+            "hash": "638e5d92d3c4d15e393e98111dc2fd8fc75e9523be3bb4b3a8e2ad387102a05e"
+        }
+    },
     "shortcuts": [
         [
             "ytdlp-interface.exe",
@@ -32,6 +40,9 @@
         "architecture": {
             "64bit": {
                 "url": "https://github.com/ErrorFlynn/ytdlp-interface/releases/download/v$version/ytdlp-interface.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/ErrorFlynn/ytdlp-interface/releases/download/v$version/ytdlp-interface_x86.7z"
             }
         }
     }
