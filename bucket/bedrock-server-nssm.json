@@ -1,5 +1,5 @@
 {
-    "version": "1.20.31.01",
+    "version": "1.20.32.03",
     "description": "Bedrock Dedicated Server for Minecraft",
     "homepage": "https://www.minecraft.net/en-us/download/server/bedrock",
     "license": {
@@ -7,8 +7,8 @@
         "url": "https://www.minecraft.net/en-us/terms"
     },
     "depends": "nssm",
-    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.20.31.01.zip",
-    "hash": "bd94245ee0ec17442bd25b052103e96b9fffff901a3d31abfde99b81f7b35f13",
+    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.20.32.03.zip",
+    "hash": "2f58c4cb83e19ac43800c38d7c5c5e8850308b69c25f41f9c54043b28ebe8f88",
     "notes": [
         "Change the service's configuration by running: nssm edit 'Bedrock Server'",
         "Start the service by running: nssm start 'Bedrock Server'",
