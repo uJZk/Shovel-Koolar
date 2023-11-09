@@ -1,23 +1,20 @@
 {
-    "version": "rtx-1.1",
-    "description": "a free and open-source video renderer for DirectShow. (NV/Intel SuperRes modded)",
-    "homepage": "https://github.com/emoose/VideoRenderer/",
+    "version": "0.6.9.2117",
+    "description": "a free and open-source video renderer for DirectShow.",
+    "homepage": "https://github.com/Aleksoid1978/VideoRenderer/",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/emoose/VideoRenderer/releases/download/rtx-1.1/mpc-videorenderer-rtx1.1-4e2e160.zip",
-    "hash": "c86f7e239d0f9bf57a50cd9e15f8ec995ff7407809c08661bc2d86e2064c046b",
-    "notes": [
-        "MPC Video Renderer has been registered to the system."
-    ],
+    "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/0.6.9/MpcVideoRenderer-0.6.9.2117.zip",
+    "hash": "b2efbd96bf13ec28c485e107ffb9d9611aeb6b09c52267e3e9b78a19be371956",
+    "notes": "MPC Video Renderer has been registered to the system.",
     "post_install": "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Install_MPCVR_32.cmd'; '$dir\\Install_MPCVR_64.cmd'`\"\"",
     "uninstaller": {
         "script": "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Uninstall_MPCVR_32.cmd'; '$dir\\Uninstall_MPCVR_64.cmd'`\"\""
     },
     "checkver": {
-        "url": "https://github.com/emoose/VideoRenderer/releases.atom",
-        "regex": "<title>.+(?<short>\\d+\\.\\d+).+\\d+\\.\\d+\\.\\d+-(?<commit>\\w+)</title>",
-        "replace": "rtx-${short}"
+        "url": "https://github.com/Aleksoid1978/VideoRenderer/releases.atom",
+        "regex": "<title>.+?([\\d.]+)</title>"
     },
     "autoupdate": {
-        "url": "https://github.com/emoose/VideoRenderer/releases/download/$version/mpc-videorenderer-rtx$matchShort-$matchCommit.zip"
+        "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/$matchHead/MpcVideoRenderer-$version.zip"
     }
 }
