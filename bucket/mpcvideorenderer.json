@@ -6,9 +6,15 @@
     "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/0.6.9/MpcVideoRenderer-0.6.9.2117.zip",
     "hash": "b2efbd96bf13ec28c485e107ffb9d9611aeb6b09c52267e3e9b78a19be371956",
     "notes": "MPC Video Renderer has been registered to the system.",
-    "post_install": "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Install_MPCVR_32.cmd'; '$dir\\Install_MPCVR_64.cmd'`\"\"",
+    "post_install": [
+        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Install_MPCVR_32.cmd'`\"\"",
+        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Install_MPCVR_64.cmd'`\"\""
+    ],
     "uninstaller": {
-        "script": "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Uninstall_MPCVR_32.cmd'; '$dir\\Uninstall_MPCVR_64.cmd'`\"\""
+        "script": [
+            "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Uninstall_MPCVR_32.cmd'`\"\"",
+            "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Uninstall_MPCVR_64.cmd'`\"\""
+        ]
     },
     "checkver": {
         "url": "https://github.com/Aleksoid1978/VideoRenderer/releases.atom",

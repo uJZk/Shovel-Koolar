@@ -14,9 +14,17 @@
         }
     },
     "notes": "LAV Filters has been registered to the system.",
-    "post_install": "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\install_audio.bat'; '$dir\\install_video.bat'; '$dir\\install_splitter.bat'`\"\"",
+    "post_install": [
+        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\install_audio.bat'`\"\"",
+        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\install_video.bat'`\"\"",
+        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\install_splitter.bat'`\"\""
+    ],
     "uninstaller": {
-        "script": "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\uninstall_audio.bat'; '$dir\\uninstall_video.bat'; '$dir\\uninstall_splitter.bat'`\"\""
+        "script": [
+            "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\uninstall_audio.bat'`\"\"",
+            "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\uninstall_video.bat'`\"\"",
+            "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\uninstall_splitter.bat'`\"\""
+        ]
     },
     "checkver": "github",
     "autoupdate": {
