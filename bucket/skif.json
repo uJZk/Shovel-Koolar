@@ -1,0 +1,30 @@
+{
+    "version": "SK_23_8_26",
+    "description": "Lovingly referred to as the Swiss Army Knife of PC gaming, Special K does a bit of everything.",
+    "homepage": "https://github.com/SpecialKO/SpecialK",
+    "license": {
+        "identifier": "MIT"
+    },
+    "url": "https://github.com/SpecialKO/SpecialK/releases/download/SK_23_8_26/SKIF.exe",
+    "hash": "7a5059d001dd0f0965cf032efbb5e5e831e91b336f86de2cc04964abe736fc5d",
+    "pre_install": "if(-not (Test-Path \"$dir/SKIF.ini\")) { Add-Content \"$dir/SKIF.ini\" $null }",
+    "shortcuts": [
+        [
+            "SKIF.exe",
+            "Special K Injection Frontend"
+        ]
+    ],
+    "persist": [
+        "Global",
+        "PlugIns",
+        "Profiles",
+        "SKIF.ini"
+    ],
+    "checkver": {
+        "url": "https://github.com/SpecialKO/SpecialK/tags.atom",
+        "regex": "releases/tag/(\\S+?)\""
+    },
+    "autoupdate": {
+        "url": "https://github.com/SpecialKO/SpecialK/releases/download/$version/SKIF.exe"
+    }
+}
