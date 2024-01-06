@@ -1,12 +1,12 @@
 {
-    "version": "SK_23_8_26",
+    "version": "2024-01",
     "description": "Lovingly referred to as the Swiss Army Knife of PC gaming, Special K does a bit of everything.",
     "homepage": "https://github.com/SpecialKO/SpecialK",
     "license": {
         "identifier": "MIT"
     },
-    "url": "https://github.com/SpecialKO/SpecialK/releases/download/SK_23_8_26/SKIF.exe",
-    "hash": "7a5059d001dd0f0965cf032efbb5e5e831e91b336f86de2cc04964abe736fc5d",
+    "url": "https://sk-data.special-k.info/SpecialK.7z",
+    "hash": "fb2d69937dc67e05a28fbf35b6816eb287585ed7b50d648f28350e343febcc1b",
     "pre_install": "if(-not (Test-Path \"$dir/SKIF.ini\")) { Add-Content \"$dir/SKIF.ini\" $null }",
     "shortcuts": [
         [
@@ -21,10 +21,10 @@
         "SKIF.ini"
     ],
     "checkver": {
-        "url": "https://github.com/SpecialKO/SpecialK/tags.atom",
-        "regex": "releases/tag/(\\S+?)\""
+        "url": "https://worldtimeapi.org/api/timezone/utc",
+        "regex": "\"utc_datetime\":\"(\\d{4}-\\d{2})-\\d{2}"
     },
     "autoupdate": {
-        "url": "https://github.com/SpecialKO/SpecialK/releases/download/$version/SKIF.exe"
+        "url": "https://sk-data.special-k.info/SpecialK.7z"
     }
 }
