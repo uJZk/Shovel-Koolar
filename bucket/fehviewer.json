@@ -34,7 +34,7 @@
         ]
     },
     "checkver": {
-        "url": "https://github.com/honjow/FEhViewer/tags.atom",
+        "url": "https://github.com/honjow/FEhViewer/releases.atom",
         "regex": "<title>[vV]?(\\S+?)</title>"
     },
     "autoupdate": {
