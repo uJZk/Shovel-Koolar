@@ -1,15 +1,15 @@
 {
-    "version": "8c3557e",
+    "version": "1.18.0",
     "description": "A rule-based tunnel in Go.",
-    "homepage": "https://github.com/MetaCubeX/Clash.Meta",
+    "homepage": "https://github.com/MetaCubeX/mihomo",
     "license": "GPL-3.0-only",
     "suggest": {
         "Clash Verge": "Koolar/clash-verge"
     },
-    "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/Prerelease-Alpha/clash.meta-windows-amd64-alpha-8c3557e.zip",
-    "hash": "0274117f51ee7eae4cf1a74323869a96ee10613b9395fef68c27276d7285032f",
+    "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.18.0/mihomo-windows-amd64-v1.18.0.zip",
+    "hash": "ab8b25366867d178f333c0de21c7b270b066f55a5506e5a8370163ae5fc6aa4a",
     "bin": "clash.meta.exe",
-    "pre_install": "Rename-Item \"$dir\\clash.meta-windows-amd64.exe\" 'clash.meta.exe'",
+    "pre_install": "Rename-Item \"$dir\\mihomo-windows-amd64.exe\" 'clash.meta.exe'",
     "post_install": [
         "if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe\") {",
         "    if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\") {",
@@ -22,16 +22,13 @@
     "uninstaller": {
         "script": [
             "if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta_exe_bac\") {",
-            "    Remove-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\"",
+            "    Remove-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\" -Force",
             "    Rename-Item \"$scoopdir\\apps\\clash-verge\\current\\clash-meta_exe_bac\" 'clash-meta.exe'",
             "}"
         ]
     },
-    "checkver": {
-        "url": "https://github.com/MetaCubeX/Clash.Meta/releases",
-        "regex": "wb-break-all\">(\\w+)<\\/code>"
-    },
+    "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/Prerelease-Alpha/clash.meta-windows-amd64-alpha-$version.zip"
+        "url": "https://github.com/MetaCubeX/mihomo/releases/download/v$version/mihomo-windows-amd64-v$version.zip"
     }
 }

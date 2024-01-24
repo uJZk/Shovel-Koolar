@@ -1,15 +1,15 @@
 {
-    "version": "8c3557e",
+    "version": "1.18.0",
     "description": "A rule-based tunnel in Go.",
-    "homepage": "https://github.com/MetaCubeX/Clash.Meta",
+    "homepage": "https://github.com/MetaCubeX/mihomo",
     "license": "GPL-3.0-only",
     "suggest": {
         "Clash Verge": "Koolar/clash-verge"
     },
-    "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/Prerelease-Alpha/clash.meta-windows-amd64-compatible-alpha-8c3557e.zip",
-    "hash": "a13a11f87aefabe2752ad9eb6079e7c359cfa218ec2ad602bd8f5c2d84209a34",
+    "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.18.0/mihomo-windows-amd64-compatible-v1.18.0.zip",
+    "hash": "1f55cfb752fc96956e91c4ebee83ea6eaae55469cbc2d52c7d88d905095119dc",
     "bin": "clash.meta.exe",
-    "pre_install": "Rename-Item \"$dir\\clash.meta-windows-amd64-compatible\" 'clash.meta.exe'",
+    "pre_install": "Rename-Item \"$dir\\mihomo-windows-amd64-compatible\" 'clash.meta.exe'",
     "post_install": [
         "if (-not (Test-Path \"$scoopdir\\apps\\clash.meta\\current\\clash.meta.exe\") -and (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\Clash Verge.exe\")) {",
         "    if (Test-Path \"$scoopdir\\apps\\clash-verge\\current\\clash-meta.exe\") {",
@@ -27,11 +27,8 @@
             "}"
         ]
     },
-    "checkver": {
-        "url": "https://github.com/MetaCubeX/Clash.Meta/releases",
-        "regex": "wb-break-all\">(\\w+)<\\/code>"
-    },
+    "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/MetaCubeX/Clash.Meta/releases/download/Prerelease-Alpha/clash.meta-windows-amd64-compatible-alpha-$version.zip"
+        "url": "https://github.com/MetaCubeX/mihomo/releases/download/v$version/mihomo-windows-amd64-compatible-v$version.zip"
     }
 }

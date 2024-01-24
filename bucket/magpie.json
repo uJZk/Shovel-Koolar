@@ -28,7 +28,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Blinue/Magpie/releases/download/v$version/Magpie_v$version.zip"
+                "url": "https://github.com/Blinue/Magpie/releases/download/v$version/Magpie_v$version-x64.zip"
             }
         }
     }
