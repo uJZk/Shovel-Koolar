@@ -32,7 +32,6 @@
     },
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/keiko233/clash-nyanpasu/releases/download/v$version/Clash.Nyanpasu_$version_x64_portable.zip",
-        "extract_dir": "Clash.Nyanpasu_$version_x64_portable"
+        "url": "https://github.com/keiko233/clash-nyanpasu/releases/download/v$version/Clash.Nyanpasu_$version_x64_portable.zip"
     }
 }
