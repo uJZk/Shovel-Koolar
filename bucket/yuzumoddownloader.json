@@ -1,22 +1,20 @@
 {
-    "version": "1.4.0.0",
+    "version": "1.4.1.0",
     "description": "A One-Click Yuzu Mod downloader for Yuzu Game Mods.",
     "homepage": "https://github.com/amakvana/YuzuModDownloader",
     "license": "GPL-3.0-only",
     "suggest": {
         "Yuzu": "Koolar/yuzu"
     },
-    "url": "https://github.com/amakvana/YuzuModDownloader/releases/download/v1.4.0.0/YuzuModDownloader-1.4.0.0-Windows-x64.zip",
-    "hash": "c85df6ac60dd255685cd512d68bcb1f81dd9dc140f37095e7e077647d265c1fe",
+    "url": "https://github.com/amakvana/YuzuModDownloader/releases/download/v1.4.1.0/YuzuModDownloader-1.4.1.0-Windows-x64.zip",
+    "hash": "6f4917b260af5ac99a1008148b80e9af123b5edcacfecbdf4d42ae100bc9da41",
     "post_install": [
         "if (Test-Path \"$scoopdir\\apps\\yuzu\\current\\yuzu.exe\") {",
         "    Copy-Item \"$dir\\YuzuModDownloader.exe\" -Destination \"$scoopdir\\apps\\yuzu\\current\\\" -Force",
         "}"
     ],
     "uninstaller": {
-        "script": [
-            "Remove-Item \"$scoopdir\\apps\\yuzu\\current\\YuzuModDownloader.exe\" -Force -ErrorAction SilentlyContinue"
-        ]
+        "script": "Remove-Item \"$scoopdir\\apps\\yuzu\\current\\YuzuModDownloader.exe\" -Force -ErrorAction SilentlyContinue"
     },
     "checkver": "github",
     "autoupdate": {
