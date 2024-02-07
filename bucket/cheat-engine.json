@@ -1,13 +1,13 @@
 {
-    "version": "7.5.0-7707",
+    "version": "7.5.0-7690",
     "description": "Tool for modifying/debugging single player games and applications.",
     "homepage": "https://cheatengine.org/index.php",
     "license": {
         "identifier": "Freeware",
         "url": "https://github.com/cheat-engine/cheat-engine/issues/60#issuecomment-467317576"
     },
-    "url": "https://github.com/ardittristan/cheat-engine/releases/download/7.5.0-7707/release.zip",
-    "hash": "56d38b2571ce34549384298725f73b7a9702c410e304aadc6765625e642160e4",
+    "url": "https://github.com/ardittristan/cheat-engine/releases/download/7.5.0-7690/release.zip",
+    "hash": "fe6ac777aa342fa7873b15ac139af6353e15dfbee37f9d97c48f791c50dfedc8",
     "architecture": {
         "64bit": {
             "shortcuts": [
