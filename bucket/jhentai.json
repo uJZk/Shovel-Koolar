@@ -1,5 +1,5 @@
 {
-    "version": "7.4.10+149",
+    "version": "7.4.11",
     "description": "A cross-platform app made for e-hentai & exhentai by Flutter.",
     "homepage": "https://github.com/jiangtian616/JHenTai",
     "license": "Apache-2.0",
@@ -34,7 +34,7 @@
         ]
     },
     "checkver": {
-        "url": "https://github.com/jiangtian616/JHenTai/releases",
+        "url": "https://github.com/jiangtian616/JHenTai/releases.atom",
         "regex": "<title>[vV]?(\\S+?)</title>"
     },
     "autoupdate": {
