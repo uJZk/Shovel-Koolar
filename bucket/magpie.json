@@ -1,12 +1,12 @@
 {
-    "version": "0.10.3",
+    "version": "0.10.5",
     "description": "Magpie magnifies any window to fullscreen with a handful of algorithms/filter. The main goal is to tackle the situations where the games either do not natively support fullscreen or display blurry images under fullscreen modes.",
     "homepage": "https://github.com/Blinue/Magpie",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Blinue/Magpie/releases/download/v0.10.3/Magpie_v0.10.3.zip",
-            "hash": "741c8d300a8e59297ff90f370eaac183b97954ccb5624977c4ac8ecf51f9eb45"
+            "url": "https://github.com/Blinue/Magpie/releases/download/v0.10.5/Magpie-v0.10.5-x64.zip",
+            "hash": "b6b7fdfdd6d53b6120d7307432605316ea4b384ee4ce3d777ff2309d3ea3105a"
         }
     },
     "shortcuts": [
@@ -15,9 +15,7 @@
             "Magpie"
         ]
     ],
-    "persist": [
-        "config"
-    ],
+    "persist": "config",
     "post_install": [
         "Copy-Item \"$persist_dir\\ScaleModels.json\" \"$dir\\ScaleModels.json\" -ErrorAction 'SilentlyContinue'",
         "",
@@ -28,7 +26,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Blinue/Magpie/releases/download/v$version/Magpie_v$version-x64.zip"
+                "url": "https://github.com/Blinue/Magpie/releases/download/v$version/Magpie-v$version-x64.zip"
             }
         }
     }
