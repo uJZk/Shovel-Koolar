@@ -17,8 +17,9 @@
         ]
     },
     "checkver": {
-        "url": "https://github.com/Aleksoid1978/VideoRenderer/releases.atom",
-        "regex": "<title>.+?([\\d.]+)</title>"
+        "url": "https://api.github.com/repos/Aleksoid1978/VideoRenderer/releases?per_page=1",
+        "jsonpath": "$[0].name",
+        "regex": "[\\w ]*?([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/$matchHead/MpcVideoRenderer-$version.zip"

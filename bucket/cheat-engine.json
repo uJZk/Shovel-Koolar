@@ -30,7 +30,7 @@
     "checkver": {
         "url": "https://api.github.com/repos/ardittristan/cheat-engine/releases?per_page=1",
         "jsonpath": "$..tag_name",
-        "regex": "([\\d.-]+)"
+        "regex": "[vV]?(\\S+)"
     },
     "autoupdate": {
         "url": "https://github.com/ardittristan/cheat-engine/releases/download/$version/release.zip"

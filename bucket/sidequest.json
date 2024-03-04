@@ -1,0 +1,35 @@
+{
+	"version": "0.10.39",
+	"description": "SideQuest is the ultimate platform for Oculus Quest users who want to explore the best VR games and apps beyond the official store. Discover hundreds of AppLab games, sideload games, and game ports that you can install and play with SideQuest.",
+	"homepage": "https://github.com/SideQuestVR/SideQuest",
+	"license": "MIT",
+	"architecture": {
+		"64bit": {
+			"url": "https://github.com/SideQuestVR/SideQuest/releases/download/v0.10.39/SideQuest-Setup-0.10.39-x64-win.exe#/dl.7z",
+			"hash": "832ec1278e996001ffd17eded71911763bdd54bd57d0030e2c761547048807a5"
+		}
+	},
+	"shortcuts": [
+		[
+			"SideQuest.exe",
+			"SideQuest"
+		]
+	],
+	"installer": {
+		"script": [
+			"Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+			"Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse"
+		]
+	},
+	"uninstaller": {
+		"script": "Remove-Item \"$env:APPDATA\\SideQuest\" -Force -Recurse"
+	},
+	"checkver": "github",
+	"autoupdate": {
+		"architecture": {
+			"64bit": {
+				"url": "https://github.com/SideQuestVR/SideQuest/releases/download/v$version/SideQuest-Setup-$version-x64-win.exe#/dl.7z"
+			}
+		}
+	}
+}
