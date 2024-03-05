@@ -1,10 +1,10 @@
 {
-    "version": "0.7.1.2172",
+    "version": "0.7.3.2210",
     "description": "a free and open-source video renderer for DirectShow.",
     "homepage": "https://github.com/Aleksoid1978/VideoRenderer/",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/0.7.1/MpcVideoRenderer-0.7.1.2172.zip",
-    "hash": "a7e98dad834c530b488a4b90267c154e153ea662ba5fdd96dd8b72674c166d29",
+    "url": "https://github.com/Aleksoid1978/VideoRenderer/releases/download/0.7.3/MpcVideoRenderer-0.7.3.2210.zip",
+    "hash": "8c337db66dd60af09644aea87a91627c8383db4e3fae607c67cb8f591a45ba16",
     "notes": "MPC Video Renderer has been registered to the system.",
     "post_install": [
         "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Install_MPCVR_32.cmd'`\"\"",
