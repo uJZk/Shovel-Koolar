@@ -1,13 +1,13 @@
 {
-    "version": "1.18.1",
+    "version": "1.18.2",
     "description": "A rule-based tunnel in Go.",
     "homepage": "https://github.com/MetaCubeX/mihomo",
     "license": "GPL-3.0-only",
     "suggest": {
         "Clash Verge": "Koolar/clash-verge"
     },
-    "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.18.1/mihomo-windows-amd64-compatible-v1.18.1.zip",
-    "hash": "34d99751c251eb34dfb62b24238b4c62ceeaa33fad3f93cfc3fb981a920b9138",
+    "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.18.2/mihomo-windows-amd64-compatible-v1.18.2.zip",
+    "hash": "e488acdfbdb4a05c6641af818c3636e33eb08581e97ad5ee6798d23e1f6b4dfa",
     "bin": "clash.meta.exe",
     "pre_install": "Rename-Item \"$dir\\mihomo-windows-amd64-compatible\" 'clash.meta.exe'",
     "post_install": [
