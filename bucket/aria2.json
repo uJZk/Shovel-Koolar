@@ -3,6 +3,9 @@
     "description": "Lightweight multi-protocol & multi-source command-line download utility with custom patches",
     "homepage": "https://github.com/myfreeer/aria2-build-msys2",
     "license": "GPL-3.0-or-later",
+    "suggest": {
+        "imFile": "Koolar/imfile"
+    },
     "architecture": {
         "64bit": {
             "url": "https://github.com/myfreeer/aria2-build-msys2/releases/download/1.37.0.1/aria2c.7z",
