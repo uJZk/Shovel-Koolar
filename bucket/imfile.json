@@ -1,12 +1,12 @@
 {
-    "version": "1.8.19",
+    "version": "1.0.7",
     "description": "A full-featured download manager.",
     "homepage": "https://github.com/imfile-io/imfile-desktop",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/agalwood/Motrix/releases/download/v1.8.19/Motrix-Setup-1.8.19.exe#/dl.7z",
-            "hash": "sha512:b8af895ba86f77ed5837b8a65580ec828b45fab647998bc1c82dc82426b857340a4306fc5222a6fb64c0f1c338bb221b90d8f563c7c7aa87d46664722ad56ab9"
+            "url": "https://github.com/imfile-io/imfile-desktop/releases/download/v1.0.7/imFile-1.0.7-win.zip",
+            "hash": "ab575296776882afa608b826c4a3e1b738664cc31f8e8dfba009d6baad7c3189"
         }
     },
     "shortcuts": [
