@@ -18,6 +18,12 @@
             "imFile"
         ]
     ],
+    "persist": [
+        [
+            "resources\\engine\\aria2.conf",
+            "aria2.conf"
+        ]
+    ],
     "pre_install": [
         "if (-not (Test-Path \"$persist_dir\\APPDATA\")) {",
         "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
@@ -25,6 +31,10 @@
         "   Move-Item -Path \"$env:APPDATA\\imFile\" -Destination \"$persist_dir\\APPDATA\" -ErrorAction SilentlyContinue",
         "} else {",
         "   Remove-Item -Path \"$env:APPDATA\\imFile\" -Recurse -ErrorAction SilentlyContinue",
+        "}",
+        "",
+        "if (-not (Test-Path \"$persist_dir\\aria2.conf\")) {",
+        "   Copy-Item \"$dir\\resources\\engine\\aria2.conf\" \"$persist_dir\\aria2.conf\" | Out-Null",
         "}"
     ],
     "post_install": [
