@@ -1,12 +1,12 @@
 {
-    "version": "2024-05",
+    "version": "2024-06",
     "description": "Lovingly referred to as the Swiss Army Knife of PC gaming, Special K does a bit of everything.",
     "homepage": "https://github.com/SpecialKO/SpecialK",
     "license": {
         "identifier": "MIT"
     },
     "url": "https://sk-data.special-k.info/SpecialK.7z",
-    "hash": "fb2d69937dc67e05a28fbf35b6816eb287585ed7b50d648f28350e343febcc1b",
+    "hash": "88336338e86a4f517b2148cd2271c3ba7784cc7783ece754ec0c56706acca6de",
     "pre_install": "if(-not (Test-Path \"$dir/SKIF.ini\")) { Add-Content \"$dir/SKIF.ini\" $null }",
     "shortcuts": [
         [
