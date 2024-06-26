@@ -1,14 +1,14 @@
 {
-    "version": "1.20.81.01",
+    "version": "1.21.1.03",
     "description": "Bedrock Dedicated Server for Minecraft",
-    "homepage": "https://www.minecraft.net/en-us/download/server/bedrock",
+    "homepage": "https://www.minecraft.net",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.minecraft.net/en-us/terms"
     },
     "depends": "nssm",
-    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.20.81.01.zip",
-    "hash": "1cb688bb88433c6f77a5924966339ee8449350dfb27a8f671ae094e56d890666",
+    "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-1.21.1.03.zip",
+    "hash": "457e4a4688858176162d323eae9c679727b64c6ee214cf18267453a9d7ab658a",
     "notes": [
         "Change the service's configuration by running: nssm edit 'Bedrock Server'",
         "Start the service by running: nssm start 'Bedrock Server'",
@@ -48,9 +48,8 @@
         ]
     },
     "checkver": {
-        "url": "https://minecraft.fandom.com/wiki/Bedrock_Dedicated_Server",
-        "regex": "bin-win/bedrock-server-(\\S+?)\\.zip",
-        "reverse": true
+        "url": "https://api.github.com/repos/LomotHo/minecraft-bedrock/releases?per_page=1",
+        "jsonpath": "$..tag_name"
     },
     "autoupdate": {
         "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-$version.zip"
