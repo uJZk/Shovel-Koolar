@@ -28,6 +28,8 @@
         "} else {",
         "   New-Item -ItemType Directory -Path \"$persist_dir\\MoviePilot\" -ErrorAction SilentlyContinue | Out-Null",
         "   Move-Item -Path \"$dir\\MoviePilot\\config\" -Destination \"$persist_dir\\MoviePilot\" -ErrorAction SilentlyContinue",
+        "   Write-Host 'Your can find your generated password in the following path after the first runing:' -ForegroundColor Yellow",
+        "   Write-Host \"$dir\\MoviePilot\\config\\logs\\moviepilot.log\" -ForegroundColor Yellow",
         "}",
         "New-Item -ItemType Junction -Path \"$dir\\MoviePilot\\config\" -Target \"$persist_dir\\MoviePilot\\config\" | Out-Null",
         "if (Test-Path \"$persist_dir\\MoviePilot\\app\\plugins\") {",
