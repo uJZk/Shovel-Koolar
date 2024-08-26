@@ -54,7 +54,7 @@
         "   Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"nssm install 'qBittorrent' '$dir\\qbittorrent.exe'; nssm set 'qBittorrent' Start SERVICE_DELAYED_AUTO_START; nssm set 'qBittorrent' AppPriority IDLE_PRIORITY_CLASS; nssm set 'qBittorrent' AppAffinity $affinity; nssm set 'qBittorrent' AppStopMethodConsole 15000; nssm set 'qBittorrent' AppStopMethodWindow 15000; nssm set 'qBittorrent' AppStopMethodThreads 15000`\"\"",
         "   Write-Host 'qBittorrent has been set as a service, it will automatically start when the system starts.'",
         "   Write-Host 'The process affinity has been set the latter half of your CPU cores.'",
-        "   Write-Host 'The process priority has been set to lower than normal.'",
+        "   Write-Host 'The process priority has been set to the lowest.'",
         "   Write-Host 'This service will be run under ''LocalSystem'' account. You may want to change it to your own.'",
         "}",
         "",
