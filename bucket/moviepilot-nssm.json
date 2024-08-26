@@ -37,14 +37,14 @@
         "if (Test-Path \"$persist_dir\\MoviePilot\\config\") {",
         "    Remove-Item \"$dir\\MoviePilot\\config -Recurse -ErrorAction SilentlyContinue",
         "} else {",
-        "    Move-Item \"$dir\\MoviePilot\\config\" \"$persist_dir\\MoviePilot\\config\"",
+        "    Move-Item \"$dir\\MoviePilot\\config\" \"$persist_dir\\MoviePilot\\config\" -ErrorAction SilentlyContinue",
         "}",
         "New-Item -ItemType Junction -Path \"$dir\\MoviePilot\\config\" -Target \"$persist_dir\\MoviePilot\\config\" | Out-Null",
         "",
         "if (Test-Path \"$persist_dir\\MoviePilot\\app\\plugins\") {",
         "    Remove-Item \"$dir\\MoviePilot\\app\\plugins -Recurse -ErrorAction SilentlyContinue",
         "} else {",
-        "    Move-Item \"$dir\\MoviePilot\\app\\plugins\" \"$persist_dir\\MoviePilot\\app\\plugins\"",
+        "    Move-Item \"$dir\\MoviePilot\\app\\plugins\" \"$persist_dir\\MoviePilot\\app\\plugins\" -ErrorAction SilentlyContinue",
         "}",
         "New-Item -ItemType Junction -Path \"$dir\\MoviePilot\\app\\plugins\" -Target \"$persist_dir\\MoviePilot\\app\\plugins\" | Out-Null"
     ]
