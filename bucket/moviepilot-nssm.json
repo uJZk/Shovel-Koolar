@@ -18,10 +18,6 @@
         "Uninstall the service by running: nssm remove MoviePilot confirm",
         "You should remove the service before uninstalling this package."
     ],
-    "persist": [
-        "MoviePilot\\config",
-        "MoviePilot\\app\\plugins"
-    ],
     "post_install": [
         "Remove-Item \"$dir\\example.com\"",
         "git clone -b Windows-MoviePilot-Git https://github.com/developer-wlj/Windows-MoviePilot.git \"$dir\"",
@@ -36,6 +32,20 @@
         "   Write-Host 'The process affinity has been set the latter half of your CPU cores.'",
         "   Write-Host 'The process priority has been set to lower than normal.'",
         "   Write-Host 'This service will be run under ''LocalSystem'' account. You may want to change it to your own.'",
-        "}"
+        "}",
+        "",
+        "if (Test-Path \"$persist_dir\\MoviePilot\\config\") {",
+        "    Remove-Item \"$dir\\MoviePilot\\config -Recurse -ErrorAction SilentlyContinue",
+        "} else {",
+        "    Move-Item \"$dir\\MoviePilot\\config\" \"$persist_dir\\MoviePilot\\config\"",
+        "}",
+        "New-Item -ItemType Junction -Path \"$dir\\MoviePilot\\config\" -Target \"$persist_dir\\MoviePilot\\config\" | Out-Null",
+        "",
+        "if (Test-Path \"$persist_dir\\MoviePilot\\app\\plugins\") {",
+        "    Remove-Item \"$dir\\MoviePilot\\app\\plugins -Recurse -ErrorAction SilentlyContinue",
+        "} else {",
+        "    Move-Item \"$dir\\MoviePilot\\app\\plugins\" \"$persist_dir\\MoviePilot\\app\\plugins\"",
+        "}",
+        "New-Item -ItemType Junction -Path \"$dir\\MoviePilot\\app\\plugins\" -Target \"$persist_dir\\MoviePilot\\app\\plugins\" | Out-Null"
     ]
 }
