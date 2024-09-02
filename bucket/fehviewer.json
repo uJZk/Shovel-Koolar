@@ -16,7 +16,7 @@
         "if (-not (Test-Path \"$persist_dir\\APPDATA\")) {",
         "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
         "   New-item \"$persist_dir\\APPDATA\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-        "   Move-Item -Path \"$env:APPDATA\\com.honjow\\fehviewer\" -Destination \"$persist_dir\\APPDATA\" -Recurse -ErrorAction SilentlyContinue",
+        "   Move-Item -Path \"$env:APPDATA\\com.honjow\\fehviewer\" -Destination \"$persist_dir\\APPDATA\" -ErrorAction SilentlyContinue",
         "} else {",
         "   Remove-Item -Path \"$env:APPDATA\\com.honjow\\fehviewer\" -Recurse -ErrorAction SilentlyContinue",
         "}"
