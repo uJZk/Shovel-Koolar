@@ -1,65 +1,65 @@
 {
-	"version": "3.17.4.83613",
-	"license": "Proprietary",
-	"description": "Spark is the perfect tool for businesses, allowing you to compose, delegate and manage emails directly with your colleagues",
-	"homepage": "https://www.sparkmailapp.com/",
-	"architecture": {
-		"64bit": {
-			"url": "https://downloads.sparkmailapp.com/Spark3/win/dist/3.17.4.83613/Spark.exe",
-			"hash": "845dc5096a1bce03d38f952c4d5a0df926e4bc7e635180639ffa676dbbd8d457",
-			"installer": {
-				"args": [
-					"/s",
-					"/S",
-					"/q",
-					"/Q",
-					"/quiet",
-					"/qn",
-					"/silent",
-					"/SILENT"
-				]
-			}
-		}
-	},
-	"pre_install": [
-		"if (-not ((Test-Path \"$persist_dir\\LOCALAPPDATA\\Spark Desktop\") -or (Test-Path \"$persist_dir\\LOCALAPPDATA\\SparkDesktop\"))) {",
-		"   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-		"   New-item \"$persist_dir\\LOCALAPPDATA\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-		"   New-item \"$persist_dir\\LOCALAPPDATA\\Spark Desktop\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-		"   New-item \"$persist_dir\\LOCALAPPDATA\\SparkDesktop\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
-		"   Move-Item -Path \"$env:LOCALAPPDATA\\Spark Desktop\" -Destination \"$persist_dir\\LOCALAPPDATA\\Spark Desktop\" -ErrorAction SilentlyContinue",
-		"   Move-Item -Path \"$env:LOCALAPPDATA\\SparkDesktop\" -Destination \"$persist_dir\\LOCALAPPDATA\\SparkDesktop\" -ErrorAction SilentlyContinue",
-		"} else {",
-		"   Remove-Item -Path \"$env:LOCALAPPDATA\\Spark Desktop\" -Recurse -ErrorAction SilentlyContinue",
-		"   Remove-Item -Path \"$env:LOCALAPPDATA\\SparkDesktop\" -Recurse -ErrorAction SilentlyContinue",
-		"}"
-	],
-	"post_install": [
-		"Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-		"Mount-ExternalRuntimeData -Source \"$persist_dir\\LOCALAPPDATA\\Spark Desktop\" -Target \"$env:LOCALAPPDATA\\Spark Desktop\"",
-		"Mount-ExternalRuntimeData -Source \"$persist_dir\\LOCALAPPDATA\\SparkDesktop\" -Target \"$env:LOCALAPPDATA\\SparkDesktop\"",
-		"Remove-Module -Name DoradoUtils"
-	],
-	"uninstaller": {
-		"script": [
-			"Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
-			"Dismount-ExternalRuntimeData -Target \"$env:LOCALAPPDATA\\Spark Desktop\"",
-			"Dismount-ExternalRuntimeData -Target \"$env:LOCALAPPDATA\\SparkDesktop\"",
-			"Remove-Module -Name DoradoUtils",
-			"",
-			"$p = \"$env:LOCALAPPDATA\\Programs\\SparkDesktop\\Uninstall Spark Desktop.exe\"",
-			"Invoke-Expression \"& '$p' /currentuser /S\""
-		]
-	},
-	"checkver": {
-		"url": "https://downloads.sparkmailapp.com/Spark3/win/dist/appcast.xml",
-		"regex": "Version ([\\d.]+)"
-	},
-	"autoupdate": {
-		"architecture": {
-			"64bit": {
-				"url": "https://downloads.sparkmailapp.com/Spark3/win/dist/$version/Spark.exe"
-			}
-		}
-	}
+    "version": "3.17.5.84174",
+    "license": "Proprietary",
+    "description": "Spark is the perfect tool for businesses, allowing you to compose, delegate and manage emails directly with your colleagues",
+    "homepage": "https://www.sparkmailapp.com/",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.sparkmailapp.com/Spark3/win/dist/3.17.5.84174/Spark.exe",
+            "hash": "f7bced3922388448340043609694d82dff79ff90e098cb6009e4b04a4bd288ab",
+            "installer": {
+                "args": [
+                    "/s",
+                    "/S",
+                    "/q",
+                    "/Q",
+                    "/quiet",
+                    "/qn",
+                    "/silent",
+                    "/SILENT"
+                ]
+            }
+        }
+    },
+    "pre_install": [
+        "if (-not ((Test-Path \"$persist_dir\\LOCALAPPDATA\\Spark Desktop\") -or (Test-Path \"$persist_dir\\LOCALAPPDATA\\SparkDesktop\"))) {",
+        "   New-item \"$persist_dir\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   New-item \"$persist_dir\\LOCALAPPDATA\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   New-item \"$persist_dir\\LOCALAPPDATA\\Spark Desktop\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   New-item \"$persist_dir\\LOCALAPPDATA\\SparkDesktop\" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null",
+        "   Move-Item -Path \"$env:LOCALAPPDATA\\Spark Desktop\" -Destination \"$persist_dir\\LOCALAPPDATA\\Spark Desktop\" -ErrorAction SilentlyContinue",
+        "   Move-Item -Path \"$env:LOCALAPPDATA\\SparkDesktop\" -Destination \"$persist_dir\\LOCALAPPDATA\\SparkDesktop\" -ErrorAction SilentlyContinue",
+        "} else {",
+        "   Remove-Item -Path \"$env:LOCALAPPDATA\\Spark Desktop\" -Recurse -ErrorAction SilentlyContinue",
+        "   Remove-Item -Path \"$env:LOCALAPPDATA\\SparkDesktop\" -Recurse -ErrorAction SilentlyContinue",
+        "}"
+    ],
+    "post_install": [
+        "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
+        "Mount-ExternalRuntimeData -Source \"$persist_dir\\LOCALAPPDATA\\Spark Desktop\" -Target \"$env:LOCALAPPDATA\\Spark Desktop\"",
+        "Mount-ExternalRuntimeData -Source \"$persist_dir\\LOCALAPPDATA\\SparkDesktop\" -Target \"$env:LOCALAPPDATA\\SparkDesktop\"",
+        "Remove-Module -Name DoradoUtils"
+    ],
+    "uninstaller": {
+        "script": [
+            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name Koolar) scripts/DoradoUtils.psm1)",
+            "Dismount-ExternalRuntimeData -Target \"$env:LOCALAPPDATA\\Spark Desktop\"",
+            "Dismount-ExternalRuntimeData -Target \"$env:LOCALAPPDATA\\SparkDesktop\"",
+            "Remove-Module -Name DoradoUtils",
+            "",
+            "$p = \"$env:LOCALAPPDATA\\Programs\\SparkDesktop\\Uninstall Spark Desktop.exe\"",
+            "Invoke-Expression \"& '$p' /currentuser /S\""
+        ]
+    },
+    "checkver": {
+        "url": "https://downloads.sparkmailapp.com/Spark3/win/dist/appcast.xml",
+        "regex": "Version ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.sparkmailapp.com/Spark3/win/dist/$version/Spark.exe"
+            }
+        }
+    }
 }
