@@ -1,12 +1,12 @@
 {
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "Automatically and easily Match and Rename Subtitles for Videos through the SubRenamer (VideoRenamer).",
     "homepage": "https://github.com/qwqcode/SubRenamer",
     "license": {
         "identifier": "GPL-2.0-only"
     },
-    "url": "https://github.com/qwqcode/SubRenamer/releases/download/v2.1.0/SubRenamer_windows_amd64.zip",
-    "hash": "76a0f9fd8fd7263c20a9c3b511a8bde59b9f3be9c6c5239dd916f573a0346adf",
+    "url": "https://github.com/qwqcode/SubRenamer/releases/download/v2.2.0/SubRenamer_windows_amd64.zip",
+    "hash": "c55999f7be79782ac573840a837ab8edccb1ac13cbf52a0412f8842cd636a615",
     "extract_dir": "SubRenamer",
     "shortcuts": [
         [
