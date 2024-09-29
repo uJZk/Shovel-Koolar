@@ -1,11 +1,11 @@
 {
-    "version": "8.0.2+259",
+    "version": "8.0.3+260",
     "description": "A cross-platform app made for e-hentai & exhentai by Flutter.",
     "homepage": "https://github.com/jiangtian616/JHenTai",
     "license": "Apache-2.0",
-    "url": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.2+259/JHenTai_8.0.2+259_Windows.zip",
-    "hash": "2e1fd5925e92a80b377693b7b445565c1d06f3507370e8493250985019c5c738",
-    "extract_dir": "JHenTai_8.0.2+259",
+    "url": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.3/JHenTai_8.0.3+260_Windows.zip",
+    "hash": "0f899cea44e850eed282769ad735d5e173eab6f4f0bf60f5c0d96cd31853cf60",
+    "extract_dir": "JHenTai_8.0.3+260",
     "shortcuts": [
         [
             "jhentai.exe",
@@ -38,7 +38,7 @@
         "regex": "^.*JHenTai_([\\w.\\-+_]+?)_Windows.zip.*$"
     },
     "autoupdate": {
-        "url": "https://github.com/jiangtian616/JHenTai/releases/download/v$version/JHenTai_$version_Windows.zip",
+        "url": "https://github.com/jiangtian616/JHenTai/releases/download/v$matchHead/JHenTai_$version_Windows.zip",
         "extract_dir": "JHenTai_$version"
     }
 }
