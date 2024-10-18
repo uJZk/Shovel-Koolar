@@ -14,6 +14,7 @@
         "64bit": {
             "url": [
                 "https://t1.daumcdn.net/potplayer/PotPlayer/Version/241015/PotPlayerSetup64.exe#/cosi.7z",
+                "https://t1.daumcdn.net/potplayer/PotPlayer/Version/241015/PotPlayerSetup64.exe#/cosi.7z",
                 "https://t1.daumcdn.net/potplayer/PotPlayer/Codec/v1/OpenCodecSetup64.exe#/codec.7z"
             ],
             "hash": [
@@ -49,6 +50,7 @@
         },
         "32bit": {
             "url": [
+                "https://t1.daumcdn.net/potplayer/PotPlayer/Version/241015/PotPlayerSetup.exe#/cosi.7z",
                 "https://t1.daumcdn.net/potplayer/PotPlayer/Version/241015/PotPlayerSetup.exe#/cosi.7z",
                 "https://t1.daumcdn.net/potplayer/PotPlayer/Codec/v1/OpenCodecSetup.exe#/codec.7z"
             ],
