@@ -1,7 +1,7 @@
 {
     "version": "1.21.30.03",
     "description": "Bedrock Dedicated Server for Minecraft",
-    "homepage": "https://www.minecraft.net",
+    "homepage": "https://www.minecraft.net/en-us/download/server/bedrock",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.minecraft.net/en-us/terms"
