@@ -13,7 +13,8 @@
     ],
     "persist": [
         "Data",
-        "Orders"
+        "Orders",
+        "Export"
     ],
     "checkver": {
         "url": "https://github.com/LaughingLeader/BG3ModManager/tags.atom",
