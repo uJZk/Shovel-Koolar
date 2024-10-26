@@ -11,7 +11,10 @@
             "Baldur's Gate 3 Mod Manager"
         ]
     ],
-    "persist": "Data",
+    "persist": [
+        "Data",
+        "Orders"
+    ],
     "checkver": {
         "url": "https://github.com/LaughingLeader/BG3ModManager/tags.atom",
         "regex": "/releases/tag/[vV]?(\\S+?)\""
