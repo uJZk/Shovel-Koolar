@@ -3,7 +3,10 @@
     "description": "NAS 媒体库自动化管理工具",
     "homepage": "https://github.com/developer-wlj/Windows-MoviePilot/tree/Windows-MoviePilot-Git",
     "license": "GPL-3.0-or-later",
-    "depends": "nssm",
+    "depends": [
+        "nssm",
+        "git"
+    ],
     "architecture": {
         "64bit": {
             "url": "https://example.com/"
@@ -21,7 +24,7 @@
     "post_install": [
         "Remove-Item \"$dir\\example.com\"",
         "git clone -b Windows-MoviePilot-Git https://github.com/developer-wlj/Windows-MoviePilot.git \"$dir\"",
-        "git clone -b dev https://github.com/developer-wlj/MoviePilot.git \"$dir\\MoviePilot\"",
+        "git clone -b v2 https://github.com/jxxghp/MoviePilot.git \"$dir\\MoviePilot\"",
         "",
         "if (Test-Path \"$persist_dir\\MoviePilot\\config\") {",
         "   Remove-Item -Path \"$dir\\MoviePilot\\config\" -Recurse -ErrorAction SilentlyContinue",
