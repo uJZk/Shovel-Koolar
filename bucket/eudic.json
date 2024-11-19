@@ -1,10 +1,10 @@
 {
-    "version": "2024-11-12",
+    "version": "2024-11-19",
     "description": "权威的英语词典软件，英语学习者必备的工具。",
     "homepage": "https://www.eudic.net",
     "license": "Freeware",
-    "url": "https://www.eudic.net/download/eudic_win.zip?v=2024-11-12",
-    "hash": "1bccca46050974b357846f266c72f0cdf4643f30b2c7bcf78e66c4640e8fca56",
+    "url": "https://www.eudic.net/download/eudic_win.zip?v=2024-11-19",
+    "hash": "e64ea06307fe9e339d20d2bdfd4f5b0840803378642bf7443e0cf9186f5978a4",
     "shortcuts": [
         [
             "eudic.exe",
