@@ -6,7 +6,7 @@
     "url": "https://downloads.sourceforge.net/project/shanaencoder/ShanaEncoder6.0.1.7.exe#/dl.7z",
     "hash": "bd5c00be0498fa5696c038f45fbb51470f1ee71d88515b3a5840a9c1f9d8b6b9",
     "post_install": [
-        "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\*\" \"$dir\"",
+        "Move-Item \"$dir\\`$PLUGINSDIR\\*\" \"$dir\"",
         "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninst*\" -Force -Recurse"
     ],
     "shortcuts": [
