@@ -13,7 +13,7 @@
             "hash": "bc858362ab967f12249851716769f063ffe64fa67ca13494b22d72d53c4e414b"
         }
     },
-    "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninst*\" -Force -Recurse",
+    "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninst*\", \"$dir\\resources\\*.dat\" -Force -Recurse",
     "post_install": [
         "# https://github.com/clash-verge-rev/clash-verge-rev/issues/21#issuecomment-1097467046",
         "if (!(Test-Path \"$persist_dir\\.config\\PORTABLE\")) {",
