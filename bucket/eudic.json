@@ -44,6 +44,6 @@
         "regex": "eudic_win.zip\\?v=(\\S+)\""
     },
     "autoupdate": {
-        "url": "https://www.eudic.net/download/eudic_win.zip?v=$version"
+        "url": "https://www.eudic.net/download/eudic_win.zip?v=$version#/dl.zip"
     }
 }
