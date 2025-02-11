@@ -1,23 +1,23 @@
 {
-    "version": "1.12.0-alpha.4",
+    "version": "1.12.0-alpha.5",
     "description": "The universal proxy platform.",
     "homepage": "https://sing-box.sagernet.org/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.4/sing-box-1.12.0-alpha.4-windows-amd64.zip",
-            "hash": "49af61c17e9f5b14d453ad567d4b90cba59d05f238a226cf1ac1ff05d7877c7e",
-            "extract_dir": "sing-box-1.12.0-alpha.4-windows-amd64"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.5/sing-box-1.12.0-alpha.5-windows-amd64.zip",
+            "hash": "9025005ab7f3d1056704a95f6c4e239107655d13fc0bf6b764a4e7e7bf057807",
+            "extract_dir": "sing-box-1.12.0-alpha.5-windows-amd64"
         },
         "32bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.4/sing-box-1.12.0-alpha.4-windows-386.zip",
-            "hash": "3ff138db30005cfd2079794ceef0e7eb257f3c0ddd7b41c7c52114388cdae2ef",
-            "extract_dir": "sing-box-1.12.0-alpha.4-windows-386"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.5/sing-box-1.12.0-alpha.5-windows-386.zip",
+            "hash": "2956f69483b579dd3da9f2a1a17d034e4a5016b53ebf23f9254f0ab8d0dd5fd9",
+            "extract_dir": "sing-box-1.12.0-alpha.5-windows-386"
         },
         "arm64": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.4/sing-box-1.12.0-alpha.4-windows-arm64.zip",
-            "hash": "454fef148bf26a48d926983b211f6fd585e9dfa1c9c3377af043feb12e609e21",
-            "extract_dir": "sing-box-1.12.0-alpha.4-windows-arm64"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.5/sing-box-1.12.0-alpha.5-windows-arm64.zip",
+            "hash": "d341ac5d171e6e77f125c47aedc5c1bf5d5623f34f1f925183040bea828befc8",
+            "extract_dir": "sing-box-1.12.0-alpha.5-windows-arm64"
         }
     },
     "bin": "sing-box.exe",
