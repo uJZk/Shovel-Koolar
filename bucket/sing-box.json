@@ -1,23 +1,23 @@
 {
-    "version": "1.12.0-alpha.10",
+    "version": "1.12.0-alpha.11",
     "description": "The universal proxy platform.",
     "homepage": "https://sing-box.sagernet.org/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.10/sing-box-1.12.0-alpha.10-windows-amd64.zip",
-            "hash": "7f2053dcd7c507451097a0f30651bd9cc1ed041eca3ae06d20a309581bc40bc3",
-            "extract_dir": "sing-box-1.12.0-alpha.10-windows-amd64"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.11/sing-box-1.12.0-alpha.11-windows-amd64.zip",
+            "hash": "5c9fd0468377d731b67e91ad543195f32536726ec65670caddf7f4fbfbf9b1f8",
+            "extract_dir": "sing-box-1.12.0-alpha.11-windows-amd64"
         },
         "32bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.10/sing-box-1.12.0-alpha.10-windows-386.zip",
-            "hash": "cdba4794d79e56a63da49c65d3563080572ac522781598501da3bf31317ac0ea",
-            "extract_dir": "sing-box-1.12.0-alpha.10-windows-386"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.11/sing-box-1.12.0-alpha.11-windows-386.zip",
+            "hash": "79d95e2e61fa3fead48f412bf184d204f2f019b260c91d2c548618bc237bef52",
+            "extract_dir": "sing-box-1.12.0-alpha.11-windows-386"
         },
         "arm64": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.10/sing-box-1.12.0-alpha.10-windows-arm64.zip",
-            "hash": "9cb30d8770b5adf0d9779506ffa57928b43741b224a87956ea64137ff4b5803e",
-            "extract_dir": "sing-box-1.12.0-alpha.10-windows-arm64"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-alpha.11/sing-box-1.12.0-alpha.11-windows-arm64.zip",
+            "hash": "7274ea074ca3c6f70fd3efdfcd375e5f1b5427e3fc8b6c3ff77a439aa0b37b81",
+            "extract_dir": "sing-box-1.12.0-alpha.11-windows-arm64"
         }
     },
     "bin": "sing-box.exe",
