@@ -48,10 +48,11 @@
         ]
     },
     "checkver": {
-        "url": "https://api.github.com/repos/LomotHo/minecraft-bedrock/releases?per_page=1",
-        "jsonpath": "$..tag_name"
+        "url": "https://www.minecraft.net/zh-hans/download/server/bedrock",
+        "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "regex": "bedrock-server-(\\S+?).zip"
     },
     "autoupdate": {
-        "url": "https://minecraft.azureedge.net/bin-win/bedrock-server-$version.zip"
+        "url": "https://www.minecraft.net/bedrockdedicatedserver/bin-win/bedrock-server-$version.zip"
     }
 }
