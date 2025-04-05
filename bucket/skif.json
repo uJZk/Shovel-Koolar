@@ -1,12 +1,12 @@
 {
-    "version": "2025-02",
+    "version": "1.2.0-25.4.1.1",
     "description": "Lovingly referred to as the Swiss Army Knife of PC gaming, Special K does a bit of everything.",
     "homepage": "https://github.com/SpecialKO/SpecialK",
     "license": {
         "identifier": "MIT"
     },
     "url": "https://sk-data.special-k.info/SpecialK.7z",
-    "hash": "7539359a154519643faaa6544e88a98cdf6de375baa84f28b77cf201105195e2",
+    "hash": "2f2c17f3045c812e96f5f3a184e4c2dcaae97fa297fa631903a2a8c9c4ecdf75",
     "pre_install": "if(-not (Test-Path \"$dir/SKIF.ini\")) { Add-Content \"$dir/SKIF.ini\" $null }",
     "shortcuts": [
         [
@@ -21,8 +21,18 @@
         "SKIF.ini"
     ],
     "checkver": {
-        "url": "https://worldtimeapi.org/api/timezone/utc",
-        "regex": "\"utc_datetime\":\"(\\d{4}-\\d{2})-\\d{2}"
+        "script": [
+            "$dl_url = 'https://sk-data.special-k.info/SpecialK.7z'",
+            "$dl = cache_path 'skif' 'unknown' $dl_url",
+            "Invoke-WebRequest $dl_url -OutFile $dl",
+            "7z x -y $dl | out-null",
+            "$ver1 = (Get-Item SKIF.exe).VersionInfo.ProductVersion",
+            "$ver2 = (Get-Item SpecialK64.dll).VersionInfo.ProductVersion",
+            "$ver = $ver1 + '-' + $ver2",
+            "Move-Item -Force $dl (cache_path 'skif' $ver $dl_url)",
+            "$ver"
+        ],
+        "regex": "(\\S+)"
     },
     "autoupdate": {
         "url": "https://sk-data.special-k.info/SpecialK.7z"
