@@ -25,11 +25,13 @@
             "$dl_url = 'https://sk-data.special-k.info/SpecialK.7z'",
             "$dl = cache_path 'skif' 'unknown' $dl_url",
             "Invoke-WebRequest $dl_url -OutFile $dl",
-            "7z x -y $dl | out-null",
+            "7z x $dl SKIF.exe SpecialK64.dll | out-null",
             "$ver1 = (Get-Item SKIF.exe).VersionInfo.ProductVersion",
             "$ver2 = (Get-Item SpecialK64.dll).VersionInfo.ProductVersion",
             "$ver = $ver1 + '-' + $ver2",
             "Move-Item -Force $dl (cache_path 'skif' $ver $dl_url)",
+            "Remove-Item SKIF.exe",
+            "Remove-Item SpecialK64.dll",
             "$ver"
         ],
         "regex": "(\\S+)"
