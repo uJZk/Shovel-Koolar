@@ -1,0 +1,21 @@
+{
+    "version": "1.0.7",
+    "description": "A GUI software that provides advanced HyperV virtual machine features such as DDA and GPU partitioning, developed based on WPF-UI.",
+    "homepage": "https://github.com/Justsenger/ExHyperV",
+    "license": {
+        "identifier": "GPL-3.0-only"
+    },
+    "url": "https://github.com/Justsenger/ExHyperV/releases/download/v1.0.7/1.0.7.7z",
+    "hash": "5dbfe60bf03cf74a1990ab0ae6169149f95343509911e252485e1c63a735ee13",
+    "shortcuts": [
+        [
+            "ExHyperV.exe",
+            "ExHyperV"
+        ]
+    ],
+    "persist": "config.xml",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/Justsenger/ExHyperV/releases/download/v$version/$version.7z"
+    }
+}
