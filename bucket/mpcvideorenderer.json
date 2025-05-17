@@ -7,13 +7,11 @@
     "hash": "15f75c82b9bb1a37d146af350e999f5bf81294f2f32784236dde88094ba2ac73",
     "notes": "MPC Video Renderer has been registered to the system.",
     "post_install": [
-        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Install_MPCVR_32.cmd'`\"\"",
-        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Install_MPCVR_64.cmd'`\"\""
+        "sudo cmd /c \"$dir\\Install_MPCVR_32.cmd && $dir\\Install_MPCVR_64.cmd\""
     ],
     "uninstaller": {
         "script": [
-            "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Uninstall_MPCVR_32.cmd'`\"\"",
-            "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command `\"'$dir\\Uninstall_MPCVR_64.cmd'`\"\""
+            "sudo cmd /c \"$dir\\Uninstall_MPCVR_32.cmd && $dir\\Uninstall_MPCVR_64.cmd\""
         ]
     },
     "checkver": {
