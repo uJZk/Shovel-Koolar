@@ -7,7 +7,7 @@
         "url": "https://potplayer.daum.net/publicRelation"
     },
     "suggest": {
-        "LAV Filters": "Koolar/lavfilters",
+        "LAV Filters": "lavfilters-np",
         "MPC Video Renderer": "Koolar/mpcvideorenderer"
     },
     "architecture": {
