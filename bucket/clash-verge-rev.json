@@ -21,8 +21,7 @@
         "}"
     ],
     "pre_uninstall": [
-        "if (!(is_admin)) { error \"$app requires admin rights to $cmd\"; break }",
-        "Start-Process \"$dir\\resources\\uninstall-service.exe\" -Wait -Verb 'RunAs' -WindowStyle 'Hidden'; Start-Sleep -Seconds 3"
+        "sudo -E --inline \"$dir\\resources\\uninstall-service.exe\"; Start-Sleep -Seconds 3"
     ],
     "uninstaller": {
         "script": "Remove-Item \"$env:USERPROFILE\\.config\\clash-verge\" -Recurse -Force -ErrorAction 'SilentlyContinue'"
