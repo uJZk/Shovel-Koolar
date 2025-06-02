@@ -1,12 +1,12 @@
 {
-    "version": "0.5.3",
+    "version": "0.5.4",
     "description": "一个用于安装 / 更新 NS 模拟器的工具",
     "homepage": "https://github.com/triwinds/ns-emu-tools",
     "license": {
         "identifier": "GPL-3.0-only"
     },
-    "url": "https://github.com/triwinds/ns-emu-tools/releases/download/0.5.3/NsEmuTools.exe",
-    "hash": "3f38b7cfebfc8e5153a663dc9c37551702e71886680df1973edac681f45816e9",
+    "url": "https://github.com/triwinds/ns-emu-tools/releases/download/0.5.4/NsEmuTools.exe",
+    "hash": "f709ffd276bae735e8bd9550192a728f1795f0655e444196bc5ac4fb27ad5a4a",
     "pre_install": "if(-not (Test-Path \"$dir/config.json\")) { Add-Content \"$dir/config.json\" $null }",
     "shortcuts": [
         [
