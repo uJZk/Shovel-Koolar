@@ -1,5 +1,5 @@
 {
-    "version": "250514",
+    "version": "1.7.22540.0",
     "description": "A multimedia software player developed for the Microsoft Windows operating system by South Korean Internet company Kakao.",
     "homepage": "https://potplayer.daum.net/",
     "license": {
@@ -13,11 +13,11 @@
     "architecture": {
         "64bit": {
             "url": [
-                "https://t1.daumcdn.net/potplayer/PotPlayer/Version/250514/PotPlayerSetup64.exe#/cosi.7z",
+                "https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe#/cosi.7z",
                 "https://t1.daumcdn.net/potplayer/PotPlayer/Codec/v1/OpenCodecSetup64.exe#/codec.7z"
             ],
             "hash": [
-                "4474be2686f6b6de525830e6b2d35c71c830a8ef14ed4b77d86b4384e01a2abf",
+                "bc51ca3572091bd6bcf026928a20161ccd101072018c78968358f255a6133772",
                 "383686311183cbcf9e8d1f4a29191d05a0c3b2aa70396a2324f58e5a2ec98648"
             ],
             "shortcuts": [
@@ -49,11 +49,11 @@
         },
         "32bit": {
             "url": [
-                "https://t1.daumcdn.net/potplayer/PotPlayer/Version/250514/PotPlayerSetup.exe#/cosi.7z",
+                "https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup.exe#/cosi.7z",
                 "https://t1.daumcdn.net/potplayer/PotPlayer/Codec/v1/OpenCodecSetup.exe#/codec.7z"
             ],
             "hash": [
-                "ddd1146f51c3df3fd3749c0f77d3f0ff61beb39fb5aedffdac2439b3be8e2e4c",
+                "dbe3f3a9416bc54d153e819073fbe094875c41e5e6575ef65be8fa744f86d291",
                 "8ee793feed9b6eeb21d45876932ba91494657a66b1b0df7666fd35416d805c3c"
             ],
             "shortcuts": [
@@ -117,16 +117,23 @@
         "PotPlayerMini64.ini"
     ],
     "checkver": {
-        "url": "https://t1.daumcdn.net/potplayer/PotPlayer/v4/Update2/UpdateEng.html",
-        "regex": "\\[(\\S+?)\\]"
+        "script": [
+            "$dl_url = 'https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe'",
+            "$dl = cache_path 'potplayer-mini' 'unknown' $dl_url",
+            "Invoke-WebRequest $dl_url -OutFile $dl",
+            "$ver = (Get-Item $dl).VersionInfo.ProductVersion",
+            "Move-Item -Force $dl (cache_path 'potplayer-mini' $ver $dl_url)",
+            "$ver"
+        ],
+        "regex": "(\\S+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/$version/PotPlayerSetup64.exe#/cosi.7z"
+                "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe#/cosi.7z"
             },
             "32bit": {
-                "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/$version/PotPlayerSetup.exe#/cosi.7z"
+                "url": "https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup.exe#/cosi.7z"
             }
         }
     }
