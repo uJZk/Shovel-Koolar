@@ -1,18 +1,18 @@
 {
-    "version": "0.5.0",
+    "version": "1.0.1",
     "description": "Windows 10 Multi-Version launcher.",
-    "homepage": "https://github.com/MCMrARM/mc-w10-version-launcher",
+    "homepage": "https://github.com/QYCottage/mc-w10-version-launcher",
     "license": "GPL-3.0-or-later",
     "shortcuts": [
         [
             "MCLauncher.exe",
-            "Minecraft Version Manager"
+            "MCLauncher"
         ]
     ],
-    "url": "https://github.com/MCMrARM/mc-w10-version-launcher/releases/download/0.5.0/MCLauncher.zip",
-    "hash": "4529801a88cbce8d03ab68347affdcc27a5d2abf219195f1dbd5cd0579dd1e05",
+    "url": "https://github.com/QYCottage/mc-w10-version-launcher/releases/download/v1.0.1/MCLauncher-Release.zip",
+    "hash": "27b336870bf5e013a9772e0adb51746a508726d9c5e42b85525d4b90206f24b1",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/MCMrARM/mc-w10-version-launcher/releases/download/$version/MCLauncher.zip"
+        "url": "https://github.com/QYCottage/mc-w10-version-launcher/releases/download/v$version/MCLauncher-Release.zip"
     }
 }
