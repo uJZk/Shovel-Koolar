@@ -20,7 +20,11 @@
         "    New-Item -Path \"$persist_dir\\.config\\PORTABLE\" -ItemType file | Out-Null",
         "}"
     ],
-    "pre_uninstall": "sudo -E --inline \"$dir\\resources\\uninstall-service.exe\"; Start-Sleep -Seconds 3",
+    "pre_uninstall": [
+        "if (Get-Service -Name 'clash_verge_service' -ErrorAction SilentlyContinue) {",
+        "   sudo -E --inline \"$dir\\resources\\uninstall-service.exe\"; Start-Sleep -Seconds 3",
+        "}"
+    ],
     "uninstaller": {
         "script": "Remove-Item \"$env:USERPROFILE\\.config\\clash-verge\" -Recurse -Force -ErrorAction 'SilentlyContinue'"
     },
