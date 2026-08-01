@@ -1,12 +1,12 @@
 {
-    "version": "1.09.079",
+    "version": "1.10.091",
     "description": "FluentCleaner Classic - Lightweight Windows system cleaning tool built with .NET Framework 4.8 and WinForms.",
     "homepage": "https://github.com/builtbybel/FluentCleaner",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/builtbybel/FluentCleaner/releases/latest/download/FluentCleaner-Classic-net48.zip",
-            "hash": "f0b16604570f8c03693ad7796b0deeef6d277e1a736eadb29cc01c0dcf88457b",
+            "url": "https://github.com/builtbybel/FluentCleaner/releases/download/classic-1.10.091/FluentCleaner-Classic-net48.zip",
+            "hash": "88f1ae41ef723958a59e8e089f8ef591d02da73136dec093e9e1de6fabe5b6f1",
             "extract_dir": "FluentCleaner-Classic-net48"
         }
     },
@@ -26,9 +26,9 @@
     "checkver": {
         "url": "https://api.github.com/repos/builtbybel/FluentCleaner/releases?per_page=1",
         "jsonpath": "$..body",
-        "regex": "\\|[ \\t]*\\*{0,2}FluentCleaner[ \\t]+Classic\\*{0,2}[^|]*\\|[ \\t]*`?v?(?<version>\\d+(?:\\.\\d+)+)`?"
+        "regex": "\\|[ \\t]*\\*{0,2}Classic\\*{0,2}[^|]*\\|[ \\t]*`?v?(?<version>\\d+(?:\\.\\d+)+)`?[^|]*\\|[^)]*\\((?<url>https://github\\.com/builtbybel/FluentCleaner/releases/download/[^)]+/FluentCleaner-Classic-net48\\.zip)\\)"
     },
     "autoupdate": {
-        "url": "https://github.com/builtbybel/FluentCleaner/releases/latest/download/FluentCleaner-Classic-net48.zip"
+        "url": "$matchUrl"
     }
 }
