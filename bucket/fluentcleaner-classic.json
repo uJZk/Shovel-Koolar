@@ -7,15 +7,10 @@
         "64bit": {
             "url": "https://github.com/builtbybel/FluentCleaner/releases/download/26.08.03/FluentCleaner-Classic-net48.zip",
             "hash": "42b2ba87792491ba07bd4ae4a70486e01a6f1effb5f23870767234062a6f78a4",
-            "extract_dir": "FluentCleaner-Classic-net48"
+            "extract_dir": "FluentCleaner-net48"
         }
     },
-    "shortcuts": [
-        [
-            "FluentCleaner.Classic.exe",
-            "FluentCleaner Classic"
-        ]
-    ],
+    "shortcuts": [["FluentCleaner.Classic.exe", "FluentCleaner Classic"]],
     "persist": "settings.json",
     "pre_install": [
         "if (!(Test-Path \"$dir\\settings.json\") -or !(Get-Item \"$dir\\settings.json\").Length) {",
@@ -29,6 +24,7 @@
         "regex": "\\|[ \\t]*\\*{0,2}Classic\\*{0,2}[^|]*\\|[ \\t]*`?v?(?<version>\\d+(?:\\.\\d+)+)`?[^|]*\\|[^)]*\\((?<url>https://github\\.com/builtbybel/FluentCleaner/releases/download/[^)]+/FluentCleaner-Classic-net48\\.zip)\\)"
     },
     "autoupdate": {
-        "url": "$matchUrl"
+        "url": "$matchUrl",
+        "extract_dir": "FluentCleaner-net48"
     }
 }
